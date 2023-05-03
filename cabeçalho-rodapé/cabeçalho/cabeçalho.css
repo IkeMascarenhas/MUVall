@@ -1,0 +1,102 @@
+@media only screen and (max-width: 481px) {
+    /* esta 481px pq está bugando em 480px*/
+   body{
+      font-family: Arial, Helvetica, sans-serif;
+   }
+   
+    header{
+        background-color: black;
+        height: 100px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+
+    }
+    #topimg{
+        width: 100%;
+        height: 60px;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        margin-top: 0.75rem;
+    }
+     #painel-menu {
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 1;
+  }
+  #painel-menu a {
+      text-decoration: none;
+      color: #fff;
+  }
+  #painel-menu a:hover {
+      color: #303685;
+  }
+  #painel-menu input {
+      display: block;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: -1px;
+      cursor: pointer;
+      opacity: 0;
+      z-index: 3;
+  }
+    #painel-menu span {
+        display: block;
+        width: 45px;
+        height: 8px;
+        margin-bottom: 5px;
+        border-radius: 3px;
+        background-color: #EA5A14;
+        position: relative;
+        top: 12px;
+        transform-origin: 4px 0px;
+        transition: transform 0.7s ease;
+        z-index: 2;
+  }
+  #painel-menu span:first-child {
+      transform-origin: 0 0;
+  }
+  #painel-menu span:nth-last-child(2) {
+      transform-origin: 0% 100%;
+  }
+  #painel-menu input:checked~span {
+      opacity: 1;
+      transform: rotate(45deg) translate(-2px, -1px);
+      background-color: white;
+  }
+  #painel-menu input:checked~span:nth-last-child(3) {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.2, 0.2);
+  }
+  #painel-menu input:checked~span:nth-last-child(2) {
+      transform: rotate(-45deg) translate(0, -1px);
+  }
+  ul {
+      position: absolute;
+      width: 200px;
+      height: 375px;
+      margin: -100px 0 0 -130px;
+      padding: 105px 0 0 20px;
+      background-color: #EA5A14;
+      transform-origin: 0 0;
+      transform: translate(0%, -100%);
+      transition: transform 0.7s ease;
+      font-size: 4.2vw;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
+      border-radius: 0px 0px 0px 10px;
+  }
+  ul li {
+      padding: 10px 0;
+      font-size: 22px;
+      
+  }
+  #painel-menu input:checked~ul {
+      transform: none;
+  }
+
+}
+
+

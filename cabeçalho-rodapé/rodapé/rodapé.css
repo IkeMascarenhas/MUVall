@@ -1,0 +1,59 @@
+@media only screen and (max-width: 481px) {
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    footer {
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 15% 15% 15% 15% 15% 15%;
+        background-color: black;
+        height: 20rem;
+        padding: 20px;
+    }
+    #logo-footer {
+        width: 100%;
+        grid-column-start: 1;
+        grid-row-start: 1;
+    }
+    #sobre {
+        text-decoration: none;
+        font-weight: bold;
+        color: white;
+        padding: 1rem;
+        width: 100%;
+        grid-column-start: 1;
+        grid-row-start: 3;
+    }
+    #fale-conosco {
+        text-decoration: none;
+        font-weight: bold;
+        color: white;
+        padding: 1rem;
+        width: 100%;
+        grid-column-start: 1;
+        grid-row-start: 4;
+    }
+    #redes {
+        text-decoration: none;
+        font-weight: bold;
+        color: white;
+        padding: 1rem;
+        width: 100%;
+        grid-column-start: 1;
+        grid-row-start: 5;
+    }
+    #logo-insta {
+        width: 100%;
+        grid-column-start: 1;
+        grid-row-start: 6;
+        text-align: justify;
+        padding-left: 1rem;
+    }
+    #logo-face {
+        width: 100%;
+        grid-column-start: 1;
+        grid-row-start: 6;
+        text-align: right;
+        padding-left: 1rem;
+    }
+}
