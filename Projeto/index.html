@@ -1,55 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muvall</title>
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/cabeçalho.css">
 </head>
+
 <body>
     <header>
-    <a id="topimg" href="/index.html" aria-label="logo"><img src="img/logomuvall.png" alt=""></a>
+        <a id="topimg" href="/index.html" aria-label="logo"><img src="img/logomuvall.png"
+                alt="Logo da empresa MUVALL"></a>
 
         <nav>
             <div id="menu-container">
-                
+
                 <div></div>
                 <div></div>
                 <div></div>
-                
-                
+
+
                 <ul id="menu-items">
-                    <li><a href="index.html" aria-label="logo">Home</a></li>
-                    <li><a href="perfil.html" aria-label="logo">Perfil</li>
-                    <li><a href="login.html" aria-label="logo">Login</a></li>
-                    <li><a href="cadastro.html" aria-label="logo">Cadastro</li>
-                    <li><a href="" aria-label="logo">Fale Conosco</a></li>
-                    <li><a href="" aria-label="logo">Sobre nós</a></li>
+                    <li><a href="index.html" aria-label="Home">Home</a></li>
+                    <li><a href="perfil.html" aria-label="Perfil">Perfil</li>
+                    <li><a href="login.html" aria-label="Login">Login</a></li>
+                    <li><a href="cadastro.html" aria-label="Cadastro">Cadastro</li>
+                    <li><a href="#" aria-label="Fale conosco">Fale Conosco</a></li>
                 </ul>
             </div>
         </nav>
     </header>
     <main>
-        <section class="topo">
-            <input type="text" placeholder="Pesquisar">
-            <button>Buscar</button>
-            <h2>Serviços</h2> <hr>
-            <img src="img/caminhão.png" alt="">
-            <img src="img/motorista.png" alt="">
-            <img src="img/onibus.png" alt="">
-        </section>
-        <section class="embaixo">
-            <h3>O que é MUVALL?</h3>
-            <img src="img/brasil.png" alt="">
-            <p>Conectamos você com motoristas do Brasil Inteiro</p>
-            <img src="img/selecione.png" alt="">
-            <p>Escolha o que melhor atende suas necessidades</p>
-            <img src="img/automoveis.png" alt="">
-            <p>Contrate serviços como: fretes, ônibus fretados, vans, etc.</p>
-            <div><a href="cadastro-anunciante.html">Seja Anunciante</a></div>
-            
-        </section>
+        <div class="larguraPadrao">
+            <div id="barraPesquisa">
+                <input type="text" placeholder="Pesquisar">
+                <button>Buscar</button>
+            </div>
+            <section id="cards">
+                <a href="#" class="card-home">
+                    <img src="img/do-utilizador.png" alt="Ícone usuário">
+                    <p>Para você</p>
+                </a>
+                <a href="" class="card-home">
+                    <img src="img/companhia.png" alt="Ícone empresários">
+                    <p>Para anunciantes</p>
+                </a>
+            </section>
+        </div>
+
+
+        <article>
+            <section class="informacoes">
+                <h3>O que é MUVALL?</h3>
+                <img src="img/brasil.png" alt="">
+                <p>Conectamos você com motoristas do Brasil Inteiro</p>
+                <img src="img/selecione.png" alt="">
+                <p>Escolha o que melhor atende suas necessidades</p>
+                <img src="img/automoveis.png" alt="">
+                <p>Contrate serviços como: fretes, ônibus fretados, vans, etc.</p>
+                <div><a href="cadastro.html">Cadastre-se</a></div>
+            </section>
+            <section class="funcionamento">
+                <h3>Como funciona?</h3>
+                <img src="img/promocao.png" alt="Megafone">
+                <p>Cadastre sua empresa e anuncie conosco pagando apenas xx,xx R$</p>
+                <img src="img/search-engine-optimization.png" alt="">
+                <p>Pare de buscar clientes e deixe que eles te encontrem</p>
+                <img src="img/money-bag.png" alt="">
+                <p>Receba todo o pagamento pelo seu serviço</p>
+                <div><a href="cadastro-anunciante.html">Seja um Anunciante</a></div>
+            </section>
+        </article>
     </main>
     <footer>
         <img src="img/logomuvall.png" alt="">
@@ -59,4 +83,5 @@
     </footer>
     <script src="script/menu.js"></script>
 </body>
+
 </html>
