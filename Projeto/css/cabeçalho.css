@@ -28,7 +28,6 @@ body{
     header{
         background-color: black;
         min-height: 8vh;
- 
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -82,7 +81,7 @@ body{
         justify-content: flex-end;
         align-items: center;
         width: 50vw;
-        height: 70vh;
+        height: 60vh;
         background-color: #ea5a14;
         position: fixed;
         right: -100vw;
