@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muvall</title>
     <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/cabeçalho.css">
+    <link rel="stylesheet" href="css/cabeçalho-rodape.css">
+
 </head>
 
 <body>
     <header>
-        <a id="topimg" href="/index.html" aria-label="logo"><img src="img/logomuvall.png"
-                alt="Logo da empresa MUVALL"></a>
+        <a id="topimg" href="/index.html" aria-label="logo"><img src="img/logomuvall.png"alt="Logo da empresa MUVALL" rel="prev"></a>
 
         <nav>
             <div id="menu-container">
@@ -24,9 +24,9 @@
 
 
                 <ul id="menu-items">
-                    <li><a href="perfil.html" aria-label="Perfil">Minha conta</li>
-                    <li><a href="login.html" aria-label="Login">Login</a></li>
-                    <li><a href="#" aria-label="Fale conosco">Fale Conosco</a></li>
+                    <li><a href="perfil.html" aria-label="Perfil" rel="next">Minha conta</li>
+                    <li><a href="login.html" aria-label="Login" rel="next">Login</a></li>
+                    <li><a href="#" aria-label="Fale conosco" rel="next">Fale Conosco</a></li>
                 </ul>
             </div>
         </nav>
@@ -38,11 +38,11 @@
                 <button>Buscar</button>
             </div>
             <section id="cards">
-                <a href="#" class="card-home">
+                <a href="#informacoes" class="card-home">
                     <img src="img/do-utilizador.png" alt="Ícone usuário">
                     <p>Para você</p>
                 </a>
-                <a href="" class="card-home">
+                <a href="#funcionamento" class="card-home">
                     <img src="img/companhia.png" alt="Ícone empresários">
                     <p>Para anunciantes</p>
                 </a>
@@ -51,33 +51,43 @@
 
 
         <article>
-            <section class="informacoes">
-                <h3>O que é MUVALL?</h3>
-                <img src="img/brasil.png" alt="">
-                <p>Conectamos você com motoristas do Brasil Inteiro</p>
-                <img src="img/selecione.png" alt="">
-                <p>Escolha o que melhor atende suas necessidades</p>
-                <img src="img/automoveis.png" alt="">
-                <p>Contrate serviços como: fretes, ônibus fretados, vans, etc.</p>
-                <div><a href="cadastro.html">Cadastre-se</a></div>
-            </section>
-            <section class="funcionamento">
-                <h3>Como funciona?</h3>
+                <section class="informacoes" id="informacoes">
+                    <h1>O que é MUVall?</h3>
+                    <img src="img/brasil.png" alt="Ícone Brasil">
+                    <p>Conectamos você com motoristas do Brasil Inteiro</p>
+                    <img src="img/selecione.png" alt="Ícone filtro">
+                    <p>Escolha o que melhor atende suas necessidades</p>
+                    <img src="img/automoveis.png" alt="Ícone Veículos">
+                    <p>Contrate serviços como: fretes, ônibus fretados, vans, etc.</p>
+                    <a href="cadastro.html" class="larguraPadrao" rel="next">Cadastre-se</a>
+                </section>
+            <section class="informacoes" id="funcionamento">
+                <h1>Como funciona?</h3>
                 <img src="img/promocao.png" alt="Megafone">
                 <p>Cadastre sua empresa e anuncie conosco pagando apenas xx,xx R$</p>
-                <img src="img/search-engine-optimization.png" alt="">
+                <img src="img/search-engine-optimization.png" alt="Ícone PC e lupa">
                 <p>Pare de buscar clientes e deixe que eles te encontrem</p>
-                <img src="img/money-bag.png" alt="">
+                <img src="img/money-bag.png" alt="Ícone bolsa de dinheiro">
                 <p>Receba todo o pagamento pelo seu serviço</p>
-                <div><a href="cadastro-anunciante.html">Seja um Anunciante</a></div>
+                <div><a href="cadastro-anunciante.html" class="larguraPadrao" rel="next">Seja um Anunciante</a></div>
             </section>
         </article>
     </main>
     <footer>
-        <img src="img/logomuvall.png" alt="">
-        <p>Sobre nós</p>
+        <img src="img/logomuvall.png" alt="Logo MUVall">
         <a href="">Fale conosco</a>
-        <p>Redes sociais</p>
+        <div id="cadastro-rodape">
+            <h2>Cadastro</h2>
+            <ul>
+                <li><a href="cadastro.html" rel="next">Usuário</a></li>
+                <li><a href="cadastro-anunciante.html" rel="next">Anunciante</a></li>
+            </ul>
+        </div>
+        <div id="redesSociais">
+            <h2>Redes sociais</h2>
+            <a href="https://instagram.com"><img src="img/instagram.png" alt="Logo Instagram" target="_blank" rel="external"></a>
+            <a href="https://instagram.com"><img src="img/linkedin.png" alt="Logo Facebook" target="_blank" rel="external"></a>
+        </div>
     </footer>
     <script src="script/menu.js"></script>
 </body>

@@ -19,7 +19,7 @@ body{
 
 
 
-@media only screen and (max-width: 481px) {
+@media (max-width: 480px) {
     /* esta 481px pq está bugando em 480px*/
    
    
@@ -81,7 +81,7 @@ body{
         justify-content: flex-end;
         align-items: center;
         width: 50vw;
-        height: 60vh;
+        height: 40vh;
         background-color: #ea5a14;
         position: fixed;
         right: -100vw;
@@ -103,7 +103,43 @@ body{
         text-shadow: 1px 1px 3px #1a1a1a;
     }
 
+    footer{
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+        padding: 4vw;
+    }
 
+    footer>img{
+        width: 30vw;
+
+    }
+
+    footer a{
+        color: white;
+        font: bold 3.5vw Roboto, sans-serif;
+
+    }
+
+    footer h2{
+        font: bold 4.5vw Roboto, sans-serif;
+        color: white;
+        
+    }
+
+    #cadastro-rodape a{
+        display: block;
+        margin-top: 1vh;
+    }
+
+    #redesSociais img{
+        width:6vw;
+        margin-top: 1vh;
+        margin-right: 2vw;
+    }
+
+    
     
 
 }

@@ -20,7 +20,7 @@ body{
 
 
 
-@media only screen and (max-width: 481px) {
+@media (max-width: 480px) {
     /* esta 481px pq está bugando em 480px*/
    
 
@@ -58,6 +58,10 @@ body{
         height: 100%;
         margin-left: -1px;
         border: 2px solid #1a1a1a;
+    }
+
+    #barraPesquisa button:hover{
+        background-color: #1a1a1ae8;
     }
 
     #cards{
@@ -103,4 +107,64 @@ body{
         width: 65%;
     
     }
+
+
+    .informacoes{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10vh;
+        background-color: #F2F2F2;
+        width: 100vw;
+        padding: 2vw;
+        
+    }
+
+    .informacoes h1{
+        color: #ea5a14;
+        margin: 4vw;
+        font-size: 6vw;
+    }
+
+    .informacoes img{
+        width: 30%;
+        margin-bottom: 1.5vh;
+    }
+
+    .informacoes p{
+        color: #1a1a1a;
+        font: bolder 4vw Roboto, sans-serif;
+        text-align: center;
+        width: 40%;
+        margin-bottom: 6vh;
+    }
+
+    .informacoes a{
+        background-color: #ea5a14;
+        width: 100vw;
+        color: white;
+        padding: 4vw;
+        border-radius: 20px;
+        font:bold 5vw Roboto, sans-serif;
+        text-align: center;
+        box-shadow: 2px 2px 2px #1a1a1a9d;
+        margin-bottom: 3vh;
+    }
+
+    .informacoes a:hover{
+        background-color: #ea5b14da;
+        border: 2px solid #1a1a1a;
+    }
+
+    .informacoes:nth-child(2){
+        background-color: white;
+    }
+
+    .informacoes:nth-child(2) a{
+        display: block;
+        margin-bottom: 5vh;
+    }
+
+
 }

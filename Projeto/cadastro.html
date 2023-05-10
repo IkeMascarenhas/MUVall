@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/cabeçalho-rodape.css"
     <link rel="stylesheet" href="css/cadastro.css">
+    <script src="script/menu.js"></script>
 </head>
 <body>
     <header>
@@ -42,11 +43,22 @@
         </form>
     </main>
     <footer>
-        <img src="../img/logomuvall.png" alt="Logo">
-        <p>Sobre nós</p>
+        <img src="img/logomuvall.png" alt="Logo MUVall">
         <a href="">Fale conosco</a>
-        <p>Redes sociais</p>
+        <div id="cadastro-rodape">
+            <h2>Cadastro</h2>
+            <ul>
+                <li><a href="cadastro.html" rel="next">Usuário</a></li>
+                <li><a href="cadastro-anunciante.html" rel="next">Anunciante</a></li>
+            </ul>
+        </div>
+        <div id="redesSociais">
+            <h2>Redes sociais</h2>
+            <a href="https://instagram.com"><img src="img/instagram.png" alt="Logo Instagram" target="_blank" rel="external"></a>
+            <a href="https://instagram.com"><img src="img/linkedin.png" alt="Logo Facebook" target="_blank" rel="external"></a>
+        </div>
     </footer>
+    <script src="script/menu.js"></script>
 </body>
 <script>
     function formatCPF(cpf) {
