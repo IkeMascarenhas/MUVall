@@ -30,7 +30,7 @@
     
 
     input{
-        padding: 3vw;
+        padding: 4vw;
         font: normal 3vw roboto, sans-serif;
         font-style: italic;
         border: 2px solid #ea5a14;
@@ -50,7 +50,7 @@
     }
 
     button{
-        padding: 3vw;
+        padding: 4vw;
         background-color: #ea5a14;
         font: bold 5vw roboto, sans-serif;
         color: white;
