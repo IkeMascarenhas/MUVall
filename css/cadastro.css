@@ -22,14 +22,7 @@
         border-radius: 5px;
     }
 
-    form input:valid{
-        border: solid green 2px;
-    }
-
-    form input:invalid{
-        border: solid red 2px;
-
-    }
+    
 
     button#cadastrar-bttn{
         grid-row-start: 6;

@@ -80,7 +80,7 @@ body{
         display: flex;
         flex-direction: column;
         border-radius: 10px ;
-        box-shadow: 2px 2px 4px #00000050;
+        box-shadow: var(--sombra);
         
     }
 
@@ -148,8 +148,9 @@ body{
         border-radius: 20px;
         font:bold 5vw Roboto, sans-serif;
         text-align: center;
-        box-shadow: 2px 2px 2px #1a1a1a9d;
+        box-shadow: var(--sombra);
         margin-bottom: 3vh;
+        cursor: pointer;
     }
 
     .informacoes a:hover{

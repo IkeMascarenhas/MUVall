@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/cabeçalho-rodape.css"
-    <link rel="stylesheet" href="css/cadastro.css">
-    <script src="script/menu.js"></script>
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css/cabeçalho-rodape.css">
+    <link rel="stylesheet" href="css/login-cadastro.css">
+
 </head>
 <body>
     <header>
@@ -30,12 +30,12 @@
         </nav>
     </header>
     <main>
+        <h2>Cadastro</h2><hr>
         <form action="cadastro" method="post"  onsubmit="validarFormulario()">
-            <h2>Cadastro</h2><hr>
-            <input type="email" name="email" placeholder="E-Mail" id="email" required maxlength="100">
-            <input type="text" name="nome" placeholder="Nome Completo" id="nome" required maxlength="100" minlength="3">
-            <input type="password" name="senha" placeholder="Senha" id="senha" required maxlength="30" minlength="8">
-            <input type="text" name="cpf" placeholder="CPF" id="cpf" required oninput="this.value = formatCPF(this.value)">
+            <input type="email" name="email" placeholder="E-Mail:" id="email" required maxlength="100">
+            <input type="text" name="nome" placeholder="Nome:" id="nome" required maxlength="100" minlength="3">
+            <input type="password" name="senha" placeholder="Senha:" id="senha" required maxlength="30" minlength="8">
+            <input type="date" name="cpf" placeholder="Data de Nascimento:" id="age" required >
             <button type="submit" id="cadastrar-bttn">Cadastrar</button>
         </form>
     </main>
@@ -56,8 +56,9 @@
         </div>
     </footer>
     <script src="script/menu.js"></script>
+    <script src="script/idade.js"></script>
 </body>
-<script>
+ <!-- <script>
     function formatCPF(cpf) {
         cpf = cpf.replace(/\D/g, '');
         cpf = cpf.substring(0, 11); 
@@ -99,7 +100,7 @@
     }
     return true;
     }
-</script>
+</script> -->
 
 <script>
     function validarEmail() {
@@ -157,5 +158,6 @@
 }
 </script>
 
-</html>
 
+</html>
+ 
