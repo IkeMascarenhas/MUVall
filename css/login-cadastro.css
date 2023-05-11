@@ -37,6 +37,7 @@
         box-shadow: var(--sombra);
         border-radius: 5px;
         margin-top: 3vh;
+        width: 100%;
     }
 
     form input:valid{
