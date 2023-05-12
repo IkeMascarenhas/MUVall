@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro anunciante Muvall</title>
-    <link rel="stylesheet" href="css/cabeçalho-rodape.css"
-    <link rel="stylesheet" href="css/cadastro-anunciante.css">
+    <link rel="stylesheet" href="css/cabeçalho-rodape.css">
+    <link rel="stylesheet" href="css/login-cadastro.css">
     <script src="script/menu.js"></script>
 </head>
 <body>
@@ -30,22 +30,16 @@
         </nav>
     </header>
     <main>
-        
+        <h2>Cadastro</h2><hr id="cadastro">
         <form action="cadastro" method="post">
-            <!-- <h2>Cadastro</h2><hr id="cadastro">
-            <input type="e-mail" placeholder="E-Mail" id="email">
-            <input type="text" placeholder="Nome" id="nome">
-            <input type= "password" placeholder="Senha" id="senha">
-            <input type="number" placeholder="CNPJ" id="cnpj">
-            <input type="text" placeholder="Nome da Empresa" id="nome-emp">
-            <h3>Especialidades</h3><hr id="especialidade">
-            <input type="checkbox" name="cargas" id="especialidade1" aria-label="Especialidades">
-            <label for="cargas" id="label-e1">Cargas</label>
-            <input type="checkbox" name="pessoas" id="especialidade2">
-            <label for="pessoas" id="label-e2">Pessoas</label>
-            <input type="checkbox" name="motorista" id="especialidade3">
-            <label for="motorista" id="label-e3">Motorista</label>
-            <button type="submit" id="cadastrar-bttn">Cadastrar</button> -->
+           <input type="email" aria-label="E-mail" placeholder="Email:" required>
+           <input type="password" aria-label="Senha" placeholder="Senha" required>
+           <input type="number" aria-label="CNPJ" placeholder="CNPJ" required>
+           <input type="text" aria-label="Nome da Empresa" placeholder="Nome da Empresa:" required>
+           <input type="text" aria-label="Localização" placeholder="Localização" required >
+           <input type="file" aria-label="Logo" required name="Logo" id="Logo">
+
+           <button type="submit">Continuar</button>
         </form>
     </main>
     <footer>
