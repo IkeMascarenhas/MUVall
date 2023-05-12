@@ -18,12 +18,12 @@ body{
 
  }
 
+ 
 
 
-@media (max-width: 480px) {
-    /* esta 481px pq está bugando em 480px*/
-   
 
+
+@media (max-width: 720px) {
     .larguraPadrao{
         max-width: 85vw;
         margin: auto;
@@ -39,13 +39,15 @@ body{
 
     #barraPesquisa input{
         width: 75%;
-        height: 100%;
         margin-right: -1px;
-        text-align: center;
         border: 2px solid #ea5a14;
         border-radius: 5px 0 0 5px;
+        font-size: 4vw;
+    }
+
+    #barraPesquisa input::placeholder{
         font-style: italic;
-        font-size: 3vw;
+        text-align: center;
     }
 
     #barraPesquisa button{
@@ -53,7 +55,7 @@ body{
         background-color: #1a1a1a;
         color: #fff;
         font-weight: bold;
-        font-size: 3.5vw;
+        font-size: 4vw;
         border-radius: 0 5px 5px 0;
         height: 100%;
         margin-left: -1px;
@@ -165,7 +167,4 @@ body{
     .informacoes:nth-child(2) a{
         display: block;
         margin-bottom: 5vh;
-    }
-
-
-}
+    }}
