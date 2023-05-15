@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-bt">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro anunciante Muvall</title>
-    <link rel="stylesheet" href="css/cabeçalho-rodape.css">
+    <title>Pagamento</title>
     <link rel="stylesheet" href="css/login-cadastro.css">
+    <link rel="stylesheet" href="css/cabeçalho-rodape.css">
 </head>
 <body>
     <header>
@@ -29,14 +29,12 @@
         </nav>
     </header>
     <main>
-        <h2>Cadastro</h2><hr id="cadastro">
-        <form action="cadastro" method="post">
-           <input type="email" aria-label="E-mail" placeholder="Email:" required>
-           <input type="password" aria-label="Senha" placeholder="Senha" required>
-           <input type="number" aria-label="CNPJ" placeholder="CNPJ" required>
-           <input type="text" aria-label="Nome da Empresa" placeholder="Nome da Empresa:" required>
-           <input type="text" aria-label="Localização" placeholder="Localização" required >
-           <input type="file" aria-label="Logo" required name="Logo" id="Logo">
+        <h2>Pagamento</h2><hr>
+        <form action="" method="post">
+           <input type="text" aria-label="Titular do Cartão" required maxlength="100" minlength="3">
+           <input type="number" aria-label="Número do Cartão" maxlength="16" minlength="13" required>
+           <input type="number" aria-label="CVV" required maxlength="3">
+           <input type="date" aria-label="Expira em:" required>
 
            <button type="submit">Continuar</button>
         </form>
@@ -58,5 +56,7 @@
         </div>
     </footer>
     <script src="script/menu.js"></script>
+    <script src="script/cadastro.js"></script>
+</body>
 </body>
 </html>

@@ -1,0 +1,125 @@
+#empresa{
+    background-color: #1A1A1A;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#empresa>img{
+    width: 7vw;
+    align-self: flex-end;
+    margin: 2vw;
+    
+}
+
+#logo-nome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5vh;
+}
+
+#logo-nome img{
+    width: 50%;
+    border-radius: 50%;
+    border: 4px solid #ea5a14;
+    
+}
+
+#logo-nome h1{
+    color: #ea5a14;
+    font: bold 6vw roboto, sans-serif;
+}
+
+#nav-info{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5vh;
+    height: 6vh;
+}
+
+#nav-info a{
+    color: #ea5a14;
+    font: bold 4vw roboto, sans-serif;
+}
+
+#nav-info span{
+    height: 100%;
+    background-color: #ea5a14;
+    width: 1vw;
+}
+
+#servicos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+/* #servicos hr{
+    width: 100vw;
+    height: 0.1vh;
+    background-color: #1A1A1A;
+} */
+
+.anuncios{
+    display: flex;
+    justify-content: space-between;
+    height: 20vh;
+    margin: 2vw 0 2vw 0;
+    border-bottom: 1px solid #1A1A1A;
+}
+
+.anuncios:first-child{
+    margin-top: 3vh;
+}
+
+.anuncios img{
+    width: 40%;
+    height: 90%;
+    margin-left: 5vw;
+    margin-bottom: 3vw;
+    border-radius: 10px;
+    align-self: center;
+}
+
+.anuncios h2{
+    color: #ea5a14;
+    font: bold 3.5vw roboto, sans-serif;
+}
+
+.anuncios p{
+    font: 500 3vw roboto, sans-serif;
+    color: black;
+}
+
+.informacoes-anuncio{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    height: 20vh;
+}
+
+#servicos button{
+    width: 20vw;
+    margin: auto;
+    background-color: #ea5a14;
+    padding: 3vw;
+    border-radius: 10px;
+    font: bold 3.5vw roboto, sans-serif;
+    color: #fff;
+    margin-top: 3vh;
+}
+
+.hidden{
+    display: none;
+}
+
+.show-ads{
+    display: flex !important;
+}
