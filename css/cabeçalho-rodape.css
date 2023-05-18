@@ -3,6 +3,7 @@
 
 :root{
     --sombra:2px 2px 4px #00000050;
+    --titulo:bold 7vw roboto, sans-serif;
 }
 
 *{

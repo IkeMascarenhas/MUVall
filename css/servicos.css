@@ -1,71 +1,123 @@
 @media only screen and (max-width: 481px) {
-    /* esta 481px pq está bugando em 480px*/
-   body{
-      font-family: Arial, Helvetica, sans-serif;
-   }
-  
-    
-    #cat{
-      width: 100%;
-      grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row-start: 3;
-      grid-row-end: 3;
-    }
-    #filtro{
-      width: 100%;
-      height: 100%;
-      grid-column-start: 3;
-    }
-    #pesquisa-resultados{
-      padding: 0.5rem;
-      display: grid;
-      grid-template-columns: 25% 25% 25% 25%;
-      grid-template-rows: 50% 50% 50%;
-      padding-top: 1.25rem;
-    }
-    #pesquisa-topo{
-      grid-column-start: 1;
-      grid-column-end: 2;
-      margin-left: 1.75rem;
-      padding-left: 1rem;
-      padding-right: 1rem;
-      height: 2.15rem;
-      width: 16.5rem;
-      border: 0.1875rem solid #EA5A14;
-      border-radius: 5px;
-      text-align: left;
-      font-size: 15px;
-    }
-    #buscar{
-      grid-column-start: 3;
-      grid-column-end: 4;
-      width: 100%;
-      height: 2.65rem;
-      text-align: center;
-      font-size: 1rem;
-      margin-left: 5.85rem;
-      border-radius: 0px 5px 5px 0px;
-      border: 0px;
 
-      font-weight: bold;
-      color: white;
-      background-color: black;
-    }
-    h2{
-      padding-left: 0.85rem;
-      grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row-start: 3;
-      font-weight: bold;
-      color: #EA5A14;
-      font-size: 2rem;
-    }
-    hr{
-      width: 90%;
-      height: 2px;
-      background-color: black;
-      border: 0px;
-    }
-    
+  .larguraPadrao {
+    max-width: 85vw;
+    margin: auto;
+  }
+
+  #barraPesquisa {
+    width: 100%;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    height: 6vh;
+  }
+
+  #barraPesquisa input {
+    width: 75%;
+    margin-right: -1px;
+    border: 2px solid #ea5a14;
+    border-radius: 5px 0 0 5px;
+    font-size: 4vw;
+  }
+
+  #barraPesquisa input::placeholder {
+    font-style: italic;
+    text-align: center;
+  }
+
+  #barraPesquisa button {
+    width: 25%;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-weight: bold;
+    font-size: 4vw;
+    border-radius: 0 5px 5px 0;
+    height: 100%;
+    margin-left: -1px;
+    border: 2px solid #1a1a1a;
+  }
+
+  #barraPesquisa button:hover {
+    background-color: #1a1a1ae8;
+  }
+
+
+  main>div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3vh !important; 
+  }
+
+  main>div>h1{
+    color: #ea5a14;
+    font: var(--titulo);
+  }
+
+
+  #servicos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+  .anuncios {
+    display: flex;
+    justify-content: space-between;
+    height: 20vh;
+    margin: 2vw 0 2vw 0;
+    border-bottom: 1px solid #1A1A1A;
+    width: 100vw;
+  }
+
+  .anuncios:first-child {
+    margin-top: 3vh;
+  }
+
+  .anuncios img {
+    width: 40%;
+    height: 90%;
+    margin-left: 5vw;
+    margin-bottom: 3vw;
+    border-radius: 10px;
+    align-self: center;
+  }
+
+  .anuncios h2 {
+    color: #ea5a14;
+    font: bold 3.5vw roboto, sans-serif;
+  }
+
+  .anuncios p {
+    font: 500 3vw roboto, sans-serif;
+    color: black;
+  }
+
+  .informacoes-anuncio {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    height: 20vh;
+  }
+
+  #navegacao {
+    display: flex;
+    justify-content: space-around;
+    margin: 5vh auto;
+    gap: 10vw;
+  }
+
+  #navegacao a button {
+    width: 100%;
+    padding: 3vw;
+    background-color: #ea5a14;
+    font: bold 5vw roboto, sans-serif;
+    color: white;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+  }
+
 }
