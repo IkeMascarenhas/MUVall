@@ -80,7 +80,7 @@ body{
         position: fixed;
         right: 0  !important;
         top: 0 !important;
-        transition-duration: 0.5s;
+        transition-duration: 50ms;
     }
 
     #menu-items{
