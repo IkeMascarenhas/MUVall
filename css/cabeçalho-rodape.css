@@ -71,8 +71,7 @@ body{
         border: 2px solid black;
         height: 25%;
         width: 100%;
-        z-index:5;
-        border-radius: 3px;
+                border-radius: 3px;
 
     }
 
@@ -81,24 +80,29 @@ body{
         position: fixed;
         right: 0  !important;
         top: 0 !important;
-        transition-duration: 1s;
+        transition-duration: 0.5s;
     }
 
     #menu-items{
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: space-between;
         align-items: center;
-        width: 50vw;
-        height: 40vh;
+        width: 100vw;
+        height: 100vh;
         background-color: #ea5a14;
         position: fixed;
-        right: -100vw;
         top: -100vh;
-        transition-duration: 1s;
+        right: -100vw;
+        transition-duration: 0.5s;
         border-radius: 0 0 0 20px;
-    }
+        }
 
+        #menu-items img{
+            align-self: flex-end;
+            margin: 5vw;
+            width: 10vw;
+        }
 
     #menu-items li{
         margin: 2vh 0;
