@@ -7,6 +7,7 @@
     <title>Cadastro anunciante Muvall</title>
     <link rel="stylesheet" href="css/cabeçalho-rodape.css">
     <link rel="stylesheet" href="css/login-cadastro.css">
+    <link rel="stylesheet" href="css/cadastro-anunciante.css">
 </head>
 <body>
     <header>
@@ -36,7 +37,10 @@
            <input type="number" aria-label="CNPJ" placeholder="CNPJ" required>
            <input type="text" aria-label="Nome da Empresa" placeholder="Nome da Empresa:" required>
            <input type="text" aria-label="Localização" placeholder="Localização" required >
-           <input type="file" aria-label="Logo" required name="Logo" id="Logo">
+           <div id="boxLogo">
+               <label for="Logo" class="addLogo"><img src="img/botao-adicionar.png" alt="Botão para adicionar Logo">Logo</label>
+               <input type="file" aria-label="Logo" required name="Logo" id="Logo" max="1" placeholder="Logo">
+           </div>
 
            <button type="submit">Continuar</button>
         </form>
@@ -57,6 +61,6 @@
             <a href="https://instagram.com"><img src="img/linkedin.png" alt="Logo Facebook" target="_blank" rel="external"></a>
         </div>
     </footer>
-    <script src="script/menu.js"></script>
+    <script src="script/script.js"></script>
 </body>
 </html>
