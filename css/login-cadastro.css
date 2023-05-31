@@ -11,8 +11,8 @@
         margin-bottom: 2vh;
     }
     
-    main>h2{
-        font: bold 8vw roboto, sans-serif;
+    main>h1{
+        font: var(--titulo);
         color: #ea5a14;
         margin-top: 3vh;
         margin-bottom: 0.5vh;

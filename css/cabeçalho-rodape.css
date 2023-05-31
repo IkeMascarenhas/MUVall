@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
-:root{
-    --sombra:2px 2px 4px #00000050;
+:root {
+    --sombra: 2px 2px 4px #00000050;
+    --titulo: bold 7vw roboto, sans-serif;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -15,25 +16,25 @@
     outline: none;
 }
 
-html{
+html {
     font-size: 62.5%;
     scroll-behavior: smooth;
 }
 
-body{
+body {
     font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
- }
+}
 
 
 
 
 @media (max-width: 720px) {
     /* esta 481px pq está bugando em 480px*/
-   
-   
-   
-   
-    header{
+
+
+
+
+    header {
         background-color: black;
         min-height: 8vh;
         display: flex;
@@ -42,78 +43,87 @@ body{
 
     }
 
-    #topimg{
+    #topimg {
         width: 30vw;
         min-width: 45px;
         margin: 2vw;
     }
 
-    #topimg img{
+    #topimg img {
         width: 100%;
         margin-left: 5vw;
         min-height: 5vh;
     }
 
-    #menu-container{
+    #menu-container {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         min-width: 40px;
         max-width: 50px;
         width: 10vw;
-        height: 5vh ;
+        height: 5vh;
         margin-right: 5vw;
 
     }
 
-    #menu-container div{
+    #menu-container div {
         background-color: #ea5a14;
         border: 2px solid black;
         height: 25%;
         width: 100%;
-        z-index:5;
         border-radius: 3px;
 
     }
 
 
-    .show-items{
+    .show-items {
         position: fixed;
-        right: 0  !important;
+        right: 0 !important;
         top: 0 !important;
-        transition-duration: 1s;
+        transition-duration: 50ms;
     }
 
-    #menu-items{
+    #menu-items {
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: space-around;
         align-items: center;
-        width: 50vw;
-        height: 40vh;
+        width: 100vw;
+        height: 100vh;
         background-color: #ea5a14;
         position: fixed;
-        right: -100vw;
         top: -100vh;
-        transition-duration: 1s;
-        border-radius: 0 0 0 20px;
+        right: -100vw;
+        transition-duration: 0.5s;
     }
 
+    #menu-items img {
+        align-self: flex-end;
+        margin: 0 6vw;
+        width: 10vw;
+    }
 
-    #menu-items li{
-        margin: 2vh 0;
+    #menu-items li {
+        margin: 1vh 0;
         font-size: 6vw;
     }
 
- 
 
-    #menu-items a{
+
+    #menu-items a {
         color: #fff;
         font-weight: bold;
         text-shadow: 1px 1px 3px #1a1a1a;
     }
 
-    footer{
+    #menu-items div{
+        width: 80vw;
+        height: 0.1vh;
+        background-color: #1a1a1a;
+    }
+
+    footer {
         background-color: black;
         display: flex;
         flex-direction: column;
@@ -121,36 +131,35 @@ body{
         padding: 4vw;
     }
 
-    footer>img{
+    footer>img {
         width: 30vw;
 
     }
 
-    footer a{
+    footer a {
         color: white;
         font: bold 3.5vw Roboto, sans-serif;
 
     }
 
-    footer h2{
+    footer h2 {
         font: bold 4.5vw Roboto, sans-serif;
         color: white;
-        
+
     }
 
-    #cadastro-rodape a{
+    #cadastro-rodape a {
         display: block;
         margin-top: 1vh;
     }
 
-    #redesSociais img{
+    #redesSociais img {
         width: 7vw;
         margin-top: 1vh;
         margin-right: 2vw;
     }
 
-    
-    
+
+
 
 }
-

@@ -112,6 +112,7 @@
     font: bold 3.5vw roboto, sans-serif;
     color: #fff;
     margin-top: 3.5vh;
+    box-shadow: var(--sombra);
 }
 
 .hidden{
