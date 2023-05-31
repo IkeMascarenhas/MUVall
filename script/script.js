@@ -8,15 +8,15 @@ menu.addEventListener("click", ()=>{
 
 //Ver mais(perfil)
 
-let adHidden = [...document.querySelectorAll('.hidden')]
-let showAd = document.querySelector('#seeAds')
+// let adHidden = [...document.querySelectorAll('.hidden')]
+// let showAd = document.querySelector('#seeAds')
 
-showAd.addEventListener('click', ()=>{
-    showAd.innerHTML='Ver menos'
-    adHidden.map((ad)=>{
-        ad.classList.toggle('show-ads')
-    })
-})
+// showAd.addEventListener('click', ()=>{
+//     showAd.innerHTML='Ver menos'
+//     adHidden.map((ad)=>{
+//         ad.classList.toggle('show-ads')
+//     })
+// })
 
 // Adicionar Logo(Cadastro anunciante)
 
