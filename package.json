@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  },
+  "name": "muvall",
+  "description": "",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IkeMascarenhas/MUVall.git"
+  },
+  "author": "MUVall maskeikos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IkeMascarenhas/MUVall/issues"
+  },
+  "homepage": "https://github.com/IkeMascarenhas/MUVall#readme"
+}

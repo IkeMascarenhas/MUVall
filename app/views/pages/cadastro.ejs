@@ -1,0 +1,109 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css/cabeçalho-rodape.css">
+    <link rel="stylesheet" href="css/login-cadastro.css">
+
+</head>
+<body>
+    <header>
+        <a id="topimg" href="/" aria-label="logo"><img src="imagem/LogoMuvall.png"alt="Logo da empresa MUVALL" rel="prev"></a>
+
+        <nav>
+            <div id="menu-container">
+
+                <div></div>
+                <div></div>
+                <div></div>
+
+
+                <ul id="menu-items">
+                    <img src="imagem/delete.png" alt="">
+                    <li><a href="perfil" aria-label="Perfil" rel="next">Minha conta</a></li>
+                    <li><a href="login" aria-label="Login" rel="next">Login</a></li>
+                    <li><a href="#" aria-label="Fale conosco" rel="next">Fale Conosco</a></li>
+                    <li><a href="lista-de-servicos" aria-label="Fale conosco" rel="next">Lista de Serviços</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>Cadastro</h1><hr>
+        <form action="cadastro" method="post"  onsubmit="validarFormulario()">
+            <input type="email" name="email" placeholder="E-Mail:" id="email" required maxlength="100">
+            <input type="text" name="nome" placeholder="Nome:" id="nome" required maxlength="100" minlength="3">
+            <input type="password" name="senha" placeholder="Senha:" id="senha" required maxlength="30" minlength="8">
+            <input type="date" name="data" placeholder="Data de Nascimento:" id="data" required >
+            <button type="submit" id="cadastrar-bttn">Cadastrar</button>
+        </form>
+    </main>
+    <footer>
+        <img src="imagem/LogoMuvall.png" alt="Logo MUVall">
+        <a href="">Fale conosco</a>
+        <div id="cadastro-rodape">
+            <h2>Cadastro</h2>
+            <ul>
+                <li><a href="cadastro" rel="next">Usuário</a></li>
+                <li><a href="cadastro-anunciante" rel="next">Anunciante</a></li>
+            </ul>
+        </div>
+        <div id="redesSociais">
+            <h2>Redes sociais</h2>
+            <a href="https://instagram.com"><img src="imagem/instagram.png" alt="Logo Instagram" target="_blank" rel="external"></a>
+            <a href="https://instagram.com"><img src="imagem/linkedin.png" alt="Logo Facebook" target="_blank" rel="external"></a>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/cadastro.js"></script>
+</body>
+
+ <!-- <script>
+    function formatCPF(cpf) {
+        cpf = cpf.replace(/\D/g, '');
+        cpf = cpf.substring(0, 11); 
+
+        if (!/^\d+$/.test(cpf)) { 
+            return ''; 
+        }
+
+        cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2'); 
+        cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2'); 
+        cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2'); 
+
+        return cpf;
+    }
+    function validarCPF(cpf) {
+    cpf = cpf.replace(/[^\d]+/g, ''); // Remove tudo que não é número
+    if (cpf.length !== 11 || !/^\d{11}$/.test(cpf)) {
+        return false;
+    }
+    // Calcula o primeiro dígito verificador
+    let soma = 0;
+    for (let i = 0; i < 9; i++) {
+        soma += parseInt(cpf.charAt(i)) * (10 - i);
+    }
+    let resto = 11 - (soma % 11);
+    let digitoVerificador1 = resto === 10 || resto === 11 ? 0 : resto;
+    if (digitoVerificador1 !== parseInt(cpf.charAt(9))) {
+        return false;
+    }
+    // Calcula o segundo dígito verificador
+    soma = 0;
+    for (let i = 0; i < 10; i++) {
+        soma += parseInt(cpf.charAt(i)) * (11 - i);
+    }
+    resto = 11 - (soma % 11);
+    let digitoVerificador2 = resto === 10 || resto === 11 ? 0 : resto;
+    if (digitoVerificador2 !== parseInt(cpf.charAt(10))) {
+        return false;
+    }
+    return true;
+    }
+</script> -->
+
