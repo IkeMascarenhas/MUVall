@@ -2,7 +2,7 @@ var mysql = require("mysql");
 
 
 module.exports = function(){
- return bd = mysql.createConnection({
+ return mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
@@ -12,9 +12,3 @@ module.exports = function(){
 } 
 
 
-bd.connect((err) => {
-  if(err){
-    throw err
-  }
-  console.log('Concectado ao banco de dados MySQL')
-})

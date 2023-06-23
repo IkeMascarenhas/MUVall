@@ -1,22 +1,17 @@
 var express = require('express')
 var router = express.Router()
-var bcrypt = require('bcrypt')
+var md5 = require('md5')
 var mysql = require('mysql')
 
-const bd = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "MUVALL",
-    port: 3306
-});
+var fabricDeConexao = require('../../config/connection-factory')
+var bd = fabricDeConexao()
 
 bd.connect((err) => {
     if(err){
       throw err
     }
     console.log('Concectado ao banco de dados MySQL')
-  })
+})
 
 router.get('/', function(req, res){
     res.render('pages/index')
@@ -24,6 +19,37 @@ router.get('/', function(req, res){
 
 router.get('/cadastro', function(req, res){
     res.render('pages/cadastro')
+})
+
+router.post('/cadastro',  (req, res) => {
+    const { nome, email, senha } = req.body
+
+    if (nome && email && senha){
+    bd.query('select * from cadastro where email = ?',
+    [email],
+    (error, results) => {
+        if(results.length > 0) {
+            res.send('Email já cadastrado')
+        } else {
+            const hashedPassword = md5(senha)
+
+            bd.query(
+            'insert into cadastro (nome, email, senha) values (?, ?, ?)',
+            [nome, email, hashedPassword],
+            (error, results) => {
+                if(error){
+                    res.send('Erro ao cadastrar o usuário')
+                } else {
+                    res.send('Cadastro realizado com sucesso!')
+                }
+            }
+            )
+        }
+    })
+    } else {
+        res.send('Por favor, preencha todos os campos')
+    }
+    res.redirect('/')
 })
 
 router.get('/cadastro-anunciante', function(req, res){
@@ -41,28 +67,30 @@ router.get('/login', function(req, res){
 router.post('/login', (req, res) => {
     const { email, senha } = req.body
 
-    if(email && senha) {
+    if (email && senha) {
+
         bd.query(
             'SELECT * FROM cadastro WHERE email = ?',
             [email],
             (error, results) => {
-                if (results.length > 0) {
-                    bcrypt.compare(senha, results[0].senha, (err, match) => {
-                        if (match) {
-                            req.session.loggedin = true
-                            req.session.email = email
-                            res.redirect('/')
-                        } else {
-                            res.send('Senha incorreta')
-                        }
-                    })
+                if (results.length > 0){
+                    const storedPassword = results[0].senha
+                    const hashedPassword = md5(senha)
+
+                    if(storedPassword === hashedPassword){
+                        req.session.loggedin = true
+                        req.session.email = email
+                        res.redirect('/')
+                    }else {
+                        res.send('Senha incorreta')
+                    }
                 } else {
-                    res.send('Email não encontrado')
+                    res.send('Email nao encontrado')
                 }
             }
         )
     } else {
-        res.send('Email e senha incorretos')
+        res.send('Informe um email e senha')
     }
 })
 
