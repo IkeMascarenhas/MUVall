@@ -102,4 +102,16 @@ router.get('/perfil', function(req, res){
     res.render('pages/perfil')
 })
 
+router.get('/anunciar', function(req, res){
+    res.render('pages/anunciar')
+})
+
+router.get('/descservico', function(req, res){
+    res.render('pages/descservico')
+})
+
+router.get('/faleConosco', function(req, res){
+    res.render('pages/faleConosco')
+})
+
 module.exports = router

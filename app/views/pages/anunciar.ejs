@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muvall</title>
+    <link rel="stylesheet" href="css/login-cadastro.css">
+    <link rel="stylesheet" href="css/cabeçalho-rodape.css">
+    <link rel="stylesheet" href="css/anunciar.css">
+</head>
+<header>
+    <a id="topimg" href="/" aria-label="logo"><img src="imagem/LogoMuvall.png" alt="Logo da empresa MUVALL"
+            rel="prev"></a>
+
+    <nav>
+        <div id="menu-container">
+
+            <div></div>
+            <div></div>
+            <div></div>
+
+
+            <ul id="menu-items" class="NaoPropagar">
+                <img src="imagem/delete.png" alt="Fechar" id="close">
+                <li class="NaoPropagar"><a href="perfil" aria-label="Perfil" rel="next">Minha conta</a></li>
+                <li class="NaoPropagar"><a href="anunciar">Anuncie</a></li>
+                <li class="NaoPropagar"><a href="faleConosco" aria-label="Fale conosco" rel="next">Fale Conosco</a></li>
+                <li class="NaoPropagar"><a href="login">Entre</a></li>
+                <li class="NaoPropagar"><a href="cadastro">Cadastre-se</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<body>
+    <main>
+        <h1>Anunciar</h1>
+        <hr>
+        <form action="" method="post">
+            <input type="text" placeholder="Título: " aria-label="Título" required>
+            <input type="text" placeholder="Descrição: " aria-label="Descrição" required>
+            <input type="text" placeholder="Região: " aria-label="Região" required>
+            <input type="text" placeholder="Modelo do veículo: " aria-label="Placa" required>
+            <input type="text" placeholder="Placa do veículo: " aria-label="Placa do veículo: " required>
+            <input type="number" name="Capac" id="CapacMax" placeholder="Capacidade Máx: " required>
+            <input type="Number" name="Valor" id="Valor" placeholder="Valor: " required>
+            <h2>Contato</h2>
+            <input type="tel" placeholder="Telefone: " name="Telefone" id="Telefone" required>
+            <input type="email" name="E-mai" id="E-mail" placeholder="Email: " aria-label="Email:" required>
+            <h2>Tipo de Transporte</h2>
+            <div class="Tipos">
+                <input type="radio" name="tipo" id="TipoPessoas">
+                <label for="TipoPessoas">Pessoas</label>
+            </div>
+            <div class="Tipos">
+                <input type="radio" name="tipo" id="TipoCargas">
+                <label for="TipoCargas">Cargas</label>
+            </div>
+            <h2>Contato</h2>
+            <input type="number" name="Telefone" id="Telefone" required minlength="5"
+            maxlength="15" placeholder="Telefone:">
+            <input type="email" name="ContEmail" id="ContEmail" required minlength="12" maxlength="100" placeholder="Email:">
+            <div id="boxImg">
+                <label for="ImagensAdd" class="addImg"><img src="imagem/botao-adicionar.png" alt="Botão para adicionar Imagens">Imagem</label>
+                <input type="file" aria-label="Imagem" required name="ImagensAdd" id="ImagensAdd" placeholder="Imagem">
+            </div>
+            <button type="button">Anunciar</button>
+        </form>
+    </main>
+    <footer>
+        <img src="imagem/LogoMuvall.png" alt="Logo MUVall">
+        <a href="faleConosco">Fale conosco</a>
+        <div id="cadastro-rodape">
+            <h2>Cadastro:</h2>
+            <ul>
+                <li><a href="cadastro" rel="next">Usuário</a></li>
+                <li><a href="cadastro-anunciante" rel="next">Anunciante</a></li>
+            </ul>
+        </div>
+        <div id="redesSociais">
+            <h2>Redes sociais</h2>
+            <a href="https://instagram.com"><img src="imagem/instagram.png" alt="Logo Instagram" target="_blank"
+                    rel="external"></a>
+            <a href="https://instagram.com"><img src="imagem/linkedin.png" alt="Logo Facebook" target="_blank"
+                    rel="external"></a>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

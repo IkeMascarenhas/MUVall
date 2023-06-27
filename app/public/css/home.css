@@ -18,7 +18,6 @@ body{
 
  }
 
- 
 
 
 
@@ -29,42 +28,7 @@ body{
         margin: auto;
     }
     
-    #barraPesquisa{
-        width: 100%;
-        margin-top: 3rem;
-        display: flex;
-        justify-content: center;
-        height: 6vh;
-    }
-
-    #barraPesquisa input{
-        width: 75%;
-        margin-right: -1px;
-        border: 2px solid #ea5a14;
-        border-radius: 5px 0 0 5px;
-        font-size: 4vw;
-    }
-
-    #barraPesquisa input::placeholder{
-        font-style: italic;
-        text-align: center;
-    }
-
-    #barraPesquisa button{
-        width: 25%;
-        background-color: #1a1a1a;
-        color: #fff;
-        font-weight: bold;
-        font-size: 4vw;
-        border-radius: 0 5px 5px 0;
-        height: 100%;
-        margin-left: -1px;
-        border: 2px solid #1a1a1a;
-    }
-
-    #barraPesquisa button:hover{
-        background-color: #1a1a1ae8;
-    }
+    
 
     #cards{
         display: flex;
@@ -168,3 +132,155 @@ body{
         display: block;
         margin-bottom: 5vh;
     }}
+
+    @media(min-width:720px){
+        /* main{
+            width: 80vw;
+            margin: auto;
+        } */
+
+        #barraPesquisa{
+            width: 80vw;
+            display: flex;
+            justify-content: center;
+            height: 6vh;
+            margin: auto;
+            
+        }
+    
+        #barraPesquisa input{
+            width: 75%;
+            margin-right: -1px;
+            border: 2px solid #ea5a14;
+            border-radius: 5px 0 0 5px;
+            font-size: 2vw;
+            padding: 2vw;
+        }
+    
+        #barraPesquisa input::placeholder{
+            font-style: italic;
+            text-align: center;
+        }
+    
+        #barraPesquisa button{
+            width: 25%;
+            background-color: #1a1a1a;
+            color: #fff;
+            font-weight: bold;
+            font-size: 2.2vw;
+            border-radius: 0 5px 5px 0;
+            margin-left: -1px;
+            border: 2px solid #1a1a1a;
+            padding: 2vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        #barraPesquisa button:hover{
+            background-color: #1a1a1ae8;
+        }
+
+        #cards{
+            display: none;
+        }
+
+        article{
+
+            margin: auto;
+        }
+
+        .informacoes{
+            display: grid; 
+            grid-template-columns: 1fr 1fr 1fr; 
+            grid-template-rows: 0.5fr 2fr 1fr 1fr; 
+            gap: 1vh 4vw; 
+            grid-template-areas: 
+                "OQ OQ OQ"
+                "BR filtro veiculos"
+                "txtBr txtFiltro txtVeículos"
+                "cadastrar cadastrar cadastrar"; 
+            padding: 0 10vw 0 10vw;
+            margin-top: 3vh;
+            background-color: #f2f2f2;
+            margin-top: 5vh;
+        }
+
+        .informacoes>h1{
+            grid-area: OQ;
+        }
+
+        .informacoes>img:nth-child(2){
+            grid-area: BR;
+        }
+        
+        .informacoes>p:nth-child(3){
+            grid-area: txtBr;
+        }
+
+        .informacoes>img:nth-child(4){
+            grid-area: filtro;
+        }
+        
+        .informacoes>p:nth-child(5){
+            grid-area: txtFiltro;
+        }
+
+        .informacoes>img:nth-child(6){
+            grid-area: veiculos;
+        }
+        
+        .informacoes>p:nth-child(7){
+            grid-area: txtVeículos;
+        }
+        .informacoes>a{
+            grid-area: cadastrar;
+        }
+
+        .informacoes p{
+            color: #1a1a1a;
+            font: bolder 2vw Roboto, sans-serif;
+            text-align: center;
+            margin-bottom: 6vh;
+        }
+
+        .informacoes>h1{
+            margin: 2vh auto;
+            font: bold 2.5vw Roboto, sans-serif;
+            color: #ea5a14;
+        }
+
+        .informacoes>img{
+            width: 60%;
+            margin: auto;
+        }
+
+        .informacoes a{
+            background-color: #ea5a14;
+            width: 35vw !important;
+            color: white;
+            padding: 2vw;
+            border-radius: 20px;
+            font: bold 2vw Roboto, sans-serif;
+            text-align: center;
+            box-shadow: var(--sombra);
+            margin-bottom: 3vh;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+        
+        #funcionamento{
+            background-color: #1a1a1a !important;
+            
+        }
+
+        #funcionamento p{
+            color:white;
+        }
+       
+    
+
+    }

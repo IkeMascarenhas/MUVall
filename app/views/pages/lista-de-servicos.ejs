@@ -1,109 +1,166 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Serviços</title>
-    <link rel="stylesheet" href="css/cabeçalho-rodape.css">
-    <link rel="stylesheet" href="css/servicos.css">
-</head>
-<body>
-        <header>
-            <a id="topimg" href="/" aria-label="logo"><img src="imagem/LogoMuvall.png"alt="Logo da empresa MUVALL" rel="prev"></a>
-    
-            <nav>
-                <div id="menu-container">
-    
-                    <div></div>
-                    <div></div>
-                    <div></div>
-    
-    
-                    <ul id="menu-items">
-                      <img src="imagem/delete.png" alt="">
-                    <li><a href="perfil" aria-label="Perfil" rel="next">Minha conta</a></li>
-                    <li><a href="login" aria-label="Login" rel="next">Login</a></li>
-                    <li><a href="#" aria-label="Fale conosco" rel="next">Fale Conosco</a></li>
-                    <li><a href="lista-de-servicos" aria-label="Fale conosco" rel="next">Lista de Serviços</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        <div class="larguraPadrao">
-            <div id="barraPesquisa">
-                <input type="text" placeholder="Pesquisar">
-                <button>Buscar</button>
-            </div>
-        </div>
-            <main>
 
-                <div class="larguraPadrao">
-                    <h1>Resultados</h1>
-                    <img src="" alt="Filtro">
-                </div>
-                <section id="servicos">
-                    <a href="#" class="anuncios">
-                      <img src="imagem/cam3.png" alt="Foto do veículo">
-                      <div class="informacoes-anuncio">
-                        <h2>Panda Mudanças</h2>
-                        <p>R$ ---</p>
-                        <p>Capac. 6 toneladas</p>
-                        <p>Sorocaba-SP</p>
-                      </div>
-                    </a>
-                    <hr>
-                    <a href="#" class="anuncios">
-                      <img src="imagem/caminhaozinho.png" alt="Foto veículo">
-                      <div class="informacoes-anuncio">
-                        <h2>Panda Carretos</h2>
-                        <p>R$ ---</p>
-                        <p>Capac. 3 toneladas</p>
-                        <p>Sorocaba-SP</p>
-                      </div>
-                    </a>
-                    <hr>
-                    <a href="#" class="anuncios">
-                      <img src="imagem/van4.png" alt="Foto do veículo">
-                      <div class="informacoes-anuncio">
-                        <h2>Panda Van Escolar</h2>
-                        <p>R$ ---</p>
-                        <p>Capac. 25 pessoas</p>
-                        <p>Sorocaba-SP</p>
-                      </div>
-                    </a>
-                    <hr>
-                  
-                    <a href="#" class="anuncios">
-                      <img src="imagem/van4.png" alt="Foto do veículo">
-                      <div class="informacoes-anuncio">
-                        <h2>Panda Mudanças</h2>
-                        <p>R$ ---</p>
-                        <p>Capac. 25 pessoas</p>
-                        <p>Sorocaba-SP</p>
-                      </div>
-                    </a>
-                  <section id="navegacao">
-                    <a href="#"><button>Anterior</button></a>
-                    <a href="#"><button>Próxima</button></a>
-                  </section>
-            </main>
-            <footer>
-                <img src="imagem/LogoMuvall.png" alt="Logo MUVall">
-                <a href="">Fale conosco</a>
-                <div id="cadastro-rodape">
-                    <h2>Cadastro</h2>
-                    <ul>
-                        <li><a href="cadastro" rel="next">Usuário</a></li>
-                        <li><a href="cadastro-anunciante" rel="next">Anunciante</a></li>
-                    </ul>
-                </div>
-                <div id="redesSociais">
-                    <h2>Redes sociais</h2>
-                    <a href="https://instagram.com"><img src="imagem/instagram.png" alt="Logo Instagram" target="_blank" rel="external"></a>
-                    <a href="https://instagram.com"><img src="imagem/linkedin.png" alt="Logo Facebook" target="_blank" rel="external"></a>
-                </div>
-            </footer>
-            <script src="js/script.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Serviços</title>
+  <link rel="stylesheet" href="css/cabeçalho-rodape.css">
+  <link rel="stylesheet" href="css/servicos.css">
+</head>
+
+<body>
+  <header>
+    <a id="topimg" href="/" aria-label="logo"><img src="imagem/LogoMuvall.png" alt="Logo da empresa MUVALL"
+        rel="prev"></a>
+  
+    <nav>
+      <div id="menu-container">
+  
+        <div></div>
+        <div></div>
+        <div></div>
+  
+  
+      <ul id="menu-items" class="NaoPropagar">
+        <img src="imagem/delete.png" alt="Fechar" id="close">
+        <li class="NaoPropagar"><a href="perfil" aria-label="Perfil" rel="next">Minha conta</a></li>
+        <li class="NaoPropagar"><a href="#">Anuncie</a></li>
+        <li class="NaoPropagar"><a href="faleConosco" aria-label="Fale conosco" rel="next">Fale Conosco</a></li>
+        <li class="NaoPropagar"><a href="login">Entre</a></li>
+        <li class="NaoPropagar"><a href="cadastro">Cadastre-se</a></li>
+      </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="larguraPadrao">
+    <div id="barraPesquisa">
+      <input type="search" placeholder="Pesquisar">
+      <button>Buscar</button>
+    </div>
+  </div>
+  <main>
+
+    <div class="larguraPadrao">
+      <h1>Resultados</h1>
+
+      <div id="filtrar-container">
+        <img src="imagem/Filtro.png" alt="Filtro" id="filtro">
+
+        <div id="filtrar-items">
+          <img src="imagem/delete.png" alt="Fechar Filtros" id="closeFilter">
+          <form action="" method="post" class="NaoPropagar">
+            <h2>Filtros</h2> 
+            <label for="regiao">Região:</label>
+            <input type="text" name="regiao" id="regiao">
+              <label for="preco">Preço:</label>
+              <div>
+                <input type="number" name="preco" id="precoMax" placeholder="Min">
+                <input type="number" name="preco" id="precoMin" placeholder="Max">
+              </div>
+
+
+              <label for="capac">Capacidade:</label>
+              <div class="NaoPropagar">
+                <input type="number" maxlength="3" name="capac" id="capacNum">
+                <select name="capac" id="capacMed">
+                  <option value="toneladas">Toneladas</option>
+                  <option value="pessoas">Pessoas</option>
+                  <option value="kg">Quilos</option>
+                  <option value="litros">Litros</option>
+                </select>
+              </div>
+
+            <h2>Ordenar</h2>
+            <h3>Preço:</h3>
+            <div>
+              <input type="radio" name="preco" id="MaiorMenor" placeholder="Do maior ao menor" value="MaiorMenor">
+              <label for="MaiorMenor">Do Maior ao Menor</label><br>
+              <input type="radio" name="preco" id="MenorMaior" value="MenorMaior">
+              <label for="MenorMaior">Do Menor ao Maior</label><br>
+            </div>
+              <h3>Avaliação:</h3>
+              <div>
+                <input type="radio" name="Avaliacao" id="MelhorPior" value="MelhorPior">
+                <label for="MelhorPior">Da melhor a pior</label><br>
+                <input type="radio" name="Avaliacao" id="PiorMelhor" value="PiorMelhor">
+                <label for="PiorMelhor">Da pior a melhor</label><br>
+              </div>
+
+            <button type="submit">Aplicar</button>
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+    <section id="servicos">
+      <a href="#" class="anuncios">
+        <img src="imagem/cam3.png" alt="Foto do veículo">
+        <div class="informacoes-anuncio">
+          <h2>Nome da Empresa</h2>
+          <p>R$ ---</p>
+          <p>Capac. 6 toneladas</p>
+          <p>Sorocaba-SP</p>
+        </div>
+      </a>
+      <hr>
+      <a href="#" class="anuncios">
+        <img src="imagem/caminhaozinho.png" alt="Foto veículo">
+        <div class="informacoes-anuncio">
+          <h2>Nome da Empresa</h2>
+          <p>R$ ---</p>
+          <p>Capac. 3 toneladas</p>
+          <p>Sorocaba-SP</p>
+        </div>
+      </a>
+      <hr>
+      <a href="#" class="anuncios">
+        <img src="imagem/van4.png" alt="Foto do veículo">
+        <div class="informacoes-anuncio">
+          <h2>Nome da Empresa</h2>
+          <p>R$ ---</p>
+          <p>Capac. 25 pessoas</p>
+          <p>Sorocaba-SP</p>
+        </div>
+      </a>
+      <hr>
+
+      <a href="#" class="anuncios">
+        <img src="imagem/van4.png" alt="Foto do veículo">
+        <div class="informacoes-anuncio">
+          <h2>Nome da Empresa</h2>
+          <p>R$ ---</p>
+          <p>Capac. 25 pessoas</p>
+          <p>Sorocaba-SP</p>
+        </div>
+      </a>
+      <section id="navegacao">
+        <a href="#"><button>Anterior</button></a>
+        <a href="#"><button>Próxima</button></a>
+      </section>
+  </main>
+  <footer>
+    <img src="imagem/LogoMuvall.png" alt="Logo MUVall">
+    <a href="faleConosco">Fale conosco</a>
+    <div id="cadastro-rodape">
+      <h2>Cadastro</h2>
+      <ul>
+        <li><a href="cadastro" rel="next">Usuário</a></li>
+        <li><a href="cadastro-anunciante" rel="next">Anunciante</a></li>
+      </ul>
+    </div>
+    <div id="redesSociais">
+      <h2>Redes sociais</h2>
+      <a href="https://instagram.com"><img src="imagem/instagram.png" alt="Logo Instagram" target="_blank"
+          rel="external"></a>
+      <a href="https://instagram.com"><img src="imagem/linkedin.png" alt="Logo Facebook" target="_blank"
+          rel="external"></a>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+  <script src="js/abrirFiltro.js"></script>
 </body>
+
 </html>

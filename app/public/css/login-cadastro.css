@@ -1,35 +1,47 @@
 @media (max-width: 720px) {
-    main{
+    main {
         width: 90vw;
         margin: auto;
     }
 
-    hr{
+    hr {
         width: 100%;
         color: #ea5a14;
         border: 0.2vw solid #1a1a1a;
         margin-bottom: 2vh;
     }
-    
-    main>h1{
+
+    main>h1 {
         font: var(--titulo);
         color: #ea5a14;
         margin-top: 3vh;
         margin-bottom: 0.5vh;
     }
-    
-    
-    
-    form{
+
+    h2 {
+        margin-top: 3vh;
+        font: bold 5vw Roboto, sans-serif;
+    }
+
+    #suporte {
+        margin-bottom: 3vh;
+    }
+
+    #suporte p {
+        margin-top: 1vh;
+        font: 500 4vw Roboto, sans-serif;
+    }
+
+    form {
         display: flex;
         flex-direction: column;
         width: 100%;
         margin-bottom: 15vh;
     }
 
-    
 
-    input{
+
+    input {
         padding: 4vw;
         font: normal 3vw roboto, sans-serif;
         font-style: italic;
@@ -40,16 +52,35 @@
         width: 100%;
     }
 
-    form input:valid{
+    form input:valid {
         border: solid green 2px;
     }
 
-    form input:invalid{
+    form input:invalid {
         border: solid red 2px;
 
     }
 
-    button{
+    .Tipos {
+        display: flex;
+        padding-top: 2.5vh;
+    }
+
+    input[type=radio] {
+        font: normal 3vw roboto, sans-serif;
+        font-style: italic;
+        border: 2px solid #ea5a14;
+        box-shadow: none !important;
+        border-radius: 5px;
+        margin-top: 0 !important;
+        width: 10%;
+    }
+
+    .Tipos label {
+        font: bold 4vw Roboto, sans-serif;
+    }
+
+    button {
         padding: 4vw;
         background-color: #ea5a14;
         font: bold 5vw roboto, sans-serif;
@@ -61,20 +92,56 @@
         margin-top: 6vh;
     }
 
-    form>p{
-        font: italic bold 3vw roboto,sans-serif;
+    form>p {
+        font: italic bold 3.5vw roboto, sans-serif;
         align-self: flex-end;
         margin-top: 1.5vh;
-        
+
     }
 
-    form>p>a{
+    form>p>a {
         color: black;
         text-decoration: underline;
         cursor: pointer;
     }
 
-    form>p>a:hover{
+    form>p>a:hover {
         color: #000000c7;
     }
-} 
+
+    /*Página anunciar.html*/
+    #Telefone {
+        margin-top: 1vh !important;
+    }
+
+    #boxImg {
+        margin-top: 3vh;
+        width: 90vw;
+        height: 40vw;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+    #boxImg label {
+        background-color: #ea5a14;
+        width: 40vw;
+        height: 40vw;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font: normal bold 7vw Roboto;
+        cursor: pointer;
+    }
+
+    input[type='file'] {
+        display: none
+    }
+
+    label>img {
+        width: 40%;
+    }
+
+}

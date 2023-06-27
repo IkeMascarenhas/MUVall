@@ -20,12 +20,13 @@
             <div></div>
 
 
-            <ul id="menu-items">
-              <img src="imagem/delete.png" alt="">
-              <li><a href="perfil" aria-label="Perfil" rel="next">Minha conta</a></li>
-              <li><a href="login" aria-label="Login" rel="next">Login</a></li>
-              <li><a href="#" aria-label="Fale conosco" rel="next">Fale Conosco</a></li>
-              <li><a href="lista-de-servicos" aria-label="Fale conosco" rel="next">Lista de Serviços</a></li>
+            <ul id="menu-items" class="NaoPropagar">
+              <img src="imagem/delete.png" alt="Fechar" id="close">
+              <li class="NaoPropagar"><a href="perfil" aria-label="Perfil" rel="next">Minha conta</a></li>
+              <li class="NaoPropagar"><a href="anunciar">Anuncie</a></li>
+              <li class="NaoPropagar"><a href="faleConosco" aria-label="Fale conosco" rel="next">Fale Conosco</a></li>
+              <li class="NaoPropagar"><a href="login">Entre</a></li>
+              <li class="NaoPropagar"><a href="cadastro">Cadastre-se</a></li>
             </ul>
         </div>
     </nav>
@@ -37,9 +38,9 @@
     <h1>Nome da Empresa</h1>
   </div>
   <div id="nav-info">
-    <a href="">Serviços</a><span></span>
-    <a href="">Avaliações</a><span></span>
-    <a href="">Informações</a>
+    <a href="#servicos">Serviços</a><span></span>
+    <a href="#avaliacoes">Avaliações</a><span></span>
+    <a href="#informacoes-anunciante">Informações</a>
   </div>
 </section>
 
@@ -47,7 +48,7 @@
   <a href="#" class="anuncios">
     <img src="imagem/cam3.png" alt="Foto do veículo">
     <div class="informacoes-anuncio">
-      <h2>Panda Mudanças</h2>
+      <h2>Nome da Empresa</h2>
       <p>R$ ---</p>
       <p>Capac. 6 toneladas</p>
       <p>Sorocaba-SP</p>
@@ -57,7 +58,7 @@
   <a href="#" class="anuncios">
     <img src="imagem/caminhaozinho.png" alt="Foto veículo">
     <div class="informacoes-anuncio">
-      <h2>Panda Carretos</h2>
+      <h2>Nome da Empresa</h2>
       <p>R$ ---</p>
       <p>Capac. 3 toneladas</p>
       <p>Sorocaba-SP</p>
@@ -67,7 +68,7 @@
   <a href="#" class="anuncios">
     <img src="imagem/van4.png" alt="Foto do veículo">
     <div class="informacoes-anuncio">
-      <h2>Panda Van Escolar</h2>
+      <h2>Nome da Empresa</h2>
       <p>R$ ---</p>
       <p>Capac. 25 pessoas</p>
       <p>Sorocaba-SP</p>
@@ -78,7 +79,7 @@
   <a href="#" class="anuncios hidden">
     <img src="imagem/van4.png" alt="Foto do veículo">
     <div class="informacoes-anuncio">
-      <h2>Panda Mudanças</h2>
+      <h2>Nome da Empresa</h2>
       <p>R$ ---</p>
       <p>Capac. 25 pessoas</p>
       <p>Sorocaba-SP</p>
@@ -88,7 +89,7 @@
   <a href="#" class="anuncios hidden">
     <img src="imagem/van4.png" alt="Foto do veículo">
     <div class="informacoes-anuncio">
-      <h2>Panda Mudanças</h2>
+      <h2>Nome da Empresa</h2>
       <p>R$ ---</p>
       <p>Capac. 25 pessoas</p>
       <p>Sorocaba-SP</p>
@@ -98,7 +99,7 @@
   <a href="#" class="anuncios hidden">
     <img src="imagem/van4.png" alt="Foto do veículo">
     <div class="informacoes-anuncio">
-      <h2>Panda Mudanças</h2>
+      <h2>Nome da Empresa</h2>
       <p>R$ ---</p>
       <p>aac. 25 pessoas</p>
       <p>Sorocaba-SP</p>
@@ -136,7 +137,34 @@
   
   </div>
  <hr>
- <button class="VerMais">Ver mais</button>
+ <div class="avaliacao hide">
+  <div>
+    <img src="imagem/do-utilizador.png" alt="Foto do usuário">
+    <p>Bia Pereira</p>
+  </div>
+  <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad eaque tenetur esse saepe quidem tempora quae accusantium, hic fuga quasi qui similique labore? Quaerat ad pariatur esse! Velit, necessitatibus ea.</P>
+
+</div>
+<hr>
+<div class="avaliacao hide">
+  <div>
+    <img src="imagem/do-utilizador.png" alt="Foto do usuário">
+    <p>Bia Pereira</p>
+  </div>
+  <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad eaque tenetur esse saepe quidem tempora quae accusantium, hic fuga quasi qui similique labore? Quaerat ad pariatur esse! Velit, necessitatibus ea.</P>
+
+</div>
+<hr>
+<div class="avaliacao hide">
+  <div>
+    <img src="imagem/do-utilizador" alt="Foto do usuário">
+    <p>Bia Pereira</p>
+  </div>
+  <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad eaque tenetur esse saepe quidem tempora quae accusantium, hic fuga quasi qui similique labore? Quaerat ad pariatur esse! Velit, necessitatibus ea.</P>
+
+</div>
+<hr>
+ <button class="VerMais" id="seeAva">Ver mais</button>
 </section>
 
 <section id="informacoes-anunciante">
@@ -150,7 +178,7 @@
 </section>
 <footer>
   <img src="imagem/LogoMuvall.png" alt="Logo MUVall">
-  <a href="">Fale conosco</a>
+  <a href="faleConosco">Fale conosco</a>
   <div id="cadastro-rodape">
       <h2>Cadastro</h2>
       <ul>
@@ -165,5 +193,6 @@
   </div>
 </footer>
 <script src="js/script.js"></script>
+<script src="js/verMais.js"></script>
 </body>
 </html>

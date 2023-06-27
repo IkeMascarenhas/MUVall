@@ -10,46 +10,47 @@
     <link rel="stylesheet" href="css/cadastro-anunciante.css">
 </head>
 <body>
-    <header>
-        <a id="topimg" href="/" aria-label="logo"><img src="imagem/LogoMuvall.png"alt="Logo da empresa MUVALL" rel="prev"></a>
+<header>
+    <a id="topimg" href="/" aria-label="logo"><img src="imagem/LogoMuvall.png" alt="Logo da empresa MUVALL"
+            rel="prev"></a>
 
-        <nav>
-            <div id="menu-container">
+    <nav>
+        <div id="menu-container">
 
-                <div></div>
-                <div></div>
-                <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
 
 
-                <ul id="menu-items">
-                    <img src="imagem/delete.png" alt="">
-                    <li><a href="perfil" aria-label="Perfil" rel="next">Minha conta</a></li>
-                    <li><a href="login" aria-label="Login" rel="next">Login</a></li>
-                    <li><a href="#" aria-label="Fale conosco" rel="next">Fale Conosco</a></li>
-                    <li><a href="lista-de-servicos" aria-label="Fale conosco" rel="next">Lista de Serviços</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+            <ul id="menu-items" class="NaoPropagar">
+                <img src="imagem/delete.png" alt="Fechar" id="close">
+                <li class="NaoPropagar"><a href="perfil" aria-label="Perfil" rel="next">Minha conta</a></li>
+                <li class="NaoPropagar"><a href="anunciar">Anuncie</a></li>
+                <li class="NaoPropagar"><a href="faleConosco" aria-label="Fale conosco" rel="next">Fale Conosco</a></li>
+                <li class="NaoPropagar"><a href="login">Entre</a></li>
+                <li class="NaoPropagar"><a href="cadastro">Cadastre-se</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
     <main>
-        <h1>Cadastro</h1><hr id="cadastro">
+        <h1>Cadastro</h1><hr>
         <form action="cadastro" method="post">
            <input type="email" aria-label="E-mail" placeholder="Email:" required>
            <input type="password" aria-label="Senha" placeholder="Senha" required>
            <input type="number" aria-label="CNPJ" placeholder="CNPJ" required>
            <input type="text" aria-label="Nome da Empresa" placeholder="Nome da Empresa:" required>
-           <input type="text" aria-label="Localização" placeholder="Localização" required >
            <div id="boxLogo">
                <label for="Logo" class="addLogo"><img src="imagem/botao-adicionar.png" alt="Botão para adicionar Logo">Logo</label>
                <input type="file" aria-label="Logo" required name="Logo" id="Logo" max="1" placeholder="Logo">
            </div>
 
-           <button type="submit">Continuar</button>
+           <button type="button">Continuar</button>
         </form>
     </main>
     <footer>
         <img src="imagem/LogoMuvall.png" alt="Logo MUVall">
-        <a href="">Fale conosco</a>
+        <a href="faleConosco">Fale conosco</a>
         <div id="cadastro-rodape">
             <h2>Cadastro</h2>
             <ul>
@@ -64,5 +65,6 @@
         </div>
     </footer>
     <script src="js/script.js"></script>
+    <script src="js/image-preview.js"></script>
 </body>
 </html>

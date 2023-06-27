@@ -1,11 +1,11 @@
-@media (max-width:480px){
+@media (max-width:720px){
 
 #empresa{
     background-color: #1A1A1A;
     width: 100vw;
     display: flex;
     flex-direction: column;
-
+    margin-top: -1px;
 }
 
 #empresa>img{
@@ -54,54 +54,53 @@
     width: 1vw;
 }
 
-#servicos{
+#servicos {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 85vw;
+    margin: auto;
+  }
 
 
-}
-
-
-.anuncios{
+  .anuncios {
     display: flex;
     justify-content: space-between;
-    height: 20vh;
+    height: 25vh;
     margin: 2vw 0 2vw 0;
-    border-bottom: 1px solid #1A1A1A;
-    width: 100vw;
-}
+    background-color: #1a1a1aec;
+    border-radius: 10px;
+    padding: 0 8vw 0 8vw;
+  }
 
-.anuncios:first-child{
+  .anuncios:first-child {
     margin-top: 3vh;
-}
+  }
 
-.anuncios img{
+  .anuncios img {
     width: 40%;
-    height: 90%;
-    margin-left: 5vw;
-    margin-bottom: 3vw;
+    min-height: 20vh;
     border-radius: 10px;
     align-self: center;
-}
+    min-width: 50%;
+  }
 
-.anuncios h2{
+  .anuncios h2 {
     color: #ea5a14;
     font: bold 3.5vw roboto, sans-serif;
-}
+  }
 
-.anuncios p{
+  .anuncios p {
     font: 500 3vw roboto, sans-serif;
-    color: black;
-}
+    color: white;
+  }
 
-.informacoes-anuncio{
-    width: 50vw;
+  .informacoes-anuncio {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 2vh;
-    height: 20vh;
-}
+  }
 
 .VerMais{
     width: 20vw;
@@ -117,6 +116,10 @@
 
 .hidden{
     display: none;
+}
+
+.hide{
+    display: none !important;
 }
 
 .show-ads{

@@ -1,4 +1,4 @@
-@media only screen and (max-width: 481px) {
+@media (max-width: 720px) {
 
   .larguraPadrao {
     max-width: 85vw;
@@ -19,6 +19,7 @@
     border: 2px solid #ea5a14;
     border-radius: 5px 0 0 5px;
     font-size: 4vw;
+    padding: 2vw;
   }
 
   #barraPesquisa input::placeholder {
@@ -36,6 +37,7 @@
     height: 100%;
     margin-left: -1px;
     border: 2px solid #1a1a1a;
+    cursor: pointer;
   }
 
   #barraPesquisa button:hover {
@@ -54,21 +56,101 @@
     font: var(--titulo);
   }
 
+  #filtrar-container{
+    width: 6vw;
+
+  }
+
+  #filtrar-items{
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    width: 65vw;
+    height: 100vh;
+    padding: 3vw 3vw 3vw 3vw;
+    background-color: #fff;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    transition-duration: 0.5s;
+  }
+
+  .show-filtro{
+    right: 0 !important;
+    transition-duration: 0.5s;
+  }
+
+  #filtrar-items form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 80%;
+  }
+
+  #filtrar-items>img{
+    width: 10% !important;
+    align-self: flex-end;
+  }
+
+  #filtrar-items form h2{
+    color: #ea5a14;
+    font: bold 5vw Roboto, sans-serif;
+    border-bottom: solid #1a1a1a 0.5vh;
+  }
+
+  #filtrar-items form label{
+    font: bold 3.5vw Roboto, sans-serif;
+    
+  }
+
+  #filtrar-items form h3{
+    font: bold 3.5vw Roboto, sans-serif;
+    
+  }
+
+  #filtrar-items input{
+    border: solid #ea5a14 0.5vw;
+    border-radius: 5px;
+    padding: 2vw;
+    max-width: 20vw;
+  }
+
+  #filtrar-items button{
+        padding: 3vw;
+        background-color: #ea5a14;
+        font: bold 5vw roboto, sans-serif;
+        color: white;
+        width: 80%;
+        align-self: center;
+        border-radius: 10px;
+        box-shadow: var(--sombra);
+        margin-top: 3vh;
+  }
+
+
+ #filtrar-container img{
+  width: 100%;
+ }
+
+
 
   #servicos {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 85vw;
+    margin: auto;
   }
 
 
   .anuncios {
     display: flex;
     justify-content: space-between;
-    height: 20vh;
+    height: 25vh;
     margin: 2vw 0 2vw 0;
-    border-bottom: 1px solid #1A1A1A;
-    width: 100vw;
+    background-color: #1a1a1aec;
+    border-radius: 10px;
+    padding: 0 8vw 0 8vw;
   }
 
   .anuncios:first-child {
@@ -77,11 +159,10 @@
 
   .anuncios img {
     width: 40%;
-    height: 90%;
-    margin-left: 5vw;
-    margin-bottom: 3vw;
+    min-height: 20vh;
     border-radius: 10px;
     align-self: center;
+    min-width: 50%;
   }
 
   .anuncios h2 {
@@ -91,15 +172,14 @@
 
   .anuncios p {
     font: 500 3vw roboto, sans-serif;
-    color: black;
+    color: white;
   }
 
   .informacoes-anuncio {
-    width: 50vw;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 2vh;
-    height: 20vh;
   }
 
   #navegacao {

@@ -23,14 +23,13 @@
                 <div></div>
 
 
-                <ul id="menu-items">
-                    <img src="imagem/delete.png" alt="">
-                    <li><a href="perfil" aria-label="Perfil" rel="next">Minha conta</a></li>
-                    <li><a href="login" aria-label="Login" rel="next">Login</a></li>
-                    <li><a href="#" aria-label="Fale conosco" rel="next">Fale Conosco</a></li>
-                    <li><a href="lista-de-servicos" aria-label="Fale conosco" rel="next">Lista de Serviços</a></li>
-                    <div></div>
-                    <li>Política de Privacidade</li>
+                <ul id="menu-items" class="NaoPropagar">
+                    <img src="imagem/delete.png" alt="Fechar" id="close">
+                    <li class="NaoPropagar"><a href="perfil" aria-label="Perfil" rel="next">Minha conta</a></li>
+                    <li class="NaoPropagar"><a href="anunciar">Anuncie</a></li>
+                    <li class="NaoPropagar"><a href="faleConosco" aria-label="Fale conosco" rel="next">Fale Conosco</a></li>
+                    <li class="NaoPropagar"><a href="login">Entre</a></li>
+                    <li class="NaoPropagar"><a href="cadastro">Cadastre-se</a></li>
                 </ul>
             </div>
         </nav>
@@ -38,7 +37,7 @@
     <main>
         <div class="larguraPadrao">
             <div id="barraPesquisa">
-                <input type="text" placeholder="Pesquisar">
+                <input type="search" placeholder="Pesquisar">
                 <button>Buscar</button>
             </div>
             <section id="cards">
@@ -46,6 +45,7 @@
                     <img src="imagem/do-utilizador.png" alt="Ícone usuário">
                     <p>Para você</p>
                 </a>
+                
                 <a href="#funcionamento" class="card-home">
                     <img src="imagem/companhia.png" alt="Ícone empresários">
                     <p>Para anunciantes</p>
@@ -70,16 +70,16 @@
                 <img src="imagem/promocao.png" alt="Megafone">
                 <p>Cadastre sua empresa e anuncie conosco pagando apenas xx,xx R$</p>
                 <img src="imagem/search-engine-optimization.png" alt="Ícone PC e lupa">
-                <p>Pare de buscar clientes e deixe que eles te encontrem</p>
+                <p>Pare de procurar clientes e deixe que eles te encontrem</p>
                 <img src="imagem/money-bag.png" alt="Ícone bolsa de dinheiro">
                 <p>Receba todo o pagamento pelo seu serviço</p>
-                <div><a href="cadastro-anunciante" class="larguraPadrao" rel="next">Seja um Anunciante</a></div>
+                <a href="cadastro-anunciante" class="larguraPadrao" rel="next">Seja um Anunciante</a>
             </section>
         </article>
     </main>
     <footer>
         <img src="imagem/LogoMuvall.png" alt="Logo MUVall">
-        <a href="">Fale conosco</a>
+        <a href="faleConosco">Fale conosco</a>
         <div id="cadastro-rodape">
             <h2>Cadastro</h2>
             <ul>
@@ -94,6 +94,6 @@
         </div>
     </footer>
     <script src="js/script.js"></script>
-    
 </body>
+
 </html>

@@ -1,26 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-bt">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagamento</title>
+    <title>Muvall</title>
     <link rel="stylesheet" href="css/login-cadastro.css">
     <link rel="stylesheet" href="css/cabeçalho-rodape.css">
+    <style>
+        
+    </style>
 </head>
+
 <body>
-<header>
-    <a id="topimg" href="/" aria-label="logo"><img src="imagem/LogoMuvall.png" alt="Logo da empresa MUVALL"
-            rel="prev"></a>
-
-    <nav>
-        <div id="menu-container">
-
-            <div></div>
-            <div></div>
-            <div></div>
-
-
+    <header>
+        <a id="topimg" href="/" aria-label="logo"><img src="imagem/LogoMuvall.png" alt="Logo da empresa MUVALL"
+                rel="prev"></a>
+    
+        <nav>
+            <div id="menu-container">
+    
+                <div></div>
+                <div></div>
+                <div></div>
+    
+    
             <ul id="menu-items" class="NaoPropagar">
                 <img src="imagem/delete.png" alt="Fechar" id="close">
                 <li class="NaoPropagar"><a href="perfil" aria-label="Perfil" rel="next">Minha conta</a></li>
@@ -29,20 +34,26 @@
                 <li class="NaoPropagar"><a href="login">Entre</a></li>
                 <li class="NaoPropagar"><a href="cadastro">Cadastre-se</a></li>
             </ul>
-        </div>
-    </nav>
-</header>
+            </div>
+        </nav>
+    </header>
     <main>
-        <h2>Pagamento</h2><hr>
-        <form action="" method="post">
-           <input type="text" aria-label="Titular do Cartão" required maxlength="100" minlength="3" placeholder="Titular do cartão: ">
-           <input type="number" aria-label="Número do Cartão" maxlength="16" minlength="13" required placeholder="Número do cartão: ">
-           <input type="number" aria-label="CVV" required maxlength="3" placeholder="CVV: ">
-           <input type="date" aria-label="Expira em:" required placeholder="Expira em:">
+        <h1>Fale conosco</h1><hr>
 
-           <button type="button">Continuar</button>
+        <div id="suporte">
+            <h2>Suporte</h2>
+            <p>muvall.br@gmail.com</p>
+        </div>
+
+        <form action="" method="post">
+            <h2>Sugestões/Relatar Erros</h2>
+            <input type="email" name="Email" id="Email" aria-label="Email" placeholder="Seu Email:" required minlength="10">
+            <input type="text" name="Nome" id="Nome" aria-label="Nome" placeholder="Seu Nome" required minlength="3">
+            <input type="text" name="Desc" id="Desc" aria-label="Descrição" placeholder="Descrição" required minlength="5">
+            <button type="button">Enviar</button>
         </form>
     </main>
+
     <footer>
         <img src="imagem/LogoMuvall.png" alt="Logo MUVall">
         <a href="faleConosco">Fale conosco</a>
@@ -60,7 +71,6 @@
         </div>
     </footer>
     <script src="js/script.js"></script>
-    <script src="js/cadastro.js"></script>
-</body>
-</body>
-</html>
+    </body>
+    </html>
+    
