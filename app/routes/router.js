@@ -49,7 +49,6 @@ router.post('/cadastro',  (req, res) => {
     } else {
         res.send('Por favor, preencha todos os campos')
     }
-    res.redirect('/')
 })
 
 router.get('/cadastro-anunciante', function(req, res){
@@ -80,7 +79,9 @@ router.post('/login', (req, res) => {
                     if(storedPassword === hashedPassword){
                         req.session.loggedin = true
                         req.session.email = email
-                        res.redirect('/')
+                        // res.redirect('/')
+                        console.log(req.session.loggedin)
+                        res.send('Login realizado com sucesso!')
                     }else {
                         res.send('Senha incorreta')
                     }

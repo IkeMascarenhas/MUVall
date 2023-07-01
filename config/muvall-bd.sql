@@ -1,7 +1,6 @@
-
-
 CREATE DATABASE MUVALL
 
+USE MUVALL
 
 CREATE TABLE cadastro (
   id INT(11) NOT NULL AUTO_INCREMENT,
@@ -18,14 +17,11 @@ SET data_nascimento = '1990-05-15'
 WHERE id = 1;
 
 INSERT INTO cadastro (nome, email, senha) VALUES
-('Pietro Gostoso', 'pietro@example.com', 'senha2131'),
-('Richar Preto Viado','macaco.pistili@example.com', '2312312ds'),
-('Felipe Gosta de Negão', 'Neres.viado@example.com', 'senh12312a789');
+('Pietro', 'pietro@example.com', 'senha2141'),
+('Richard','pistili@example.com', 'senha4321'),
+('Felipe', 'Neres@example.com', 'senh1234');
 
 SELECT * FROM CADASTRO
-
---------------------------------------------------------------------------
-
 
 
 CREATE TABLE cadastro_anunciante (
