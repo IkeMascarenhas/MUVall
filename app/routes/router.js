@@ -2,6 +2,8 @@ var express = require('express')
 var router = express.Router()
 var md5 = require('md5')
 var mysql = require('mysql')
+const multer = require('multer')
+const upload = multer({ dest: 'uploads/' })
 
 var fabricDeConexao = require('../../config/connection-factory')
 var bd = fabricDeConexao()
@@ -55,6 +57,38 @@ router.get('/cadastro-anunciante', function(req, res){
     res.render('pages/cadastro-anunciante')
 })
 
+router.post('/cadastro-anunciante', upload.single('logo'), function(req, res){
+    const { nomeEmp, email, senha, cnpj } = req.body
+    const logo = req.file
+
+    if (nomeEmp && email && senha && cnpj){
+    bd.query('select * from cadastro_anunciante where email = ?',
+    [email],
+    (error, results) => {
+        if(results.length > 0) {
+            res.send('Email já cadastrado')
+        } else {
+            const hashedPassword = md5(senha)
+            const caminhoImagem = logo.path
+
+            bd.query(
+            'insert into cadastro_anunciante (nomeDaEmpresa, email, senha, cnpj) values (?, ?, ?, ?)',
+            [nomeEmp, email, hashedPassword, cnpj, caminhoImagem],
+            (error, results) => {
+                if(error){
+                    res.send('Erro ao cadastrar o usuário')
+                } else {
+                    res.redirect('/perfil')
+                }
+            }
+            )
+        }
+    })
+    } else {
+        res.send('Por favor, preencha todos os campos')
+    }
+})
+
 router.get('/lista-de-servicos', function(req, res){
     res.render('pages/lista-de-servicos')
 })
@@ -69,7 +103,7 @@ router.post('/login', (req, res) => {
     if (email && senha) {
 
         bd.query(
-            'SELECT * FROM cadastro WHERE email = ?',
+            'SELECT * FROM cadastro_anunciante WHERE email = ?',
             [email],
             (error, results) => {
                 if (results.length > 0){
@@ -79,9 +113,9 @@ router.post('/login', (req, res) => {
                     if(storedPassword === hashedPassword){
                         req.session.loggedin = true
                         req.session.email = email
-                        // res.redirect('/')
-                        console.log(req.session.loggedin)
-                        res.send('Login realizado com sucesso!')
+                        console.log('Usuário autenticado?', req.session.loggedin)
+                        console.log(req.session)
+                        res.redirect('/perfil')
                     }else {
                         res.send('Senha incorreta')
                     }
@@ -100,7 +134,13 @@ router.get('/pagamento', function(req, res){
 })
 
 router.get('/perfil', function(req, res){
-    res.render('pages/perfil')
+    if(!req.session.loggedin){
+        // redireciona o usuário caso ele não esteja logado
+        return res.redirect('/login')
+    }
+    
+
+    res.render('pages/perfil', {nomeEmp: user})
 })
 
 router.get('/anunciar', function(req, res){

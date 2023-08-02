@@ -5,9 +5,8 @@ module.exports = function(){
  return mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "@ITB123456",
+    password: "",
     database: "MUVALL",
     port: 3306
   });
-} 
-
+}

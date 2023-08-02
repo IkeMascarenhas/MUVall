@@ -35,17 +35,17 @@
 </header>
     <main>
         <h1>Cadastro</h1><hr>
-        <form action="cadastro" method="post">
-           <input type="email" aria-label="E-mail" placeholder="Email:" required>
-           <input type="password" aria-label="Senha" placeholder="Senha" required>
-           <input type="number" aria-label="CNPJ" placeholder="CNPJ" required>
-           <input type="text" aria-label="Nome da Empresa" placeholder="Nome da Empresa:" required>
+        <form action="cadastro-anunciante" method="post" enctype="multipart/form-data">
+           <input type="email" name="email" placeholder="Email:" required>
+           <input type="password" name="senha" placeholder="Senha" required>
+           <input type="number" name="cnpj" placeholder="CNPJ" required>
+           <input type="text" name="nomeEmpresa" placeholder="Nome da Empresa:" required>
            <div id="boxLogo">
                <label for="Logo" class="addLogo"><img src="imagem/botao-adicionar.png" alt="Botão para adicionar Logo">Logo</label>
-               <input type="file" aria-label="Logo" required name="Logo" id="Logo" max="1" placeholder="Logo">
+               <input type="file" name="logo" id="Logo" max="1" placeholder="Logo" required>
            </div>
 
-           <button type="button">Continuar</button>
+           <button type="submit">Continuar</button>
         </form>
     </main>
     <footer>
