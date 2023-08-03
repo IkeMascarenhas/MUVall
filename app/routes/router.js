@@ -140,7 +140,7 @@ router.get('/perfil', function(req, res){
     }
     
 
-    res.render('pages/perfil', {nomeEmp: user})
+    res.render('pages/perfil')
 })
 
 router.get('/anunciar', function(req, res){
