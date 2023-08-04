@@ -43,7 +43,9 @@
       <a href="editarPerfilAnunciante"><img src="imagem/editar.png" alt="Editar dados da empresa" /></a>
       <div id="logo-nome">
         <img src="imagem/Logo-empresa.jpg" alt="Logo da Empresa" />
-        <h1>Nome da Empresa</h1>
+
+        <h1 id="nomeEmp"><%= nomeEmp%></h1>
+        
       </div>
       <div id="nav-info">
         <a href="#servicos">Serviços</a><span></span>
@@ -151,7 +153,9 @@
       <h2>Localização:</h2>
       <p>SP</p>
     </section>
-    <button class="btn">Excluir conta</button>
+    <form action="excluirConta" method="post">
+      <button class="btn">Excluir conta</button>
+    </form>
   </main>
     <footer>
       <img src="imagem/LogoMuvall.png" alt="Logo MUVall" />

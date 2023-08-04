@@ -6,6 +6,7 @@ const multer = require('multer')
 const upload = multer({ dest: 'uploads/' })
 
 var fabricDeConexao = require('../../config/connection-factory')
+const session = require('express-session')
 var bd = fabricDeConexao()
 
 bd.connect((err) => {
@@ -58,10 +59,10 @@ router.get('/cadastro-anunciante', function(req, res){
 })
 
 router.post('/cadastro-anunciante', upload.single('logo'), function(req, res){
-    const { nomeEmp, email, senha, cnpj } = req.body
+    const { nomeEmpresa, email, senha, cnpj } = req.body
     const logo = req.file
 
-    if (nomeEmp && email && senha && cnpj){
+    if (nomeEmpresa && email && senha && cnpj){
     bd.query('select * from cadastro_anunciante where email = ?',
     [email],
     (error, results) => {
@@ -72,11 +73,12 @@ router.post('/cadastro-anunciante', upload.single('logo'), function(req, res){
             const caminhoImagem = logo.path
 
             bd.query(
-            'insert into cadastro_anunciante (nomeDaEmpresa, email, senha, cnpj) values (?, ?, ?, ?)',
-            [nomeEmp, email, hashedPassword, cnpj, caminhoImagem],
+            'insert into cadastro_anunciante (nomeDaEmpresa, email, senha, cnpj, fotoPerfil) values (?, ?, ?, ?, ?)',
+            [nomeEmpresa, email, hashedPassword, cnpj, caminhoImagem],
             (error, results) => {
                 if(error){
                     res.send('Erro ao cadastrar o usuário')
+                    throw error
                 } else {
                     res.redirect('/perfil')
                 }
@@ -114,8 +116,8 @@ router.post('/login', (req, res) => {
                         req.session.loggedin = true
                         req.session.email = email
                         console.log('Usuário autenticado?', req.session.loggedin)
-                        console.log(req.session)
                         res.redirect('/perfil')
+                        const nomeEmp = results[0].nomeDaEmpresa
                     }else {
                         res.send('Senha incorreta')
                     }
@@ -138,10 +140,35 @@ router.get('/perfil', function(req, res){
         // redireciona o usuário caso ele não esteja logado
         return res.redirect('/login')
     }
-    
-
-    res.render('pages/perfil')
+    bd.query('SELECT * from cadastro_anunciante WHERE email = ?',
+        [req.session.email],
+        (error, results) =>{
+            const emailBD = results[0].email
+            if(emailBD == req.session.email){
+                var nomeEmpresa = results[0].nomeDaEmpresa
+                var foto = 
+                res.render('pages/perfil', {nomeEmp: nomeEmpresa})
+            }
+        })
 })
+router.get('/excluirConta', function(req, res){
+    res.render('pages/login')
+})
+router.post('/excluirConta', function(req, res){
+    const btn = req.body
+
+    bd.query('DELETE from cadastro_anunciante WHERE email = ?',
+    [req.session.email],
+    (error, results) =>{
+    if(error){
+        throw error
+    }else{
+        console.log('Conta excluída com sucesso!')
+        res.redirect('/login')
+    }
+    })
+ })
+
 
 router.get('/anunciar', function(req, res){
     res.render('pages/anunciar')
