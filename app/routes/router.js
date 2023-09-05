@@ -1,9 +1,9 @@
 var express = require('express')
 var router = express.Router()
-var md5 = require('md5')
+var bcrypt = require('bcryptjs')
+var salr = bcrypt.genSaltSync(12)
 var mysql = require('mysql')
-const multer = require('multer')
-const upload = multer({ dest: 'uploads/' })
+var { body, validationResult } = require('express-validator')
 
 var fabricDeConexao = require('../../config/connection-factory')
 const session = require('express-session')
@@ -34,7 +34,7 @@ router.post('/cadastro',  (req, res) => {
         if(results.length > 0) {
             res.send('Email já cadastrado')
         } else {
-            const hashedPassword = md5(senha)
+            const hashedPassword = bcrypt.hashSync(senha)
 
             bd.query(
             'insert into cadastro (nome, email, senha) values (?, ?, ?)',
@@ -58,9 +58,9 @@ router.get('/cadastro-anunciante', function(req, res){
     res.render('pages/cadastro-anunciante')
 })
 
-router.post('/cadastro-anunciante', upload.single('logo'), function(req, res){
+router.post('/cadastro-anunciante', function(req, res){
     const { nomeEmpresa, email, senha, cnpj } = req.body
-    const logo = req.file
+    
 
     if (nomeEmpresa && email && senha && cnpj){
     bd.query('select * from cadastro_anunciante where email = ?',
@@ -69,12 +69,11 @@ router.post('/cadastro-anunciante', upload.single('logo'), function(req, res){
         if(results.length > 0) {
             res.send('Email já cadastrado')
         } else {
-            const hashedPassword = md5(senha)
-            const caminhoImagem = logo.path
-
+            const hashedPassword = bcrypt.hashSync(senha)
+            
             bd.query(
-            'insert into cadastro_anunciante (nomeDaEmpresa, email, senha, cnpj, fotoPerfil) values (?, ?, ?, ?, ?)',
-            [nomeEmpresa, email, hashedPassword, cnpj, caminhoImagem],
+            'insert into cadastro_anunciante (nomeDaEmpresa, email, senha, cnpj) values (?, ?, ?, ?)',
+            [nomeEmpresa, email, hashedPassword, cnpj],
             (error, results) => {
                 if(error){
                     res.send('Erro ao cadastrar o usuário')
@@ -110,9 +109,9 @@ router.post('/login', (req, res) => {
             (error, results) => {
                 if (results.length > 0){
                     const storedPassword = results[0].senha
-                    const hashedPassword = md5(senha)
+                    const hashedPassword = bcrypt.hashSync(senha)
 
-                    if(storedPassword === hashedPassword){
+                    if(bcrypt.compareSync(storedPassword, hashedPassword)){
                         req.session.loggedin = true
                         req.session.email = email
                         console.log('Usuário autenticado?', req.session.loggedin)
@@ -145,8 +144,7 @@ router.get('/perfil', function(req, res){
         (error, results) =>{
             const emailBD = results[0].email
             if(emailBD == req.session.email){
-                var nomeEmpresa = results[0].nomeDaEmpresa
-                var foto = 
+                var nomeEmpresa = results[0].nomeDaEmpresa 
                 res.render('pages/perfil', {nomeEmp: nomeEmpresa})
             }
         })
@@ -154,7 +152,7 @@ router.get('/perfil', function(req, res){
 router.get('/excluirConta', function(req, res){
     res.render('pages/login')
 })
-router.post('/excluirConta', function(req, res){
+router.post('/excluirContaAnunciante', function(req, res){
     const btn = req.body
 
     bd.query('DELETE from cadastro_anunciante WHERE email = ?',

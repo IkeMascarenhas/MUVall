@@ -17,6 +17,7 @@ app.use(
         secret: 'pietromacacocadeobd',
         resave: false,
         saveUninitialized: true,
+        cookie: { secure: false }
     })
 )
 
