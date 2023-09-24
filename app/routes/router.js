@@ -13,7 +13,7 @@ bd.connect((err) => {
     if(err){
       throw err
     }
-    console.log('Concectado ao banco de dados MySQL')
+    console.log('Conectado ao banco de dados MySQL')
 })
 
 router.get('/', function(req, res){
@@ -186,6 +186,10 @@ router.get('/avaliar', function(req, res){
 
 router.get('/editarPerfil', function(req, res){
     res.render('pages/editarPerfil')
+})
+
+router.get('/form_contratacao', function(req, res){
+    res.render('pages/form_contratacao')
 })
 
 module.exports = router
