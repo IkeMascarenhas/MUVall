@@ -1,0 +1,24 @@
+.rating-box .stars{
+    margin-top: 2vh;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 2vh;
+
+}
+
+.stars i{
+    color: #1a1a1a;
+    font-size: 35px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.stars i.active{
+    color: #ff9c1a;
+}
+
+input{
+    height: 15vh;
+    padding: 3vw 3vw 10vh 3vw;
+}

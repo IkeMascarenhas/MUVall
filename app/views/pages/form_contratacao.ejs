@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contratar</title>
+    <link rel="stylesheet" href="css/cabeçalho-rodape.css">
+    <link rel="stylesheet" href="css/login-cadastro.css">
+</head>
+<body>
+    <header>
+        <a id="topimg" href="index" aria-label="logo"><img src="imagem/LogoMuvall.png"alt="Logo da empresa MUVALL" rel="prev"></a>
+
+        <nav>
+            <div id="menu-container">
+
+                <div></div>
+                <div></div>
+                <div></div>
+
+
+                <ul id="menu-items" class="NaoPropagar">
+                    <img src="imagem/delete.png" alt="Fechar" id="close">
+                    <li class="NaoPropagar"><a href="perfil" aria-label="Perfil" rel="next">Minha conta</a></li>
+                    <li class="NaoPropagar"><a href="anunciar">Anuncie</a></li>
+                    <li class="NaoPropagar"><a href="faleConosco" aria-label="Fale conosco" rel="next">Fale Conosco</a></li>
+                    <li class="NaoPropagar"><a href="login">Entre</a></li>
+                    <li class="NaoPropagar"><a href="cadastro">Cadastre-se</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>Contratar serviço</h1>
+        <hr>
+        <form>
+            <input type="text" placeholder="Data em que o serviço deve ser realizado:" required aria-label="Data em que o serviço deve ser realizado:">
+            <input type="number" placeholder="Quantidade de carga:" required aria-label="Quantidade de carga:">
+            <input type="text" placeholder="Valor que está disposto a pagar:" required aria-label="Valor que está disposto a pagar:">
+            <input type="text" placeholder="Localização inicial:" required aria-label="Localização inicial:">
+            <input type="text" placeholder="Localização final:" required aria-label="Localização final:">
+            <input type="text" placeholder="Informações adicionais:" required aria-label="Informações adicionais:" style="height:10vh; padding-bottom: 6vh;">
+            <button>Enviar Solicitação</button>
+        </form>
+    </main>
+    <footer>
+        <img src="imagem/LogoMuvall.png" alt="Logo MUVall">
+        <a href="faleConosco">Fale conosco</a>
+        <div id="cadastro-rodape">
+            <h2>Cadastro</h2>
+            <ul>
+                <li><a href="cadastro" rel="next">Usuário</a></li>
+                <li><a href="cadastro-anunciante" rel="next">Anunciante</a></li>
+            </ul>
+        </div>
+        <div id="redesSociais">
+            <h2>Redes sociais</h2>
+            <a href="https://instagram.com"><img src="imagem/instagram.png" alt="Logo Instagram" target="_blank" rel="external"></a>
+            <a href="https://instagram.com"><img src="imagem/linkedin.png" alt="Logo Facebook" target="_blank" rel="external"></a>
+        </div>
+    </footer>
+    <script src="script/script.js" defer></script>
+</body>
+</html>
