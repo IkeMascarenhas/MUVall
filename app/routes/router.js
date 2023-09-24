@@ -188,4 +188,7 @@ router.get('/editarPerfil', function(req, res){
     res.render('pages/editarPerfil')
 })
 
+router.get('/form_contratacao', function(req, res){
+    res.render('pages/form_contratacao')
+})
 module.exports = router
