@@ -180,4 +180,12 @@ router.get('/faleConosco', function(req, res){
     res.render('pages/faleConosco')
 })
 
+router.get('/avaliar', function(req, res){
+    res.render('pages/avaliar')
+})
+
+router.get('/editarPerfil', function(req, res){
+    res.render('pages/editarPerfil')
+})
+
 module.exports = router

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar</title>
+    <link rel="stylesheet" href="css/login-cadastro.css">
+    <link rel="stylesheet" href="css/cabeçalho-rodape.css">
+    <link rel="stylesheet" href="css/editar.css">
+
+</head>
+
+<body>
+    <header>
+        <a id="topimg" href="index" aria-label="logo"><img src="imagem/LogoMuvall.png" alt="Logo da empresa MUVALL"
+                rel="prev"></a>
+    
+        <nav>
+            <div id="menu-container">
+    
+                <div></div>
+                <div></div>
+                <div></div>
+    
+    
+            <ul id="menu-items" class="NaoPropagar">
+                <img src="imagem/delete.png" alt="Fechar" id="close">
+                <li class="NaoPropagar"><a href="perfil" aria-label="Perfil" rel="next">Minha conta</a></li>
+                <li class="NaoPropagar"><a href="anunciar">Anuncie</a></li>
+                <li class="NaoPropagar"><a href="faleConosco" aria-label="Fale conosco" rel="next">Fale Conosco</a></li>
+                <li class="NaoPropagar"><a href="login">Entre</a></li>
+                <li class="NaoPropagar"><a href="cadastro">Cadastre-se</a></li>
+            </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="foto_user">
+        <div id="InserirImg-user">
+        <label for="inserirImg"><img src="imagem/perfil_cliente.png" alt="Inserir Imagem"></label>
+          <input type="file" id="InserirImg" name="InserirImg" aria-label="Inserir Imagem">
+          <h1>Foto</h1>
+        </div>
+    </section>
+    <main>
+        <form action="cadastro" method="post"  onsubmit="validarFormulario()">
+                <input type="email" name="email" placeholder="E-Mail:" id="email" required maxlength="100">
+                <input type="text" name="nome" placeholder="Nome:" id="nome" required maxlength="100" minlength="3">
+                <input type="password" name="senha" placeholder="Senha:" id="senha" required maxlength="30" minlength="8">
+                <button type="submit" id="cadastrar-bttn">Confirmar</button>
+        </form>
+</main>
+    <footer>
+        <img src="imagem/LogoMuvall.png" alt="Logo MUVall">
+        <a href="faleConosco">Fale conosco</a>
+        <div id="cadastro-rodape">
+            <h2>Cadastro</h2>
+            <ul>
+                <li><a href="cadastro" rel="next">Usuário</a></li>
+                <li><a href="cadastro-anunciante" rel="next">Anunciante</a></li>
+            </ul>
+        </div>
+        <div id="redesSociais">
+            <h2>Redes sociais</h2>
+            <a href="https://instagram.com"><img src="imagem/instagram.png" alt="Logo Instagram" target="_blank" rel="external"></a>
+            <a href="https://instagram.com"><img src="imagem/linkedin.png" alt="Logo Facebook" target="_blank" rel="external"></a>
+        </div>
+    </footer>
+    <script src="script/script.js" defer></script>
+    </body>
+    </html>
+    
