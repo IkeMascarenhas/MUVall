@@ -5,15 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muvall</title>
+    <title>Ver mais</title>
     <link rel="stylesheet" href="css/cabeçalho-rodape.css">
     <link rel="stylesheet" href="css/descservico.css">
-
+    <link rel="stylesheet" href="css/slider.css">
+    <script src="script/slider.js" defer></script>
+    <script src="script/script.js" defer></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <a id="topimg" href="/" aria-label="logo"><img src="imagem/LogoMuvall.png"alt="Logo da empresa MUVALL" rel="prev"></a>
+        <a id="topimg" href="index.html" aria-label="logo"><img src="img/LogoMuvall.png"alt="Logo da empresa MUVALL" rel="prev"></a>
 
         <nav>
             <div id="menu-container">
@@ -24,12 +28,12 @@
 
 
                 <ul id="menu-items" class="NaoPropagar">
-                    <img src="imagem/delete.png" alt="Fechar" id="close">
-                    <li class="NaoPropagar"><a href="perfil" aria-label="Perfil" rel="next">Minha conta</a></li>
-                    <li class="NaoPropagar"><a href="anunciar">Anuncie</a></li>
-                    <li class="NaoPropagar"><a href="faleConosco" aria-label="Fale conosco" rel="next">Fale Conosco</a></li>
-                    <li class="NaoPropagar"><a href="login">Entre</a></li>
-                    <li class="NaoPropagar"><a href="cadastro">Cadastre-se</a></li>
+                    <img src="img/delete.png" alt="Fechar" id="close">
+                    <li class="NaoPropagar"><a href="perfil.html" aria-label="Perfil" rel="next">Minha conta</a></li>
+                    <li class="NaoPropagar"><a href="anunciar.html">Anuncie</a></li>
+                    <li class="NaoPropagar"><a href="faleConosco.html" aria-label="Fale conosco" rel="next">Fale Conosco</a></li>
+                    <li class="NaoPropagar"><a href="login.html">Entre</a></li>
+                    <li class="NaoPropagar"><a href="cadastro.html">Cadastre-se</a></li>
                 </ul>
             </div>
         </nav>
@@ -41,15 +45,26 @@
         </div>
     </div>
     <main>
-            <div class="imgFull">
-                <img src="imagem/caminhao-desc.jpg" alt="Van">
+        <section class="container imgFull">
+            <button class="arrow-left control" aria-label="Previous Image"><img src="img/arrow-left.svg" alt="Seta Voltar"></button>
+            <button class="arrow-right control" aria-label="Seta avançar"><img src="img/arrow-left.svg" alt=""></button>
+            <div class="gallery-wrapper">
+                <div class="gallery">
+                    <img src="https://source.unsplash.com/random/480x240/?truck" alt="Beach Images" class="item current-item">
+                    <img src="https://source.unsplash.com/random/480x240/?truck" alt="Animal Images" class="item">
+                    <img src="https://source.unsplash.com/random/480x240/?truck" alt="Animal Images" class="item">
+                    <img src="https://source.unsplash.com/random/480x240/?truck" alt="Animal Images" class="item">
+                    <img src="https://source.unsplash.com/random/480x240/?truck" alt="Animal Images" class="item">
+                </div>
             </div>
+        </section>
         <div class="larguraPadrao">
             <section class="valorServ">
                 <h1>Título Serviço</h1>
+                <aside>Por Nome da Empresa</aside>
+                <aside>Publicado em --/--/--</aside>
                 <div>
                     <p>R$ 300,00/Mês</p><aside>Sujeito a alteração conforme localização*</aside>
-                    <aside>Publicado em --/--/--</aside>
                 </div>
             </section>
             <section class="infoPadrao descricao">
@@ -57,7 +72,6 @@
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate sit dolores nam, nisi a quae dignissimos, tempore aspernatur magnam eligendi, nobis atque molestias enim exercitationem sunt possimus rem similique laboriosam.</p>
                 <aside id="descCompleta">Ver descrição completa</aside>
             </section>
-            <hr>
             <section class="infoPadrao caracteristicas">
                 <h2>Características: </h2>
                 <h3>Modelo:</h3>
@@ -66,42 +80,48 @@
                 <p>------ -------</p>
                 <h3>Capacidade:</h3>
                 <p>--</p>
-                <h3>Avaliação:</h3>
-                <span></span>
                 <h3>Região:</h3>
                 <p>SP-Sorocaba</p>
             </section>
-            <section class="infoPadrao contato">
-                <h2>Contato:</h2>
-                <h3>Telefone:</h3>
-                <p>(--)---------</p>
-                <h3>Whatsapp:</h3>
-                <img src="" alt="Logo Whatsapp">
-                <h3>Redes Sociais:</h3>
-                <p>@NomeEmpresa</p>
-                <p></p>
-            </section>
-            <section class="logoEmp">
-            <img src="imagem/Logo-empresa.jpg" alt="">
-            <h2>Nome da Empresa</h2>
+            <section class="infoPadrao avalAnuncio">
+                <h2>Avaliações:</h2>
+                <div class="avaliacao">
+                      <div class="stars">
+                        <p>(20) Ótimo</p><div><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star1.png" alt="Estrela de avaliação" /></div>
+                      </div>
+                      <div class="stars">
+                        <p>(52) Bom</p><div><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star0.png" alt="Estrela de avaliação" /></div>
+                      </div>
+                      <div class="stars">
+                        <p>(0) Regular</p><div><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star0.png" alt="Estrela de avaliação" /><img src="img/star0.png" alt="Estrela de avaliação" /></div>
+                      </div>
+                      <div class="stars">
+                        <p>(1) Ruim</p><div><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star0.png" alt="Estrela de avaliação" /><img src="img/star0.png" alt="Estrela de avaliação" /><img src="img/star0.png" alt="Estrela de avaliação" /></div>
+                      </div>
+                      <div class="stars">
+                        <p>(0) Péssimo</p><div><img src="img/star0.png" alt="Estrela de avaliação" /><img src="img/star0.png" alt="Estrela de avaliação" /><img src="img/star0.png" alt="Estrela de avaliação" /><img src="img/star0.png" alt="Estrela de avaliação" /><img src="img/star0.png" alt="Estrela de avaliação" /></div>
+                      </div>
+                      <div class="acessoAvaliacoes"><a href="#">Ver avaliações ></a> <a href="avaliar.html">Avaliar ></a></div>
+                  </div>
+            <section class="infoPadrao contratar">
+                <a href="#">Solicitar Contratação</a>
             </section>
         </div>
     </main>
     <footer>
-        <img src="imagem/LogoMuvall.png" alt="Logo MUVall">
-        <a href="faleConosco">Fale conosco</a>
+        <img src="img/LogoMuvall.png" alt="Logo MUVall">
+        <a href="faleConosco.html">Fale conosco</a>
         <div id="cadastro-rodape">
             <h2>Cadastro</h2>
             <ul>
-                <li><a href="cadastro" rel="next">Usuário</a></li>
-                <li><a href="cadastro-anunciante" rel="next">Anunciante</a></li>
+                <li><a href="cadastro.html" rel="next">Usuário</a></li>
+                <li><a href="cadastro-anunciante.html" rel="next">Anunciante</a></li>
             </ul>
         </div>
         <div id="redesSociais">
             <h2>Redes sociais</h2>
-            <a href="https://instagram.com"><img src="imagem/instagram.png" alt="Logo Instagram" target="_blank" rel="external"></a>
-            <a href="https://instagram.com"><img src="imagem/linkedin.png" alt="Logo Facebook" target="_blank" rel="external"></a>
+            <a href="https://instagram.com"><img src="img/instagram.png" alt="Logo Instagram" target="_blank" rel="external"></a>
+            <a href="https://instagram.com"><img src="img/linkedin.png" alt="Logo Facebook" target="_blank" rel="external"></a>
         </div>
     </footer>
-    <script src="js/script.js"></script>
     </body>
