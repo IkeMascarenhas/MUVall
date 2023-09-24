@@ -196,4 +196,8 @@ router.get('/form_contratacao', function(req, res){
     res.render('pages/form_contratacao')
 })
 
+router.get('/perfilUsuario', function(req, res){
+    res.render('pages/perfilUsuario')
+})
+
 module.exports = router
