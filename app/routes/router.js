@@ -24,26 +24,30 @@ router.get('/cadastro', function(req, res){
     res.render('pages/cadastro')
 })
 
-router.post('/cadastro',  (req, res) => {
-    const { nome, email, senha } = req.body
+router.get('/cadastro_concluido', function(req, res){
+    res.render('pages/cadastro_concluido'); // Certifique-se de que o nome do arquivo corresponde ao nome do seu arquivo EJS
+});
 
-    if (nome && email && senha){
-    bd.query('select * from cadastro where email = ?',
-    [email],
+router.post('/cadastro',  (req, res) => {
+    const { nome_usu, email_usu, senha_usu, dataNascimento_usu} = req.body
+
+    if (nome_usu && email_usu && senha_usu && dataNascimento_usu){
+    bd.query('select * from cadastro where email_usu = ?',
+    [email_usu],
     (error, results) => {
         if(results.length > 0) {
             res.send('Email já cadastrado')
         } else {
-            const hashedPassword = bcrypt.hashSync(senha)
+            const hashedPassword = bcrypt.hashSync(senha_usu)
 
             bd.query(
-            'insert into cadastro (nome, email, senha) values (?, ?, ?)',
-            [nome, email, hashedPassword],
+            'insert into cadastro (nome_usu, email_usu, senha_usu, dataNascimento_usu ) values (?, ?, ?, ?)',
+            [nome_usu,email_usu, hashedPassword,dataNascimento_usu],
             (error, results) => {
                 if(error){
                     res.send('Erro ao cadastrar o usuário')
                 } else {
-                    res.send('Cadastro realizado com sucesso!')
+                    res.redirect('/cadastro_concluido')
                 }
             }
             )

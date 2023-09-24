@@ -16,7 +16,7 @@ CREATE TABLE anuncio (
   nome_anuncio varchar(50) not null,
   descricao varchar(200),
   preco float not null,
-  veiculo varchar(30) not null
+  veiculo varchar(30) not null,
   placa_veiculo varchar(7) not null,
   capacidade varchar(30) not null,
   regiao varchar(50) not null,
