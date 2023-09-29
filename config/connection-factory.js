@@ -1,17 +1,11 @@
-const mysql = require("mysql2");
+const mysql = require("mysql");
 
 module.exports = function () {
   return mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "pietro09Pisi@", // Your database password
+    password: "", // Your database password
     database: "muvall",
-    port: 3306,
-    authPlugins: {
-      mysql_native_password: () => ({
-        data: Buffer.from(""),
-        next: () => null,
-      }),
-    },
+    port: 3306
   });
 };
