@@ -1,7 +1,7 @@
 var express = require('express')
 var router = express.Router()
 var bcrypt = require('bcryptjs')
-var salr = bcrypt.genSaltSync(12)
+var salt = bcrypt.genSaltSync(12)
 var mysql = require('mysql')
 var { body, validationResult } = require('express-validator')
 const multer = require('multer')
@@ -23,7 +23,6 @@ var usuarioDAL = new usuarioDAL(bd)
 var { verificarUsuAutenticado, limparSessao, gravarUsuAutenticado, verificarUsuAutorizado } = require('../models/autenticador_middleware') 
 
 const path = require('path');
-const { verificarUsuAutenticado } = require('../models/autenticador_middleware')
 
 var storagePasta = multer.diskStorage({
     destination: (req, file, callback)=>{
