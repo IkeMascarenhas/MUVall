@@ -7,7 +7,9 @@
     <title>Cadastro</title>
     <link rel="stylesheet" href="css/cabeçalho-rodape.css">
     <link rel="stylesheet" href="css/login-cadastro.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.js"></script>
+    <script src="js/notify.js"></script>
 </head>
 <body>
     <header>
@@ -35,7 +37,7 @@
     </header>
     <main>
         <h1>Cadastro</h1><hr>
-        <form action="cadastro" method="post"  onsubmit="validarFormulario()">
+        <form action="cadastro" method="post">
             <input type="email" name="email_usu" placeholder="E-Mail:" id="email_usu" required maxlength="100">
             <input type="text" name="nome_usu" placeholder="Nome:" id="nome_usu" required maxlength="100" minlength="3">
             <input type="password" name="senha_usu" placeholder="Senha:" id="senha_usu" required maxlength="30" minlength="8">

@@ -2,13 +2,16 @@ CREATE DATABASE MUVALL
 
 USE MUVALL
 
-CREATE TABLE cadastro (
-  id INT NOT NULL AUTO_INCREMENT,
-  nome VARCHAR(50) NOT NULL,
-  email VARCHAR(50) NOT NULL,
-  senha VARCHAR(1000) NOT NULL,
-  dataNasc DATE not null,
-  PRIMARY KEY (id)
+CREATE TABLE usuario (
+  id_usuario INT NOT NULL AUTO_INCREMENT,
+  nome_usuario VARCHAR(50) NOT NULL,
+  email_usuario VARCHAR(50) NOT NULL,
+  senha_usuario VARCHAR(1000) NOT NULL,
+  dataNasc_usuario DATE not null,
+  img_perfil_pasta VARCHAR(80) default NULL,
+  tipo_usuario INT not null default'1',
+  status_usuario INT default'1',
+  PRIMARY KEY (id_usuario)
 );
 
 CREATE TABLE anuncio (

@@ -6,7 +6,7 @@ module.exports = class UsuarioDAL {
 
     findAll() {
         return new Promise((resolve, reject) => {
-            this.bd.query("SELECT u.id_usuario, u.nome_usuario, u.user_usuario, " +
+            this.bd.query("SELECT u.id_usuario, u.nome_usuario, " +
                 "u.senha_usuario, u.email_usuario, u.dataNasc_usuario,u.tipo_usuario," +
                 " u.status_usuario, t.tipo_usuario, t.descricao_usuario FROM usuario u, tipo_usuario t where u.status_usuario = 1 and " +
                 " u.tipo_usuario = t.id_tipo_usuario", function (error, elements) {
@@ -35,7 +35,7 @@ module.exports = class UsuarioDAL {
 
     findID(id) {
         return new Promise((resolve, reject) => {
-            this.bd.query("SELECT u.id_usuario, u.nome_usuario, u.user_usuario, " +
+            this.bd.query("SELECT u.id_usuario, u.nome_usuario, " +
                 "u.senha_usuario, u.email_usuario, u.fone_usuario, u.tipo_usuario," +
                 " u.status_usuario, t.tipo_usuario, t.descricao_usuario FROM usuario u, tipo_usuario t where u.status_usuario = 1 and " +
                 " u.tipo_usuario = t.id_tipo_usuario and u.id_usuario = ?", [id], function (error, elements) {
@@ -63,10 +63,10 @@ module.exports = class UsuarioDAL {
     update(camposJson) {
         return new Promise((resolve, reject) => {
             this.bd.query(
-                "UPDATE usuario SET nome_usuario = ?, user_usuario = ?, senha_usuario = ?,  " +
+                "UPDATE usuario SET nome_usuario = ?, senha_usuario = ?,  " +
                 " email_usuario = ?, dataNasc_usuario = ?, tipo_usuario = ?, status_usuario = ? " +
                 " WHERE id_usuario = ?",
-                [camposJson.nome_usuario, camposJson.user_usuario, camposJson.senha_usuario,
+                [camposJson.nome_usuario,  camposJson.senha_usuario,
                 camposJson.email_usuario, camposJson.dataNasc_usuario, camposJson.tipo_usuario,
                 camposJson.status_usuario, camposJson.id_usuario
                 ],
