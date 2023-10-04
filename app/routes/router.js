@@ -113,41 +113,33 @@ router.get('/lista-de-servicos', function(req, res){
     res.render('pages/lista-de-servicos')
 })
 
-router.get('/login', function(req, res){
-    res.render('pages/login')
-})
-
-router.post('/login', (req, res) => {
-    const { email, senha } = req.body
-
-    if (email && senha) {
-
-        bd.query(
-            'SELECT * FROM cadastro_anunciante WHERE email = ?',
-            [email],
-            (error, results) => {
-                if (results.length > 0){
-                    const storedPassword = results[0].senha
-                    const hashedPassword = bcrypt.hashSync(senha)
-
-                    if(bcrypt.compareSync(storedPassword, hashedPassword)){
-                        req.session.loggedin = true
-                        req.session.email = email
-                        console.log('Usuário autenticado?', req.session.loggedin)
-                        res.redirect('/perfil')
-                        const nomeEmp = results[0].nomeDaEmpresa
-                    }else {
-                        res.send('Senha incorreta')
-                    }
-                } else {
-                    res.send('Email nao encontrado')
-                }
-            }
-        )
-    } else {
-        res.send('Informe um email e senha')
-    }
-})
+router.get("/login", function (req, res) {
+    res.locals.erroLogin = null
+    res.render("pages/login", { listaErros: null });
+  });
+  
+router.post(
+    "/login",
+    body("nome_usu")
+      .isLength({ min: 4, max: 45 })
+      .withMessage("O nome de usuário/e-mail deve ter de 8 a 45 caracteres"),
+    body("senha_usu")
+      .isStrongPassword()
+      .withMessage("A senha deve ter no mínimo 8 caracteres (mínimo 1 letra maiúscula, 1 caractere especial e 1 número)"),
+  
+    gravarUsuAutenticado(usuarioDAL, bcrypt),
+    function (req, res) {
+      const erros = validationResult(req);
+      if (!erros.isEmpty()) {
+        return res.render("pages/login", { listaErros: erros, dadosNotificacao: null })
+      }
+      if (req.session.autenticado != null) {
+        //mudar para página de perfil quando existir
+        res.redirect("/?login=logado");
+      } else {
+        res.render("pages/login", { listaErros: erros, dadosNotificacao: { titulo: "Erro ao logar!", mensagem: "Usuário e/ou senha inválidos!", tipo: "error" } })
+      }
+});
 
 router.get('/pagamento', function(req, res){
     res.render('pages/pagamento')
