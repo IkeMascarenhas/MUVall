@@ -16,7 +16,14 @@ bd.connect((err) => {
     }
     console.log('Conectado ao banco de dados MySQL')
 })
+
+var usuarioDAL = require("../models/UsuarioDAL");
+var usuarioDAL = new usuarioDAL(bd)
+
+var { verificarUsuAutenticado, limparSessao, gravarUsuAutenticado, verificarUsuAutorizado } = require('../models/autenticador_middleware') 
+
 const path = require('path');
+const { verificarUsuAutenticado } = require('../models/autenticador_middleware')
 
 var storagePasta = multer.diskStorage({
     destination: (req, file, callback)=>{

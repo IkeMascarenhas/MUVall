@@ -22,7 +22,7 @@ function gravarUsuAutenticado(usuarioDAL, bcrypt) {
         erros = validationResult(req)
         if (erros.isEmpty()) {
             var dadosForm = {
-                user_usuario: req.body.nome_usu,
+                nome_usuario: req.body.nome_usu,
                 senha_usuario: req.body.senha_usu,
             };
             var results = await usuarioDAL.findUserEmail(dadosForm);
