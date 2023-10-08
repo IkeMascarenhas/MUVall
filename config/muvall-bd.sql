@@ -8,10 +8,10 @@ CREATE TABLE usuario (
   id_usuario INT NOT NULL AUTO_INCREMENT,
   nome_usuario VARCHAR(50) NOT NULL,
   email_usuario VARCHAR(50) NOT NULL,
-  senha_usuario VARCHAR(100000) NOT NULL,
+  senha_usuario VARCHAR(100) NOT NULL,
   dataNasc_usuario varchar(40) not null,
   status_usuario int DEFAULT '1',
-  PRIMARY KEY (id_usuario),
+  PRIMARY KEY (id_usuario)
 );
 
 
