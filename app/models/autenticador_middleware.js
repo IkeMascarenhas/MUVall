@@ -22,7 +22,7 @@ function gravarUsuAutenticado(usuarioDAL, bcrypt) {
         erros = validationResult(req)
         if (erros.isEmpty()) {
             var dadosForm = {
-                nome_usuario: req.body.nome_usu,
+                email_usuario: req.body.email_usu,
                 senha_usuario: req.body.senha_usu,
             };
             var results = await usuarioDAL.findUserEmail(dadosForm);
@@ -30,7 +30,7 @@ function gravarUsuAutenticado(usuarioDAL, bcrypt) {
             if (total == 1) {
                 if (bcrypt.compareSync(dadosForm.senha_usuario, results[0].senha_usuario)) {
                     var autenticado = {
-                        autenticado: results[0].nome_usuario,
+                        autenticado: results[0].email_usuario,
                         id: results[0].id_usuario,
                     };
                 }

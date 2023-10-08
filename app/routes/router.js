@@ -144,7 +144,7 @@ router.post(
         //mudar para página de perfil quando existir
         res.redirect("/?login=logado");
       } else {
-        res.render("pages/login", { listaErros: erros, dadosNotificacao: { titulo: "Erro ao logar!", mensagem: "Usuário e/ou senha inválidos!", tipo: "error" } })
+        res.render("pages/login", { listaErros: erros, dadosNotificacao: { titulo: "Erro ao logar!", mensagem: "E-mail e/ou senha inválidos!", tipo: "error" } })
       }
 });
 

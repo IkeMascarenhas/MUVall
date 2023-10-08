@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/login-cadastro.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.js"></script>
-    <script src="js/notify.js"></script>
+    <script src="../../js/notify.js"></script>
 </head>
 <body>
 <header>
@@ -35,11 +35,54 @@
         </div>
     </nav>
 </header>
+
+    <% 
+        let avisoErro = {"email_usu":"", "senha_usu":""}
+        let msgErro = {"email_usu":"", "senha_usu":""}
+            if(listaErros){
+                listaErros.errors.forEach(function(itemErro){
+                    if(itemErro.path == "email_usu"){
+                        avisoErro.email_usu = "erro";
+                        msgErro.email_usu = itemErro.msg
+                    }%>
+                    <script>
+                        notify("Erro no preenchimento","Verifique o campo e-mail<br><%= itemErro.msg%>", "error", "center")                        
+                    </script>
+                    <%
+                    if(itemErro.path == "senha_usu"){
+                        avisoErro.senha_usu = "erro";
+                        msgErro.senha_usu = itemErro.msg
+                    }
+                    %>
+                    <script>
+                        notify("Erro no preenchimento","Verifique o campo senha<br><%= itemErro.msg%>", "error", "center")                        
+                    </script>
+                    <%  
+                })
+            }
+            if (dadosNotificacao) { %>
+                <script>
+                        notify("<%= dadosNotificacao.titulo%>","<%= dadosNotificacao.mensagem%>", "<%= dadosNotificacao.tipo%>", "center")
+                        if("<%= dadosNotificacao.tipo %>" == "success"){
+                            setTimeout(function(){window.location="/"}, 3000)
+                        }                        
+                </script>
+            <% }
+        %>
+
     <main>
         <h1>Login</h1><hr>
         <form action="login" method="post">
-            <input type="email" name="email" placeholder="E-Mail:" id="email" required maxlength="100">
-            <input type="password" name="senha" placeholder="Senha:" id="senha" required maxlength="30" minlength="8">
+            <input type="email" name="email_usu" placeholder="E-Mail:" id="email_usu" 
+            required maxlength="100" class="<%= avisoErro.email_usu %>"><br>
+            <span>
+                <%= msgErro.email %>
+            </span><br>
+            <input type="password" name="senha_usu" placeholder="Senha:" id="senha_usu" 
+            required maxlength="30" minlength="8" class="<%=  avisoErro.senha_usu %>"><br>
+            <span>
+                <%= msgErro.senha_usu %>
+            </span><br>
             <p>Não tem uma conta? <a href="cadastro">Cadastre-se</a></p>
             <button type="submit" id="login-btn">Entrar</button>
         </form>

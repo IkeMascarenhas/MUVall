@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/login-cadastro.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.css" />​
     <script src="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.js"></script>
-    <script src="/app/public/js/notify.js"></script>
+    <script src="../../js/notify.js"></script>
 </head>
 <body>
     <header>
@@ -37,8 +37,8 @@
     </header>
 
     <% 
-    let msgErro = {"nome_usu":"", "senha_usu":"",nomeusu_usu:"", senha_usu:""};
-    let avisoErro = {"nome_usu":"", "senha_usu":"",nomeusu_usu:"", senha_usu:""};
+    let msgErro = {"nome_usu":"", "senha_usu":"", dataNascimento_usu:"", senha_usu:""};
+    let avisoErro = {"nome_usu":"", "senha_usu":"", dataNascimento_usu:"", senha_usu:""};
     if(listaErros){
         listaErros.errors.forEach(function(itemErro){
             if(itemErro.path == "nome_usu"){
@@ -58,15 +58,6 @@
                     notify("Erro no preenchimento","Verifique o campo senha<br><%= itemErro.msg%>", "error", "center")                        
                 </script>
                 <%                
-            }
-            if(itemErro.path == "nomeusu_usu"){
-                avisoErro.nomeusu_usu = "erro";
-                msgErro.nomeusu_usu = itemErro.msg;
-                %>
-                <script>
-                    notify("Erro no preenchimento","Verifique o campo nome de usuário<br><%= itemErro.msg%>", "error", "center")                        
-                </script>
-                <%
             }
             if(itemErro.path == "email_usu"){
                 avisoErro.email_usu = "erro";
@@ -91,10 +82,10 @@
     <main>
         <h1>Cadastro</h1><hr>
         <form action="cadastro" method="post">
-            <input type="email" name="email_usu" placeholder="E-Mail:" id="email_usu" required maxlength="100">
-            <input type="text" name="nome_usu" placeholder="Nome:" id="nome_usu" required maxlength="100" minlength="3">
-            <input type="password" name="senha_usu" placeholder="Senha:" id="senha_usu" required maxlength="30" minlength="8">
-            <input type="date" name="dataNascimento_usu" placeholder="Data de Nascimento:" id="dataNascimento_usu" required >
+            <input type="email" name="email_usu" placeholder="E-Mail:" id="email_usu" required maxlength="100" value="<%= valores.email_usu %>" class="<%= avisoErro.email_usu %>">
+            <input type="text" name="nome_usu" placeholder="Nome:" id="nome_usu" required maxlength="100" minlength="3" value="<%= valores.nome_usu %>" class="<%= avisoErro.nome_usu %>">
+            <input type="password" name="senha_usu" placeholder="Senha:" id="senha_usu" required maxlength="30" minlength="8" value="<%= valores.senha_usu %>" class="<%= avisoErro.senha_usu %>">
+            <input type="date" name="dataNascimento_usu" placeholder="Data de Nascimento:" id="dataNascimento_usu" required value="<%= valores.dataNascimento_usu %>" class="<%= avisoErro.dataNascimento_usu %>">
             <button type="submit" id="cadastrar-bttn">Cadastrar</button>
         </form>
     </main>
