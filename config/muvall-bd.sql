@@ -37,4 +37,19 @@ VALUES ('Empresa XPTO', 'empresa@exemplo.com', 'senha123', '12345678901234');
 
 SELECT * FROM usuario_anunciante;
 
+CREATE TABLE anuncio (
+  id INT not null auto_increment,
+  nome_anuncio varchar(50) not null,
+  descricao varchar(200),
+  preco float not null,
+  veiculo varchar(30) not null,
+  placa_veiculo varchar(7) not null,
+  capacidade varchar(30) not null,
+  regiao varchar(50) not null,
+  telefone_contato varchar(13) not null,
+  email_contato varchar(100) not null,
+  PRIMARY KEY (id)
+);
+
+
 DROP database muvall;
