@@ -19,3 +19,4 @@ NaoPropagar.map((el)=>{
         evt.stopPropagation()
     })
 })
+

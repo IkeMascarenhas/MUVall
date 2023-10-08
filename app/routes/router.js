@@ -6,9 +6,9 @@ var mysql = require('mysql')
 var { body, validationResult } = require('express-validator')
 const multer = require('multer')
 
-var fabricDeConexao = require('../../config/connection-factory')
+var fabricaDeConexao = require('../../config/connection-factory')
 const session = require('express-session')
-var bd = fabricDeConexao()
+var bd = fabricaDeConexao()
 
 bd.connect((err) => {
     if(err){
@@ -17,8 +17,8 @@ bd.connect((err) => {
     console.log('Conectado ao banco de dados MySQL')
 })
 
-var usuarioDAL = require("../models/UsuarioDAL");
-var usuarioDAL = new usuarioDAL(bd)
+var UsuarioDAL = require("../models/UsuarioDAL");
+var usuarioDAL = new UsuarioDAL(bd)
 
 var { verificarUsuAutenticado, limparSessao, gravarUsuAutenticado, verificarUsuAutorizado } = require('../models/autenticador_middleware') 
 
@@ -40,7 +40,7 @@ router.get('/', function(req, res){
 })
 
 router.get("/cadastro", function (req, res) {
-    res.render("pages/cadastro", { listaErros: null, dadosNotificacao: null, valores: { nome_usu: "", nomeusu_usu: "", email_usu: "", senha_usu: "" } });
+    res.render("pages/cadastro", { listaErros: null, dadosNotificacao: null, valores: { email_usu: "", nome_usu: "", senha_usu: "", dataNascimento_usu: "" } });
   });
   
   router.post("/cadastro",
@@ -126,7 +126,7 @@ router.get("/login", function (req, res) {
   
 router.post(
     "/login",
-    body("nome_usu")
+    body("email_usu")
       .isLength({ min: 4, max: 45 })
       .withMessage("O nome de usuário/e-mail deve ter de 8 a 45 caracteres"),
     body("senha_usu")

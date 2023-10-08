@@ -64,7 +64,7 @@ module.exports = class UsuarioDAL {
         return new Promise((resolve, reject) => {
             this.bd.query(
                 "UPDATE usuario SET nome_usuario = ?, senha_usuario = ?,  " +
-                " email_usuario = ?, dataNasc_usuario = ?, tipo_usuario = ?, status_usuario = ? " +
+                " email_usuario = ?, dataNascimento_usu = ?, status_usuario = ? " +
                 " WHERE id_usuario = ?",
                 [camposJson.nome_usuario,  camposJson.senha_usuario,
                 camposJson.email_usuario, camposJson.dataNasc_usuario, camposJson.tipo_usuario,
