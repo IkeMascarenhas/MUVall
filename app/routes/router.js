@@ -35,8 +35,9 @@ var storagePasta = multer.diskStorage({
 
 var upload = multer({storage: storagePasta})
 
-router.get('/', function(req, res){
-    res.render('pages/index')
+router.get("/", verificarUsuAutenticado, function (req, res) {
+  req.session.autenticado.login = req.query.login;
+  res.render("pages/index", req.session.autenticado);
 })
 
 router.get("/cadastro", function (req, res) {

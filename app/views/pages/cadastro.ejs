@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/login-cadastro.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.css" />​
     <script src="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.js"></script>
-    <script src="js/notify.js"></script>
+    <script src="/app/public/js/notify.js"></script>
 </head>
 <body>
     <header>
@@ -35,6 +35,59 @@
             </div>
         </nav>
     </header>
+
+    <% 
+    let msgErro = {"nome_usu":"", "senha_usu":"",nomeusu_usu:"", senha_usu:""};
+    let avisoErro = {"nome_usu":"", "senha_usu":"",nomeusu_usu:"", senha_usu:""};
+    if(listaErros){
+        listaErros.errors.forEach(function(itemErro){
+            if(itemErro.path == "nome_usu"){
+                avisoErro.nome_usu = "erro";
+                msgErro.nome_usu += " "+itemErro.msg;
+                %>
+                <script>
+                    notify("Erro no preenchimento","Verifique o campo nome<br><%= itemErro.msg%>", "error", "center")                        
+                </script>
+                <%
+            }
+            if(itemErro.path == "senha_usu"){
+                avisoErro.senha_usu = "erro";
+                msgErro.senha_usu = itemErro.msg;
+                %>
+                <script>
+                    notify("Erro no preenchimento","Verifique o campo senha<br><%= itemErro.msg%>", "error", "center")                        
+                </script>
+                <%                
+            }
+            if(itemErro.path == "nomeusu_usu"){
+                avisoErro.nomeusu_usu = "erro";
+                msgErro.nomeusu_usu = itemErro.msg;
+                %>
+                <script>
+                    notify("Erro no preenchimento","Verifique o campo nome de usuário<br><%= itemErro.msg%>", "error", "center")                        
+                </script>
+                <%
+            }
+            if(itemErro.path == "email_usu"){
+                avisoErro.email_usu = "erro";
+                msgErro.email_usu = itemErro.msg;
+                %>
+                <script>
+                    notify("Erro no preenchimento","Verifique o campo e-mail<br><%= itemErro.msg%>", "error", "center")                        
+                </script>
+                <%
+            }
+        })
+    }
+    if (dadosNotificacao) { %>
+        <script>
+                notify("<%= dadosNotificacao.titulo%>","<%= dadosNotificacao.mensagem%>", "<%= dadosNotificacao.tipo%>", "center")
+                if("<%= dadosNotificacao.tipo %>" == "success"){
+                    setTimeout(function(){window.location="/"}, 3000)
+                }                        
+        </script>
+    <% } %>
+
     <main>
         <h1>Cadastro</h1><hr>
         <form action="cadastro" method="post">
@@ -62,7 +115,7 @@
         </div>
     </footer>
     <script src="js/script.js"></script>
-    <script src="js/cadastro.js"></script>
+    <!-- <script src="js/cadastro.js"></script> -->
 </body>
 
  <!-- <script>
