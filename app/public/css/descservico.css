@@ -1,94 +1,173 @@
-.imgFull{
+@media (max-width: 720px) {
+  /* .imgFull {
     margin-top: 3vh !important;
     margin-bottom: 2vh !important;
     width: 100vw;
-
-    height: 30vh;
+    height: 35vh;
     display: flex;
     align-items: center;
     background-color: rgba(204, 204, 204, 0.61);
     max-width: 100vw !important;
-}
+  }
 
-
-.imgFull img{
+  .imgFull img {
     width: 100%;
     height: 90%;
-}
+  } */
 
-
-.valorServ{
+  .valorServ {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-}
+  }
 
-.valorServ h1{
-    font: bold 6.5vw Roboto,sans-serif;
+  .valorServ h1 {
+    font: bold 6.5vw Roboto, sans-serif;
     color: #ea5a14;
-}
-.valorServ div{
+  }
+  .valorServ div {
     display: flex;
     flex-direction: column;
     margin-top: 0.5vh;
-}
+  }
 
-.valorServ p{
+  .valorServ p {
     font: bold 4vw Roboto, sans-serif;
     margin-top: 1vh;
-}
+  }
 
-.valorServ aside{
-font: italic 2.5vw Roboto, sans-serif;
-color: #797979;
-margin-top: 1vh;
-}
+  .valorServ aside {
+    font: italic bold 3vw Roboto, sans-serif;
+    color: #1a1a1a;
+    margin-top: 1vh;
+  }
 
-.valorServ div aside:nth-child(2){
+  .valorServ div aside:nth-child(2) {
     margin-top: 0 !important;
-}
+    color: #797979;
+  }
 
-.infoPadrao{
+  .infoPadrao {
     margin-top: 5vh;
     display: flex;
     flex-direction: column;
     gap: 2vh;
-}
+  }
 
-.infoPadrao h2{
-    font: bold 5.5vw Roboto,sans-serif;
+  .infoPadrao h2 {
+    font: bold 5.5vw Roboto, sans-serif;
     color: #1a1a1a;
-}
+  }
 
-.infoPadrao p{
-    font: 500 4vw Roboto,sans-serif;
-}
+  .infoPadrao p {
+    font: 500 4vw Roboto, sans-serif;
+  }
 
-.infoPadrao aside{
+  .infoPadrao aside {
     color: #ea5a14;
-    font: bold 3vw Roboto,sans-serif;
-}
+    font: bold 3vw Roboto, sans-serif;
+  }
 
-.infoPadrao h3{
+  .infoPadrao h3 {
     font: bold 4vw Roboto, sans-serif;
     color: #ea5a14;
-}
+  }
 
-.logoEmp{
+  .avalAnuncio a {
+    color: #ea5a14;
+    font: bold 5vw Roboto, sans-serif;
+  }
+
+  .avaliacao {
     display: flex;
     flex-direction: column;
-    margin-top: 5vh;
-    align-items: center;
     gap: 3vh;
+    margin-top: 2vh;
+  }
+
+  #avaliacoes h2{
+    font: bold 5.5vw Roboto, sans-serif;
+    color: #1a1a1a;
     margin-bottom: 5vh;
-}
+  }
 
-.logoEmp img{
-    width: 50%;
-    border-radius: 50%;
-    border: 3px solid #ea5a14;
-}
+  .avaliacao a{
+    color: #ea5a14;
+    font: bold 5vw Roboto, sans-serif;
+  }
 
-.logoEmp h2{
-    font: bold 6vw Roboto, sans-serif;
+  .avaliacao div{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+  }
+
+  .avaliacao .stars{
+    display: flex;
+    gap: 1vw ;
+    width: 70%;
+  }
+
+  .stars i{
+    color: #ff9c1a;
+    font-size: 5vw;
+  }
+  .avaliacao div p{
+    width: 40%;
+    font-size: 4.5vw;
+  }
+
+  .stars .no-star{
+    color: #ccc;
+  }
+
+  .contratar{
+    margin-bottom: 10vh;
+  }
+
+  .contratar a{
+    background-color: #ea5a14;
+    padding: 4vw;
+    color: white;
+    text-align: center;
+    width: 60vw;
+    margin: auto;
+    border-radius: 10px;
+  }
+
+  .acessoAvaliacoes{
+    display: flex;
+    width: 100%;
+    gap: 7vw;
+  }
+
+  .txt-ava{
+    margin-top: 5vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+  }
+
+  .txt-ava>div{
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.288);
+    border-radius: 20px;
+    padding: 5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+  }
+
+  .txt-ava h3{
+    font:bold 4.5vw "Roboto",sans-serif;
+  }
+
+  .txt-ava p{
+    font: normal 3.5vw "Roboto",sans-serif;
+  }
+
+  .txt-ava>div>div>i{
+    font-size: 3.5vw;
+  }
 }

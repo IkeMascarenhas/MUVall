@@ -7,7 +7,6 @@ var { body, validationResult } = require('express-validator')
 const multer = require('multer')
 
 var fabricaDeConexao = require('../../config/connection-factory')
-const session = require('express-session')
 var bd = fabricaDeConexao()
 
 bd.connect((err) => {
@@ -18,7 +17,7 @@ bd.connect((err) => {
 })
 
 var UsuarioDAL = require("../models/UsuarioDAL");
-var usuarioDAL = new UsuarioDAL(bd)
+var usuarioDAL = new UsuarioDAL(bd);
 
 var { verificarUsuAutenticado, limparSessao, gravarUsuAutenticado, verificarUsuAutorizado } = require('../models/autenticador_middleware') 
 
@@ -57,7 +56,7 @@ router.get("/cadastro", function (req, res) {
         senha_usuario: bcrypt.hashSync(req.body.senha_usu, salt),
         nome_usuario: req.body.nome_usu,
         email_usuario: req.body.email_usu,
-        dataNascimento_usu: req.body.dataNascimento_usu
+        dataNasc_usuario: req.body.dataNascimento_usu
       };
       const erros = validationResult(req);
       if (!erros.isEmpty()) {
@@ -72,6 +71,7 @@ router.get("/cadastro", function (req, res) {
           }, valores: req.body
         })
       } catch (e) {
+        console.log(e)
         res.render("pages/cadastro", {
           listaErros: erros, dadosNotificacao: {
             titulo: "Erro ao cadastrar!", mensagem: "Verifique os valores digitados!", tipo: "error"
@@ -122,7 +122,7 @@ router.get('/lista-de-servicos', function(req, res){
 
 router.get("/login", function (req, res) {
     res.locals.erroLogin = null
-    res.render("pages/login", { listaErros: null });
+    res.render("pages/login", { listaErros: null, dadosNotificacao: null });
   });
   
 router.post(
@@ -152,11 +152,11 @@ router.get('/pagamento', function(req, res){
     res.render('pages/pagamento')
 })
 
-router.get('/perfil', function(req, res){
-    res.render('pages/perfil');
+router.get('/perfilUsuario(admin)', function(req, res){
+    res.render('pages/perfilUsuario(admin)');
 })
 
-router.post('/perfil', upload.single('logo-empresa'),
+router.post('/perfilUsuario(admin)', upload.single('logo-empresa'),
 async function (req, res){
     try{
         if(!req.file){
@@ -171,7 +171,7 @@ async function (req, res){
         // redireciona o usuário caso ele não esteja logado
         return res.redirect('/login')
     }
-    res.render('pages/perfil');
+    res.render('pages/perfilUsuario(admin)');
 })
 
 router.get('/anunciar', function(req, res){

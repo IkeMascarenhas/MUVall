@@ -7,20 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ver mais</title>
     <link rel="stylesheet" href="css/cabeçalho-rodape.css">
-    <link rel="stylesheet" href="css/descservico.css">
     <link rel="stylesheet" href="css/slider.css">
-    <script src="script/slider.js" defer></script>
-    <script src="script/script.js" defer></script>
+    <link rel="stylesheet" href="css/descservico.css">
+    <script src="js/slider.js" defer></script>
+    <script src="js/script.js" defer></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.js"></script>
-      <script src="js/notify.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.js"></script>
+      <script src="../../js/notify.js"></script>
 </head>
 
 <body>
     <header>
-        <a id="topimg" href="index.html" aria-label="logo"><img src="img/LogoMuvall.png"alt="Logo da empresa MUVALL" rel="prev"></a>
+        <a id="topimg" href="/" aria-label="logo"><img src="imagem/LogoMuvall.png"alt="Logo da empresa MUVALL" rel="prev"></a>
 
         <nav>
             <div id="menu-container">
@@ -30,13 +31,13 @@
                 <div></div>
 
 
+                <img src="imagem/delete.png" alt="Fechar" id="close">
                 <ul id="menu-items" class="NaoPropagar">
-                    <img src="img/delete.png" alt="Fechar" id="close">
-                    <li class="NaoPropagar"><a href="perfil.html" aria-label="Perfil" rel="next">Minha conta</a></li>
-                    <li class="NaoPropagar"><a href="anunciar.html">Anuncie</a></li>
-                    <li class="NaoPropagar"><a href="faleConosco.html" aria-label="Fale conosco" rel="next">Fale Conosco</a></li>
-                    <li class="NaoPropagar"><a href="login.html">Entre</a></li>
-                    <li class="NaoPropagar"><a href="cadastro.html">Cadastre-se</a></li>
+                    <li class="NaoPropagar"><a href="perfilUsuario" aria-label="Perfil" rel="next">Minha conta</a></li>
+                    <li class="NaoPropagar"><a href="anunciar">Anuncie</a></li>
+                    <li class="NaoPropagar"><a href="faleConosco" aria-label="Fale conosco" rel="next">Fale Conosco</a></li>
+                    <li class="NaoPropagar"><a href="login">Entre</a></li>
+                    <li class="NaoPropagar"><a href="cadastro">Cadastre-se</a></li>
                 </ul>
             </div>
         </nav>
@@ -49,8 +50,8 @@
     </div>
     <main>
         <section class="container imgFull">
-            <button class="arrow-left control" aria-label="Previous Image"><img src="img/arrow-left.svg" alt="Seta Voltar"></button>
-            <button class="arrow-right control" aria-label="Seta avançar"><img src="img/arrow-left.svg" alt=""></button>
+            <button class="arrow-left control" aria-label="Previous Image"><img src="imagem/arrow-left.svg" alt="Seta Voltar"></button>
+            <button class="arrow-right control" aria-label="Seta avançar"><img src="imagem/arrow-left.svg" alt=""></button>
             <div class="gallery-wrapper">
                 <div class="gallery">
                     <img src="https://source.unsplash.com/random/480x240/?truck" alt="Beach Images" class="item current-item">
@@ -89,42 +90,109 @@
             <section class="infoPadrao avalAnuncio">
                 <h2>Avaliações:</h2>
                 <div class="avaliacao">
-                      <div class="stars">
-                        <p>(20) Ótimo</p><div><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star1.png" alt="Estrela de avaliação" /></div>
+                      <div>
+                        <p>(20) Ótimo</p><div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
                       </div>
-                      <div class="stars">
-                        <p>(52) Bom</p><div><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star0.png" alt="Estrela de avaliação" /></div>
+                      <div>
+                        <p>(52) Bom</p><div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star no-star"></i>
+                        </div>
                       </div>
-                      <div class="stars">
-                        <p>(0) Regular</p><div><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star0.png" alt="Estrela de avaliação" /><img src="img/star0.png" alt="Estrela de avaliação" /></div>
+                      <div>
+                        <p>(0) Regular</p><div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star no-star"></i>
+                            <i class="fa-solid fa-star no-star"></i>
+                        </div>
                       </div>
-                      <div class="stars">
-                        <p>(1) Ruim</p><div><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star1.png" alt="Estrela de avaliação" /><img src="img/star0.png" alt="Estrela de avaliação" /><img src="img/star0.png" alt="Estrela de avaliação" /><img src="img/star0.png" alt="Estrela de avaliação" /></div>
+                      <div>
+                        <p>(1) Ruim</p><div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star no-star"></i>
+                            <i class="fa-solid fa-star no-star"></i>
+                            <i class="fa-solid fa-star no-star"></i>
+                        </div>
                       </div>
-                      <div class="stars">
-                        <p>(0) Péssimo</p><div><img src="img/star0.png" alt="Estrela de avaliação" /><img src="img/star0.png" alt="Estrela de avaliação" /><img src="img/star0.png" alt="Estrela de avaliação" /><img src="img/star0.png" alt="Estrela de avaliação" /><img src="img/star0.png" alt="Estrela de avaliação" /></div>
+                      <div>
+                        <p>(0) Péssimo</p><div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star no-star"></i>
+                            <i class="fa-solid fa-star no-star"></i>
+                            <i class="fa-solid fa-star no-star"></i>
+                            <i class="fa-solid fa-star no-star"></i>
+                        </div>
                       </div>
-                      <div class="acessoAvaliacoes"><a href="#">Ver avaliações ></a> <a href="avaliar.html">Avaliar ></a></div>
+                      <div class="acessoAvaliacoes"> <a href="avaliar">Avaliar ></a></div>
+                  </div>
+
+                  <div class="txt-ava">
+                    <div>
+                        <h3>usuário</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto ipsa laboriosam, praesentium a excepturi, voluptatum porro sequi deleniti</p>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star no-star"></i>
+                            <i class="fa-solid fa-star no-star"></i>
+                            <i class="fa-solid fa-star no-star"></i>
+                            <i class="fa-solid fa-star no-star"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>usuário</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto ipsa laboriosam, praesentium a excepturi, voluptatum porro sequi deleniti</p>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star no-star"></i>
+                            <i class="fa-solid fa-star no-star"></i>
+                            <i class="fa-solid fa-star no-star"></i>
+                            <i class="fa-solid fa-star no-star"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>usuário</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto ipsa laboriosam, praesentium a excepturi, voluptatum porro sequi deleniti</p>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star no-star"></i>
+                            <i class="fa-solid fa-star no-star"></i>
+                            <i class="fa-solid fa-star no-star"></i>
+                            <i class="fa-solid fa-star no-star"></i>
+                        </div>
+                    </div>
+                    <a href="#">Ver mais avaliações ></a>
                   </div>
             <section class="infoPadrao contratar">
-                <a href="#">Solicitar Contratação</a>
+                <a href="form_contratacao">Solicitar Contratação</a>
             </section>
         </div>
     </main>
     <footer>
-        <img src="img/LogoMuvall.png" alt="Logo MUVall">
-        <a href="faleConosco.html">Fale conosco</a>
+        <img src="imagem/LogoMuvall.png" alt="Logo MUVall">
+        <a href="faleConosco">Fale conosco</a>
         <div id="cadastro-rodape">
             <h2>Cadastro</h2>
             <ul>
-                <li><a href="cadastro.html" rel="next">Usuário</a></li>
-                <li><a href="cadastro-anunciante.html" rel="next">Anunciante</a></li>
+                <li><a href="cadastro" rel="next">Usuário</a></li>
+                <li><a href="cadastro-anunciante" rel="next">Anunciante</a></li>
             </ul>
         </div>
         <div id="redesSociais">
             <h2>Redes sociais</h2>
-            <a href="https://instagram.com"><img src="img/instagram.png" alt="Logo Instagram" target="_blank" rel="external"></a>
-            <a href="https://instagram.com"><img src="img/linkedin.png" alt="Logo Facebook" target="_blank" rel="external"></a>
+            <a href="https://instagram.com"><img src="imagem/instagram.png" alt="Logo Instagram" target="_blank" rel="external"></a>
+            <a href="https://instagram.com"><img src="imagem/linkedin.png" alt="Logo Facebook" target="_blank" rel="external"></a>
         </div>
     </footer>
     </body>
