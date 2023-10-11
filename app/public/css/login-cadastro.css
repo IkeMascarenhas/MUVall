@@ -144,4 +144,23 @@
         width: 40%;
     }
 
+    aside{
+        padding-top: 1.5vh;
+        padding-left: 2vw;
+        width: 90vw;
+        margin: auto;
+        font: 500 2.5vw "Roboto",sans-serif;
+        color: red;
+    }
+
+    aside ul{
+        display: flex;
+        flex-direction: column;
+        gap: 1vh;
+    }
+
+    .ok{
+        color: green;
+    }
+
 }

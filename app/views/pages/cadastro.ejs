@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.css" />​
     <script src="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.js"></script>
     <script src="../../js/notify.js"></script>
+    <script src="js/script.js" defer></script>    
+    <script src="js/image-preview.js" defer></script>
+    <script src="js/validacao.js" defer></script>
 </head>
 <body>
     <header>
         <a id="topimg" href="/" aria-label="logo"><img src="imagem/LogoMuvall.png" alt="Logo da empresa MUVALL"
                 rel="prev"></a>
-    
         <nav>
             <div id="menu-container">
     
@@ -85,6 +87,15 @@
             <input type="email" name="email_usu" placeholder="E-Mail:" id="email_usu" required maxlength="100" value="<%= valores.email_usu %>" class="<%= avisoErro.email_usu %>">
             <input type="text" name="nome_usu" placeholder="Nome:" id="nome_usu" required maxlength="100" minlength="3" value="<%= valores.nome_usu %>" class="<%= avisoErro.nome_usu %>">
             <input type="password" name="senha_usu" placeholder="Senha:" id="senha_usu" required maxlength="30" minlength="8" value="<%= valores.senha_usu %>" class="<%= avisoErro.senha_usu %>">
+            <aside>
+                <ul>
+                    <li> Mais de 8 caracteres</li>
+                    <li>Letras maiúsculas</li>
+                    <li>Letras minúscuilas</li>
+                <li>Números</li>
+                <li>Símbolos</li>
+                </ul>
+            </aside>
             <input type="date" name="dataNascimento_usu" placeholder="Data de Nascimento:" id="dataNascimento_usu" required value="<%= valores.dataNascimento_usu %>" class="<%= avisoErro.dataNascimento_usu %>">
             <button type="submit" id="cadastrar-bttn">Cadastrar</button>
         </form>

@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.js"></script>
     <script src="js/notify.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="js/script.js" defer></script>    
+    <script src="js/image-preview.js" defer></script>
+    <script src="js/validacao.js" defer></script>
 </head>
 <body>
 <header>
@@ -36,21 +41,30 @@
         </div>
     </nav>
 </header>
-    <main>
-        <h1>Cadastro</h1><hr>
-        <form action="cadastro-anunciante" method="post" enctype="multipart/form-data">
-           <input type="email" name="email" placeholder="Email:" id="email_unun" required>
-           <input type="password" name="senha" placeholder="Senha"id="senha_unun" required>
-           <input type="number" name="cnpj" placeholder="CNPJ" id="cnpj_unun" required>
-           <input type="text" name="nomeEmpresa" placeholder="Nome da Empresa:" id="nomeEmpresa" required>
-           <div id="boxLogo">
-               <label for="Logo" class="addLogo"><img src="imagem/botao-adicionar.png" alt="Botão para adicionar Logo">Logo</label>
-               <input type="file" name="logo-empresa" id="logo-empresa" max="1" placeholder="Logo" required>
-           </div>
+<main>
+    <h1>Cadastro</h1><hr>
+    <form action="cadastro" method="post">
+       <input type="email" aria-label="E-mail" placeholder="Email:" required>
+       <input type="password" aria-label="Senha" placeholder="Senha:" minlength="8" required id="password">
+        <aside>
+            <ul>
+                <li> Mais de 8 caracteres</li>
+                <li>Letras maiúsculas</li>
+                <li>Letras minúscuilas</li>
+            <li>Números</li>
+            <li>Símbolos</li>
+            </ul>
+        </aside>
+       <input type="text" aria-label="CNPJ" placeholder="CNPJ:" required id="CNPJ">
+       <input type="text" aria-label="Nome da Empresa" placeholder="Nome da Empresa:" required>
+       <div id="boxLogo">
+           <label for="Logo" class="addLogo"><img src="imagem/botao-adicionar.png" alt="Botão para adicionar Logo">Logo</label>
+           <input type="file" aria-label="Logo" required name="Logo" id="Logo" max="1" placeholder="Logo">
+       </div>
 
-           <button type="submit">Continuar</button>
-        </form>
-    </main>
+       <button type="button" id="cadastrar-bttn">Continuar</button>
+    </form>
+</main>
     <footer>
         <img src="imagem/LogoMuvall.png" alt="Logo MUVall">
         <a href="faleConosco">Fale conosco</a>
@@ -67,7 +81,12 @@
             <a href="https://instagram.com"><img src="imagem/linkedin.png" alt="Logo Facebook" target="_blank" rel="external"></a>
         </div>
     </footer>
-    <script src="js/script.js"></script>
-    <script src="js/image-preview.js"></script>
+    <script>
+        $("#CNPJ").mask("99.999.999/9999-99");
+        $("#Telefone").mask("(99) 99999-99999")
+        $("#CEP").mask("99999-999")
+        $("#CPF").mask("999.999.999-99")
+        $("#data").mask("99/99/9999")
+    </script>
 </body>
 </html>
