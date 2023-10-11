@@ -32,6 +32,7 @@ function gravarUsuAutenticado(usuarioDAL, bcrypt) {
                     var autenticado = {
                         autenticado: results[0].email_usuario,
                         id: results[0].id_usuario,
+                        nome_usuario:results[0].nome_usuario
                     };
                 }
             } else {

@@ -152,26 +152,12 @@ router.get('/pagamento', function(req, res){
     res.render('pages/pagamento')
 })
 
-router.get('/perfilUsuario(admin)', function(req, res){
-    res.render('pages/perfilUsuario(admin)');
+router.get('/perfilUsuario', function(req, res){
+    res.render('pages/perfilUsuario', ); 
 })
 
-router.post('/perfilUsuario(admin)', upload.single('logo-empresa'),
-async function (req, res){
-    try{
-        if(!req.file){
-            console.log("Falha no carregamento");
-        }else{
-            caminhoArquivo = "imagem/perfil/" + req.file.filename;
-            dadosForm.img_peril_pasta = caminhoArquivo
-        }
-    }catch(e){
-
-    }if(!req.session.loggedin){
-        // redireciona o usuário caso ele não esteja logado
-        return res.redirect('/login')
-    }
-    res.render('pages/perfilUsuario(admin)');
+router.post('/perfilUsuario', function(req, res){
+  res.render('pages/perfilUsuario');
 })
 
 router.get('/anunciar', function(req, res){
@@ -191,16 +177,69 @@ router.get('/avaliar', function(req, res){
 })
 
 router.get('/editarPerfil', function(req, res){
-    res.render('pages/editarPerfil')
+    res.render('pages/editarPerfil', { listaErros: null, dadosNotificacao: null, valores: { email_usu: "", nome_usu: "", senha_usu: "", dataNascimento_usu: "", img_perfil_pasta: "" } })
 })
 
-router.get('/form_contratacao', function(req, res){
-    res.render('pages/form_contratacao')
-})
+router.post("/editarPerfil", upload.single('imagem-perfil_usu'),
+  body("nome_usu")
+    .isLength({ min: 3, max: 50 }).withMessage("Mínimo de 3 letras e máximo de 50!"),
+  body("nomeusu_usu")
+    .isLength({ min: 8, max: 30 }).withMessage("Nome de usuário deve ter de 8 a 30 caracteres!"),
+  body("email_usu")
+    .isEmail().withMessage("Digite um e-mail válido!"),
+  body("fone_usu")
+    .isLength({ min: 12, max: 13 }).withMessage("Digite um telefone válido!"),
+  verificarUsuAutorizado([1, 2, 3], "pages/restrito"),
+  async function (req, res) {
+    const erros = validationResult(req);
+    console.log(erros)
+    if (!erros.isEmpty()) {
+      return res.render("pages/perfil", { listaErros: erros, dadosNotificacao: null, valores: req.body })
+    }
+    try {
+      var dadosForm = {
+        nome_usuario: req.body.nome_usu,
+        email_usuario: req.body.email_usu,
+        tipo_usuario: 1,
+        status_usuario: 1
+      };
+      console.log("senha: " + req.body.senha_usu)
+      if (req.body.senha_usu != "") {
+        dadosForm.senha_usuario = bcrypt.hashSync(req.body.senha_usu, salt);
+      }
+      if (!req.file) {
+        console.log("Falha no carregamento");
+      } else {
+        caminhoArquivo = "imagem/perfil/" + req.file.filename;
+        dadosForm.img_perfil_pasta = caminhoArquivo
+      }
+      console.log(dadosForm);
 
-router.get('/perfilUsuario', function(req, res){
-    res.render('pages/perfilUsuario')
-})
+      let resultUpdate = await usuarioDAL.update(dadosForm, req.session.autenticado.id);
+      if (!resultUpdate.isEmpty) {
+        if (resultUpdate.changedRows == 1) {
+          var result = await usuarioDAL.findID(req.session.autenticado.id);
+          var autenticado = {
+            autenticado: result[0].nome_usuario,
+            id: result[0].id_usuario,
+            tipo: result[0].tipo_usuario,
+            img_perfil_pasta: result[0].img_perfil_pasta
+          };
+          req.session.autenticado = autenticado;
+          var campos = {
+            nome_usu: result[0].nome_usuario, email_usu: result[0].email_usuario,
+            img_perfil_pasta: result[0].img_perfil_pasta
+          }
+          res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Perfil! atualizado com sucesso", mensagem: "", tipo: "success" }, valores: campos });
+        }
+      }
+    } catch (e) {
+      console.log(e)
+      res.render("pages/perfil", { listaErros: erros, dadosNotificacao: { titulo: "Erro ao atualizar o perfil!", mensagem: "Verifique os valores digitados!", tipo: "error" }, valores: req.body })
+    }
+
+  });
+
 
 router.get('/form_contratacao', function(req, res){
     res.render('pages/form_contratacao')

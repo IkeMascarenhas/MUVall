@@ -10,6 +10,7 @@ CREATE TABLE usuario (
   email_usuario VARCHAR(50) NOT NULL,
   senha_usuario VARCHAR(60) NOT NULL,
   dataNasc_usuario varchar(40) not null,
+  img_perfil varchar(80) DEFAULT null
   status_usuario int DEFAULT '1',
   tipo_usuario int DEFAULT '1',
   PRIMARY KEY (id_usuario)
