@@ -21,8 +21,8 @@ module.exports = class UsuarioDAL {
 
     findUserEmail(camposForm) {
         return new Promise((resolve, reject) => {
-            this.bd.query("SELECT * FROM usuario WHERE email_usuario = ?",
-            [camposForm.email_usu],
+            this.bd.query("SELECT * FROM usuario WHERE email_usuario = ? or nome_usuario = ?",
+            [camposForm.email_usuario, camposForm.email_usuario],
                 function (error, elements) {
                     if (error) {
                         return reject(error);
@@ -64,7 +64,7 @@ module.exports = class UsuarioDAL {
         return new Promise((resolve, reject) => {
             this.bd.query(
                 "UPDATE usuario SET nome_usuario = ?, senha_usuario = ?,  " +
-                " email_usuario = ?, dataNascimento_usu = ?, status_usuario = ? " +
+                " email_usuario = ?, dataNasc_usuario = ?, status_usuario = ? " +
                 " WHERE id_usuario = ?",
                 [camposJson.nome_usuario,  camposJson.senha_usuario,
                 camposJson.email_usuario, camposJson.dataNasc_usuario, camposJson.tipo_usuario,

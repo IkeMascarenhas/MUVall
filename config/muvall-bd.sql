@@ -8,9 +8,10 @@ CREATE TABLE usuario (
   id_usuario INT NOT NULL AUTO_INCREMENT,
   nome_usuario VARCHAR(50) NOT NULL,
   email_usuario VARCHAR(50) NOT NULL,
-  senha_usuario VARCHAR(100) NOT NULL,
+  senha_usuario VARCHAR(60) NOT NULL,
   dataNasc_usuario varchar(40) not null,
   status_usuario int DEFAULT '1',
+  tipo_usuario int DEFAULT '1',
   PRIMARY KEY (id_usuario)
 );
 
@@ -29,7 +30,9 @@ CREATE table usuario_anunciante (
   email_anunciante VARCHAR(50) NOT NULL,
   senha_anunciante VARCHAR(50) NOT NULL,
   cnpj_anunciante VARCHAR(14) NOT NULL,
-  PRIMARY KEY (id)
+  status_usuario int DEFAULT '1',
+  tipo_usuario int DEFAULT '2',
+  PRIMARY KEY (id_anunciante)
 );
 
 INSERT INTO cadastro_anunciante (nomeDaEmpresa, email, senha, cnpj) 

@@ -7,16 +7,17 @@
     <title>Perfil</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="css/cabeçalho-rodape.css" />
-    <link rel="stylesheet" href="perfil.css" />   
+    <link rel="stylesheet" href="css/perfil.css" />
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="script/script.js" defer></script>    
+    <script src="script/verMais.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.js"></script>
-    <script src="js/notify.js"></script>
-  
-    <!-- <script src="script/verMais.js" defer></script> -->
+    <script src="../../js/notify.js"></script>
   </head>
   <body>
     <header>
-      <a id="topimg" href="index" aria-label="logo"
+      <a id="topimg" href="/" aria-label="logo"
         ><img src="imagem/LogoMuvall.png" alt="Logo da empresa MUVALL" rel="prev"
       /></a>
 
@@ -27,11 +28,9 @@
           <div></div>
 
           <ul id="menu-items" class="NaoPropagar">
-            <img src="img/delete.png" alt="Fechar" id="close" />
+            <img src="imagem/delete.png" alt="Fechar" id="close" />
             <li class="NaoPropagar">
-              <a href="perfil" aria-label="Perfil" rel="next"
-                >Minha conta</a
-              >
+              <a href="perfilUsuario" aria-label="Perfil" rel="next">Minha conta</a>
             </li>
             <li class="NaoPropagar"><a href="anunciar">Anuncie</a></li>
             <li class="NaoPropagar">
@@ -47,68 +46,37 @@
     </header>
 
     <section class="empresa">
-        <a href="editarPerfil"><img src="imagem/editar.png" alt="Editar dados da empresa"/></a>
         <div id="logo-nome">
-          <img src="imagem/perfil_cliente.png" alt="Logo da Empresa" />
+          <img src="imagem/perfil_cliente.png" alt="Logo do Usuário" />
           <h1>Nome do Usuário</h1>
+          <div class="stars-box" style="margin-bottom: 2.5vh;">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
         </div>
-        <div id="nav-info">
-          <a href="#avaliacoes">Avaliações</a><span></span>
-          <a href="#informacoes-usuario">Informações</a>
         </div>
       </section>
       <main>
-        <section class="blocos-avaliacoes">
-            <section class="avaliacao-usuario">
-                <img src="imagem/cam3.png" alt="Imagem Caminhão">
-                <div class="txt_ava">
-                    <h2>Título do anúncio</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit doloribus distinctio, numquam nobis placeat voluptatibus alias, tempora rerum labore fuga, aliquid voluptatem cupiditate iste aliquam sed similique quaerat quod soluta.</p>
-                    <div class="stars-box">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                </div>
-            </section><hr>
-            <section class="avaliacao-usuario">
-                <img src="imagem/caminhaozinho.png" alt="Imagem Caminhão">
-                <div class="txt_ava">
-                    <h2>Título do anúncio</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit doloribus distinctio, numquam nobis placeat voluptatibus alias, tempora rerum labore fuga, aliquid voluptatem cupiditate iste aliquam sed similique quaerat quod soluta.</p>
-                    <div class="stars-box">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                </div>
-            </section><hr>
-            <section class="avaliacao-usuario">
-                <img src="imagem/van-furgao.jpg" alt="Imagem Caminhão">
-                <div class="txt_ava">
-                    <h2>Título do anúncio</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit doloribus distinctio, numquam nobis placeat voluptatibus alias, tempora rerum labore fuga, aliquid voluptatem cupiditate iste aliquam sed similique quaerat quod soluta.</p>
-                    <div class="stars-box">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                </div>
-            </section><hr>
+        <section class="administrar">
+          <a href="">
+            <img src="imagem/wall-clock.png" alt="pendentes">
+            <p>Contratações pendentes</p>
+          </a>
+          <a href="editarPerfil">
+            <img src="imagem/edit.png" alt="Editar Perfil">
+            <p>Editar Perfil</p>
+          </a>
+          <a href="avaliar">
+            <img src="imagem/star.png" alt="Ver Avaliações">
+            <p>Avaliações</p>
+          </a>
+          <a href="">
+            <img src="imagem/plus.png" alt="Ver Veículos">
+            <p>Ver veículos</p>
+          </a>
         </section>
-
-        <section id="informacoes-usuario">
-            <h2>Entrou em:</h2>
-            <p>10/11/2022</p>
-            <h2>Avaliações:</h2>
-            <p>5</p>
-          </section>
           <button class="btn">Excluir conta</button>
       </main>
 
@@ -134,13 +102,13 @@
           <a href="https://instagram.com"
             ><img
               src="imagem/linkedin.png"
-              alt="Logo Facebook"
+              alt="Logo Linkedin"
               target="_blank"
               rel="external"
           /></a>
         </div>
       </footer>
-    <script src="script/script.js" defer></script> 
+  
     </body>
   </html>
   
