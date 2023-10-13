@@ -24,7 +24,7 @@ body {
     font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-button{
+button,a,label{
     cursor: pointer !important;
 }
 
@@ -47,6 +47,7 @@ button{
         border-radius: 5px 0 0 5px;
         font-size: 4vw;
         padding: 2vw;
+        height: auto;
     }
 
     #barraPesquisa input::placeholder{
@@ -80,6 +81,7 @@ button{
     header {
         background-color: black;
         min-height: 8vh;
+        width: 100vw;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -104,16 +106,16 @@ button{
         min-width: 40px;
         max-width: 50px;
         width: 10vw;
-        height: 5.5vh;
+        height: 5vh;
         margin-right: 5vw;
-        
+        cursor: pointer;
 
     }
 
     #menu-container div {
         background-color: #ea5a14;
         border: 2px solid black;
-        height: 25%;
+        height: 22%;
         width: 100%;
         border-radius: 3px;
 
@@ -132,6 +134,8 @@ button{
         right: -100vw;
         transition-duration: 0.5s;
         border-radius: 0 0 0 10px;
+        z-index: 99;
+
     }
 
     .show-items {
@@ -139,6 +143,7 @@ button{
         right: 0 !important;
         transition-duration: 50ms;
         display: flex !important;
+        z-index: 99;
     }
 
     #menu-items img {
@@ -192,7 +197,7 @@ button{
     footer h2 {
         font: bold 4.5vw Roboto, sans-serif;
         color: white;
-
+        margin-top: 0vh !important;
     }
 
     #cadastro-rodape a {
@@ -219,5 +224,5 @@ button{
         justify-content: center;
         align-items: center;
     }
-    
+
 }

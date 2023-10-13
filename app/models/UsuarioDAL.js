@@ -7,9 +7,9 @@ module.exports = class UsuarioDAL {
     findAll() {
         return new Promise((resolve, reject) => {
             this.bd.query("SELECT u.id_usuario, u.nome_usuario, " +
-                "u.senha_usuario, u.email_usuario, u.dataNasc_usuario,u.tipo_usuario," +
-                " u.status_usuario, t.tipo_usuario, t.descricao_usuario FROM usuario u, tipo_usuario t where u.status_usuario = 1 and " +
-                " u.tipo_usuario = t.id_tipo_usuario", function (error, elements) {
+                "u.senha_usuario, u.email_usuario, u.dataNasc_usuario, u.tipo_usuario," +
+                " u.status_usuarioFROM usuario u where u.status_usuario = 1 and " +
+                " u.tipo_usuario = 1", function (error, elements) {
                     if (error) {
                         return reject(error);
                     }
@@ -21,8 +21,8 @@ module.exports = class UsuarioDAL {
 
     findUserEmail(camposForm) {
         return new Promise((resolve, reject) => {
-            this.bd.query("SELECT * FROM usuario WHERE email_usuario = ? or nome_usuario = ?",
-            [camposForm.email_usuario, camposForm.email_usuario],
+            this.bd.query("SELECT * FROM usuario WHERE email_usuario = ?",
+            [camposForm.email_usuario],
                 function (error, elements) {
                     if (error) {
                         return reject(error);
@@ -35,14 +35,11 @@ module.exports = class UsuarioDAL {
 
     findID(id) {
         return new Promise((resolve, reject) => {
-            this.bd.query("SELECT u.id_usuario, u.nome_usuario, " +
-                "u.senha_usuario, u.email_usuario, u.fone_usuario, u.tipo_usuario," +
-                " u.status_usuario, t.tipo_usuario, t.descricao_usuario FROM usuario u, tipo_usuario t where u.status_usuario = 1 and " +
-                " u.tipo_usuario = t.id_tipo_usuario and u.id_usuario = ?", [id], function (error, elements) {
+            this.bd.query("SELECT * FROM usuario where id_usuario = ?", [id], function (error, elements) {
                     if (error) {
                         return reject(error);
                     }
-
+                    
                     return resolve(elements);
                 });
         });

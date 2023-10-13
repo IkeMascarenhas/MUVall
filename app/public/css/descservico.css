@@ -149,7 +149,7 @@
     gap: 5vh;
   }
 
-  .txt-ava>div{
+  .txt-ava>.rate{
     border: 1px solid #ccc;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.288);
     border-radius: 20px;
@@ -170,4 +170,40 @@
   .txt-ava>div>div>i{
     font-size: 3.5vw;
   }
+
+  .pageAva{
+    margin: 5vh auto;
+    width: 80vw;
+  }
+
+  .filtroAva{
+    width: 90vw;
+    margin: 5vh auto;
+  }
+
+  .filtroAva ul{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap !important;
+    justify-content: center;
+    gap: 2vw;
+  }
+
+  .filtroAva li{
+    /* background-color: none; */
+    border: 1px solid #1a1a1a;
+    padding: 2vw;
+    border-radius: 10px;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+  .filtroAva li .stars i{
+    font-size: 100%;
+  }
+
+  
+
 }

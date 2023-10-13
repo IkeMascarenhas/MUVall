@@ -90,6 +90,7 @@
         border-radius: 10px;
         box-shadow: var(--sombra);
         margin-top: 6vh;
+        margin-bottom: 5vh;
     }
 
     form>p {
@@ -144,6 +145,19 @@
         width: 40%;
     }
 
+    textarea {
+        border: 2px solid #ea5a14;
+        padding: 3vw;
+        border-radius: 10px;
+        margin-top: 2.5vh;
+    }
+
+    textarea::placeholder{
+        font-family: "Roboto", sans-serif;
+        font: italic normal 3.5vw "Roboto", sans-serif;
+    }
+
+
     aside{
         padding-top: 1.5vh;
         padding-left: 2vw;
@@ -162,5 +176,4 @@
     .ok{
         color: green;
     }
-
 }

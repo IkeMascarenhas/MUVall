@@ -30,10 +30,13 @@ function gravarUsuAutenticado(usuarioDAL, bcrypt) {
             if (total == 1) {
                 if (bcrypt.compareSync(dadosForm.senha_usuario, results[0].senha_usuario)) {
                     var autenticado = {
-                        autenticado: results[0].email_usuario,
+                        autenticado: results[0].nome_usuario,
                         id: results[0].id_usuario,
-                        nome_usuario:results[0].nome_usuario
+                        tipo: results[0].tipo_usuario,
+                        img_perfil: results[0].img_perfil,
+                        email: results[0].email_usuario
                     };
+                    console.log(autenticado)
                 }
             } else {
                 var autenticado =  null ;
