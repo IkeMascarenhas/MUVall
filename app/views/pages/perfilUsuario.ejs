@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="css/perfil.css" />
     <link rel="stylesheet" href="css/admin.css">
     <link rel="stylesheet" href="css/login-cadastro.css">
-    <script src="script/script.js" defer></script>   
-    <script src="script/user-preview.js" defer></script> 
+    <script src="js/script.js" defer></script>   
+    <script src="js/user-preview.js" defer></script> 
     <!-- <script src="script/verMais.js" defer></script> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.js"></script>
@@ -98,8 +98,8 @@
     
     <section class="empresa">
         <div id="logo-nome">
-          <label for="img-perfil" id="user"><img src="<%= arquivo.imagem %>" alt="Logo da Empresa"/></label>
-          <input type="file" name="img-perfil" id="img-perfil">
+          <label for="img-perfil" id="img_perfil"><img src="<%= arquivo.imagem %>" alt="Logo da Empresa"/></label>
+          <input type="file" name="img_perfil" id="img-perfil">
           <h1><%= valores.nome_usu%> </h1>
           <div class="stars-box" style="margin-bottom: 2.5vh;">
             <i class="fa-solid fa-star"></i>
@@ -110,6 +110,23 @@
         </div>
         </div>
       </section>
+      <form action="perfilUsuario" method="post" style="width: 80vw; margin: auto;" id="#editar" enctype="multipart/form-data">
+        <p>
+          <input type="email" name="email_usu" placeholder="E-Mail:" id="email_usu" value="<%= valores.email_usu %>" class="<%= avisoErro.email_usu %>" required maxlength="100">
+          <span> <%= msgErro.email_usu %> </span> <b>*</b>
+        </p>
+        <p>
+          <input type="text" name="nome_usu" placeholder="Nome:" id="nome" value="<%= valores.nome_usu %>" class="<%= avisoErro.nome_usu %>" required maxlength="100" minlength="3">
+          <span> <%= msgErro.nome_usu %> </span> <b>*</b>
+        </p>
+        <p>
+          <input type="password" name="senha_usu" placeholder="Senha:" id="senha_usu" maxlength="30" minlength="8">
+          <span class="aviso">Não preencha este campo para manter a senha atual</span>
+        </p>
+        <label for="img-perfil" id="img_perfil"><img src="<%= arquivo.imagem %>" alt="Logo da Empresa"/></label>
+        <input type="file" name="img_perfil" id="img-perfil">
+        <button type="submit" id="cadastrar-bttn">Confirmar</button>
+      </form>
       <main>
         <section class="administrar">
           <a href="">
@@ -131,22 +148,6 @@
         </section>
           <button class="btn">Excluir conta</button>
       </main>
-
-      <form action="cadastro" method="post" style="width: 80vw; margin: auto;" id="#editar">
-        <p>
-          <input type="email" name="email_usu" placeholder="E-Mail:" id="email_usu" value="<%= valores.email_usu %>" class="<%= avisoErro.email_usu %>" required maxlength="100">
-          <span> <%= msgErro.email_usu %> </span> <b>*</b>
-        </p>
-        <p>
-          <input type="text" name="nome_usu" placeholder="Nome:" id="nome" value="<%= valores.nome_usu %>" class="<%= avisoErro.nome_usu %>" required maxlength="100" minlength="3">
-          <span> <%= msgErro.nome_usu %> </span> <b>*</b>
-        </p>
-        <p>
-          <input type="password" name="senha_usu" placeholder="Senha:" id="senha_usu" maxlength="30" minlength="8">
-          <span class="aviso">Não preencha este campo para manter a senha atual</span>
-        </p>
-        <button type="submit" id="cadastrar-bttn">Confirmar</button>
-    </form>
     <footer>
         <img src="imagem/LogoMuvall.png" alt="Logo MUVall" />
         <a href="faleConosco">Fale conosco</a>
