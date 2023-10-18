@@ -29,7 +29,7 @@ var storagePasta = multer.diskStorage({
         callback(null, './app/public/imagem/perfil/')
     },
     filename:(req, file, callBack) =>{
-        callBack(null, file.fieldname + '-' + DataTransfer.now() + path.extname(file.originalname))
+        callBack(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
     }
 })
 
@@ -39,6 +39,15 @@ router.get("/", verificarUsuAutenticado, function (req, res) {
   req.session.autenticado.login = req.query.login;
   res.render("pages/index", req.session.autenticado);
 })
+
+router.get("/sair", limparSessao, function (req, res) {
+  res.redirect("/");
+});
+
+// router.get("/excluir", function (req, res) {
+//   usuarioDAL.delete(id_usuario)
+//   res.redirect("/");
+// });
 
 router.get("/cadastro", function (req, res) {
     res.render("pages/cadastro", { listaErros: null, dadosNotificacao: null, valores: { email_usu: "", nome_usu: "", senha_usu: "", dataNascimento_usu: "" } });
@@ -153,15 +162,15 @@ router.get('/pagamento', function(req, res){
     res.render('pages/pagamento')
 })
 
-router.get('/perfilUsuario', verificarUsuAutorizado([1, 2], "pages/restrito"), async function (req, res) {
+router.get('/perfilUsuario', verificarUsuAutorizado([1, 2], verificarUsuAutenticado,"pages/restrito"), async function (req, res) {
   try {
     let results = await usuarioDAL.findID(req.session.autenticado.id);
     console.log(results);
     let campos = {
-      nome_usu: results[0].nome_usuario, email_usu: results[0].email_usuario,
+      nome_usu: results[0].nome_usuario, email_usu: results[0].email_usuario, dataNasc_usu: results[0].dataNasc_usuario,
       img_perfil: results[0].img_perfil, senha_usu: ""
     }
-    res.render("pages/perfilUsuario", { listaErros: null, dadosNotificacao: null, valores: campos })
+    res.render("pages/perfilUsuario", { listaErros: null, dadosNotificacao: null, valores: campos, autenticado: req.body.autenticado })
   } catch (e) {
     res.render("pages/perfilUsuario", {
       listaErros: null, dadosNotificacao: null, valores: {
@@ -172,12 +181,13 @@ router.get('/perfilUsuario', verificarUsuAutorizado([1, 2], "pages/restrito"), a
   }
 });
 
-router.post('/perfilUsuario', upload.single('imagem-perfil_usu'),
+router.post('/perfilUsuario', upload.single('img-perfil'),
 body("nome_usu")
   .isLength({ min: 3, max: 50 }).withMessage("Mínimo de 3 letras e máximo de 50!"),
 body("email_usu")
   .isEmail().withMessage("Digite um e-mail válido!"),
 verificarUsuAutorizado([1, 2], "pages/restrito"),
+verificarUsuAutenticado,
 async function (req, res) {
   const erros = validationResult(req);
   console.log(erros)
@@ -188,9 +198,11 @@ async function (req, res) {
     var dadosForm = {
       nome_usuario: req.body.nome_usu,
       email_usuario: req.body.email_usu,
-      img_perfil: null,
+      dataNasc_usuario: req.body.dataNascimento_usu,
+      // img_perfil: null,
       tipo_usuario: 1,
-      status_usuario: 1
+      status_usuario: 1,
+      id: req.session.autenticado.id
     };
     console.log("senha: " + req.body.senha_usu)
     if (req.body.senha_usu != "") {
@@ -204,27 +216,29 @@ async function (req, res) {
     }
     console.log(dadosForm);
 
-    let resultUpdate = await usuarioDAL.update(dadosForm, req.session.autenticado.id);
+    let resultUpdate = await usuarioDAL.update(dadosForm);
     if (!resultUpdate.isEmpty) {
       if (resultUpdate.changedRows == 1) {
         var result = await usuarioDAL.findID(req.session.autenticado.id);
         var autenticado = {
           autenticado: result[0].nome_usuario,
+          email_usu: result[0].email_usuario,
           id: result[0].id_usuario,
           tipo: result[0].tipo_usuario,
-          img_perfil: result[0].img_perfil
+          img_perfil: result[0].img_perfil,
         };
+        
         req.session.autenticado = autenticado;
-        var campos = {
-          nome_usu: result[0].nome_usuario, email_usu: result[0].email_usuario,
+        let campos = {
+          nome_usu: result[0].nome_usuario, email_usu: result[0].email_usuario, dataNasc_usu: result[0].dataNasc_usuario,
           img_perfil: result[0].img_perfil, senha_usu: ""
         }
-        res.render("pages/perfilUsuario", { listaErros: null, dadosNotificacao: { titulo: "Perfil atualizado com sucesso!", mensagem: "", tipo: "success" }, valores: campos });
+        res.render("pages/perfilUsuario", { listaErros: null, dadosNotificacao: { titulo: "Perfil atualizado com sucesso!", mensagem: "", tipo: "success" }, valores: campos, autenticado: req.body.autenticado});
       }
     }
   } catch (e) {
     console.log(e)
-    res.render("pages/perfilUsuario", { listaErros: erros, dadosNotificacao: { titulo: "Erro ao atualizar o perfil!", mensagem: "Verifique os valores digitados!", tipo: "error" }, valores: req.body })
+    res.render("pages/perfilUsuario", { listaErros: erros, dadosNotificacao: { titulo: "Erro ao atualizar o perfil!", mensagem: "Verifique os valores digitados!", tipo: "error" }, valores: req.body, autenticado: req.body.autenticado })
   }
 
 });

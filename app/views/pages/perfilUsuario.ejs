@@ -13,10 +13,10 @@
     <script src="js/script.js" defer></script>   
     <script src="js/user-preview.js" defer></script> 
     <!-- <script src="script/verMais.js" defer></script> -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.css"/>
+    <script src="js/validacao.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.css" />​
     <script src="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.js"></script>
     <script src="../../js/notify.js"></script>
-    
   </head>
   <body>
     <header>
@@ -26,28 +26,31 @@
 
       <nav>
         <div id="menu-container">
+
           <div></div>
           <div></div>
           <div></div>
+
 
           <ul id="menu-items" class="NaoPropagar">
-            <img src="imagem/delete.png" alt="Fechar" id="close" />
-            <li class="NaoPropagar">
-              <a href="perfilUsuário" aria-label="Perfil" rel="next">Minha conta</a>
-            </li>
-            <li class="NaoPropagar"><a href="anunciar">Anuncie</a></li>
-            <li class="NaoPropagar">
-              <a href="faleConosco" aria-label="Fale conosco" rel="next"
-                >Fale Conosco</a
-              >
-            </li>
-            <li class="NaoPropagar"><a href="login">Entre</a></li>
-            <li class="NaoPropagar"><a href="cadastro">Cadastre-se</a></li>
+              <img src="imagem/delete.png" alt="Fechar" id="close">
+              <% if(autenticado){
+                  %>
+                  <li class="NaoPropagar"><a href="anunciar">Anuncie</a></li>
+                  <li class="NaoPropagar"><a href="perfilUsuario" aria-label="Perfil" rel="next">Minha conta</a></li>
+                  <li class="NaoPropagar"><a href="/sair">Sair da conta</a></li>
+                  <%
+              }else{ %>
+              <li class="NaoPropagar"><a href="login">Entre</a></li>
+              <li class="NaoPropagar"><a href="cadastro">Cadastre-se</a></li>
+              <li class="NaoPropagar"><a href="faleConosco" aria-label="Fale conosco" rel="next">Fale Conosco</a></li>
+              <%
+              }
+              %>
           </ul>
-        </div>
+      </div>
       </nav>
     </header>
-
     <%
 
     let arquivo = {"imagem":"imagem/perfil.png"}
@@ -78,6 +81,15 @@
                 </script>
                 <%
             }
+            if(itemErro.path == "dataNasc_usu"){
+              avisoErro.dataNasc_usu = "erro";
+              msgErro.dataNasc_usu = itemErro.msg
+              %>
+              <script>
+                notify("Erro no preenchimento","Verifique o campo data de nascimento", "error", "center")                        
+              </script>
+              <%
+            }
         })
     }
     
@@ -94,41 +106,44 @@
                 }                        
         </script>
     <% } %>
-
-    
+    <form action="perfilUsuario" method="post" id="editar" enctype="multipart/form-data">
     <section class="empresa">
-        <div id="logo-nome">
-          <label for="img-perfil" id="img_perfil"><img src="<%= arquivo.imagem %>" alt="Logo da Empresa"/></label>
-          <input type="file" name="img_perfil" id="img-perfil">
-          <h1><%= valores.nome_usu%> </h1>
-          <div class="stars-box" style="margin-bottom: 2.5vh;">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
+      <div id="logo-nome">
+        <label for="img-perfil" id="user"><img src="<%= arquivo.imagem %>" alt="Logo da Empresa"/></label>
+        <input type="file" name="img-perfil" id="img-perfil">
+        <h1><%= valores.nome_usu %></h1>
+        <div class="stars-box" style="margin-bottom: 2.5vh;">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+      </div>
+      </div>
+    </section>
+        <div class="inputs-edit">
+          <p>
+              <input type="text" name="nome_usu" id="nome_usu" placeholder="Nome" value="<%= valores.nome_usu %>" class="<%= avisoErro.nome_usu %>"/> 
+              <span> <%= msgErro.nome_usu %> </span> <b>*</b>
+          </p>
+          <p>
+              <input type="text" name="email_usu" id="email_usu" placeholder="E-mail" value="<%= valores.email_usu %>" class="<%= avisoErro.email_usu %>"/> 
+              <span> <%= msgErro.email_usu %> </span> <b>*</b>
+          </p>
+          <p>
+            <input type="date" name="dataNascimento_usu" placeholder="Data de Nascimento:" id="dataNascimento_usu" required value="<%= valores.dataNasc_usu %>" class="<%= avisoErro.dataNascimento_usu %>">
+            <span> <%= msgErro.dataNasc_usu %> </span> <b>*</b>
+          </p>
+          <p>
+              <input type="password" name="senha_usu" id="senha_usu" placeholder="Senha de Usuário">
+              <span class="aviso">Não preencha este campo para manter a senha atual</span>
+          </p>
         </div>
-        </div>
-      </section>
-      <form action="perfilUsuario" method="post" style="width: 80vw; margin: auto;" id="#editar" enctype="multipart/form-data">
-        <p>
-          <input type="email" name="email_usu" placeholder="E-Mail:" id="email_usu" value="<%= valores.email_usu %>" class="<%= avisoErro.email_usu %>" required maxlength="100">
-          <span> <%= msgErro.email_usu %> </span> <b>*</b>
-        </p>
-        <p>
-          <input type="text" name="nome_usu" placeholder="Nome:" id="nome" value="<%= valores.nome_usu %>" class="<%= avisoErro.nome_usu %>" required maxlength="100" minlength="3">
-          <span> <%= msgErro.nome_usu %> </span> <b>*</b>
-        </p>
-        <p>
-          <input type="password" name="senha_usu" placeholder="Senha:" id="senha_usu" maxlength="30" minlength="8">
-          <span class="aviso">Não preencha este campo para manter a senha atual</span>
-        </p>
-        <label for="img-perfil" id="img_perfil"><img src="<%= arquivo.imagem %>" alt="Logo da Empresa"/></label>
-        <input type="file" name="img_perfil" id="img-perfil">
-        <button type="submit" id="cadastrar-bttn">Confirmar</button>
-      </form>
-      <main>
-        <section class="administrar">
+
+        <button type="submit" id="cadastrar-bttn">Editar perfil</button>
+     </form>
+     <main>
+     <section class="administrar">
           <a href="">
             <img src="imagem/wall-clock.png" alt="pendentes">
             <p>Contratações pendentes</p>
@@ -146,7 +161,8 @@
             <p>Anunciar</p>
           </a>
         </section>
-          <button class="btn">Excluir conta</button>
+          <button class="btn" href="/sair">Sair da conta</button>
+          <button class="btn" href="/excluir">Excluir conta</button>
       </main>
     <footer>
         <img src="imagem/LogoMuvall.png" alt="Logo MUVall" />
@@ -170,13 +186,12 @@
           <a href="https://instagram.com"
             ><img
               src="imagem/linkedin.png"
-              alt="Logo Facebook"
+              alt="Logo Linkedin"
               target="_blank"
               rel="external"
           /></a>
         </div>
       </footer>
-  
     </body>
   </html>
   

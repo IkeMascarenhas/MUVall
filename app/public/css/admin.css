@@ -6,6 +6,15 @@ main{
     justify-content: space-between; */
 }
 
+#editar input:first-child{
+    margin-top: 3vh;
+}
+
+#editar .inputs-edit{
+    width: 80vw;
+    margin: auto;
+}
+
 .administrar{
     width: 90vw;
     display: grid;
@@ -26,7 +35,8 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    border-radius: 10px;
+    border-radius: 12px;
+    box-shadow: var(--sombra);
 
 }
 
@@ -55,4 +65,8 @@ main{
     width: 60%;
     aspect-ratio: 1/1;
     object-fit: contain;
+}
+
+form{
+    margin-bottom: 5vh !important;
 }

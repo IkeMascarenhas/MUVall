@@ -36,7 +36,6 @@ function gravarUsuAutenticado(usuarioDAL, bcrypt) {
                         img_perfil: results[0].img_perfil,
                         email: results[0].email_usuario
                     };
-                    console.log(autenticado)
                 }
             } else {
                 var autenticado =  null ;
