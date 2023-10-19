@@ -33,8 +33,10 @@
 
                 <ul id="menu-items" class="NaoPropagar">
                     <img src="imagem/delete.png" alt="Fechar" id="close">
-                    <% if(autenticado){
-                        %>
+                    <%
+                    if(autenticado){
+                        %> 
+                        <li class="NaoPropagar"><a href="painel_adm">Painel Admin</a></li> 
                         <li class="NaoPropagar"><a href="anunciar">Anuncie</a></li>
                         <li class="NaoPropagar"><a href="perfilUsuario" aria-label="Perfil" rel="next">Minha conta</a></li>
                         <li class="NaoPropagar"><a href="/sair">Sair da conta</a></li>

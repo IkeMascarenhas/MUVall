@@ -281,7 +281,7 @@ router.get("/painel_adm", verificarUsuAutorizado([2, 3], "pages/restrito"), veri
           autenticado: req.session.autenticado,
           login: req.session.autenticado,
           tipo_usuario: req.session.autenticado.tipo,
-          img_perfil_pasta: req.session.autenticado.img_perfil_pasta,
+          img_perfil: req.session.autenticado.img_perfil,
           usuarios: usuarios,
           totalUsuarios: totalUsuarios, 
         });
@@ -332,5 +332,9 @@ router.post("/reativar-usuario/:id", verificarUsuAutorizado([2, 3], "pages/restr
     console.log("Erro ao reativar o usuário.");
   }
 });
+
+router.get("/painel_admFILIPE", async (req, res) =>{
+  res.render("pages/painel_admFILIPE")
+})
 
 module.exports = router

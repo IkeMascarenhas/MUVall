@@ -1,0 +1,54 @@
+table, tr, th, td, caption{
+    font-family: 'Roboto', sans-serif;
+    border-collapse: collapse;
+    padding: 1.5vw;
+	font-size: 2.5vw;
+	
+}
+
+table{
+	width: 90vw;
+	margin: 5vh auto;
+	border: 1px solid #1a1a1a;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.116);
+}
+
+caption{
+	background-color: #ea5a14;
+	color: white;
+	font: bold 4vw "Roboto",sans-serif;
+	border: 1px solid #1a1a1a;
+	border-bottom: none;
+}
+
+tr{
+	border: 1px solid #1a1a1a;
+}
+
+thead tr th{
+	background-color: #1a1a1a;
+	color: white;
+}
+
+/* .delete{
+	width: 10%;
+}
+
+.delete img{
+	width: 80%;
+	height: 100%;
+	aspect-ratio: 1/1;
+	object-fit: contain;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #ea5a14;
+	border-radius: 25%;
+	padding: 0.5vw;
+} */
+
+.cadastrados-user{
+	font-weight: bold;
+	font-size: 3vw;
+}
