@@ -136,13 +136,14 @@ router.get('/pagamento', function(req, res){
 
 router.get('/perfilUsuario', verificarUsuAutorizado([1, 2, 3], verificarUsuAutenticado,"pages/restrito"), async function (req, res) {
   try {
+    req.session.autenticado.login = req.query.login
     let results = await usuarioDAL.findID(req.session.autenticado.id);
     console.log(results);
     let campos = {
       nome_usu: results[0].nome_usuario, email_usu: results[0].email_usuario, dataNasc_usu: results[0].dataNasc_usuario,
       img_perfil: results[0].img_perfil, senha_usu: ""
     }
-    res.render("pages/perfilUsuario", { listaErros: null, dadosNotificacao: null, valores: campos, autenticado: req.body.autenticado })
+    res.render("pages/perfilUsuario", { listaErros: null, dadosNotificacao: null, valores: campos, autenticado: req.session.autenticado })
   } catch (e) {
     res.render("pages/perfilUsuario", {
       listaErros: null, dadosNotificacao: null, valores: {
