@@ -104,8 +104,7 @@ router.get('/lista-de-servicos', function(req, res){
 
 router.get("/login", verificarUsuAutenticado,function (req, res) {
     res.locals.erroLogin = null
-    req.session.autenticado.login = req.query.login;
-    res.render("pages/login", req.session.autenticado,{ listaErros: null, dadosNotificacao: null });
+    res.render("pages/login", { listaErros: null, dadosNotificacao: null, autenticado: req.session.autenticado });
   });
   
 router.post(
