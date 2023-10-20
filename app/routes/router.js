@@ -120,7 +120,7 @@ router.post(
     function (req, res) {
       const erros = validationResult(req);
       if (!erros.isEmpty()) {
-        return res.render("pages/login", { listaErros: erros, dadosNotificacao: null })
+        return res.render("pages/login", { listaErros: erros, dadosNotificacao: null, autenticado: null })
       }
       if (req.session.autenticado != null) {
         //mudar para página de perfil quando existir
