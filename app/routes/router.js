@@ -78,7 +78,7 @@ router.get("/cadastro", function (req, res) {
         res.render("pages/cadastro", {
           listaErros: null, dadosNotificacao: {
             titulo: "Cadastro realizado!", mensagem: "Usuário criado com o id " + insert.insertId + "!", tipo: "success"
-          }, valores: req.body
+          }, valores: req.body, autenticado: req.session.autenticado
         })
       } catch (e) {
         console.log(e)
