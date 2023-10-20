@@ -70,7 +70,7 @@ router.get("/cadastro", function (req, res) {
       };
       const erros = validationResult(req);
       if (!erros.isEmpty()) {
-        return res.render("pages/cadastro", { listaErros: erros, dadosNotificacao: null, valores: req.body })
+        return res.render("pages/cadastro", { listaErros: erros, autenticado: req.session.autenticado,dadosNotificacao: null, valores: req.body })
       }
       try {
         let insert = await usuarioDAL.create(dadosForm);
@@ -83,7 +83,7 @@ router.get("/cadastro", function (req, res) {
       } catch (e) {
         console.log(e)
         res.render("pages/cadastro", {
-          listaErros: erros, dadosNotificacao: {
+          listaErros: erros, autenticado: null,dadosNotificacao: {
             titulo: "Erro ao cadastrar!", mensagem: "Verifique os valores digitados!", tipo: "error"
           }, valores: req.body
         })
