@@ -132,7 +132,7 @@ router.get('/lista-de-servicos', function(req, res){
 
 router.get("/login", function (req, res) {
     res.locals.erroLogin = null
-    res.render("pages/login", { listaErros: null, dadosNotificacao: null });
+    res.render("pages/login", { listaErros: null, dadosNotificacao: null, autenticado: null });
   });
   
 router.post(
