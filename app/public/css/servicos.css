@@ -163,6 +163,8 @@
     border-radius: 10px;
     align-self: center;
     min-width: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
   }
 
   .anuncios h2 {
