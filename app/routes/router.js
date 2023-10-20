@@ -49,8 +49,8 @@ router.get("/sair", limparSessao, function (req, res) {
 //   res.redirect("/");
 // });
 
-router.get("/cadastro", verificarUsuAutenticado, function (req, res) {
-    res.render("pages/cadastro", req.session.autenticado, { listaErros: null, dadosNotificacao: null, valores: { email_usu: "", nome_usu: "", senha_usu: "", dataNascimento_usu: "" } });
+router.get("/cadastro", function (req, res) {
+    res.render("pages/cadastro", { listaErros: null, dadosNotificacao: null, valores: { email_usu: "", nome_usu: "", senha_usu: "", dataNascimento_usu: "" } });
   });
   
   router.post("/cadastro",
@@ -102,9 +102,9 @@ router.get('/lista-de-servicos', function(req, res){
     res.render('pages/lista-de-servicos')
 })
 
-router.get("/login", verificarUsuAutenticado,function (req, res) {
+router.get("/login", function (req, res) {
     res.locals.erroLogin = null
-    res.render("pages/login", { listaErros: null, dadosNotificacao: null, autenticado: req.session.autenticado });
+    res.render("pages/login", { listaErros: null, dadosNotificacao: null});
   });
   
 router.post(
