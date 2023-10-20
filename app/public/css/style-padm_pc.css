@@ -7,14 +7,11 @@ table, tr, th, td, caption{
 }
 
 table{
-	width: 80vw;
+	width: 90vw;
 	margin: 5vh auto;
 	border: 1px solid #1a1a1a;
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.116);
-	position: absolute;
-	top: 37vh;
-	left: 50%;
-	transform: translate(-50%, -50%);
+
 }
 
 caption{
