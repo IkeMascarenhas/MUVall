@@ -49,8 +49,7 @@ router.get("/sair", limparSessao, function (req, res) {
 //   res.redirect("/");
 // });
 
-router.get("/cadastro", verificarUsuAutenticado,function (req, res) {
-    req.session.autenticado.login = req.query.login
+router.get("/cadastro", verificarUsuAutenticado, function (req, res) {
     res.render("pages/cadastro", req.session.autenticado, { listaErros: null, dadosNotificacao: null, valores: { email_usu: "", nome_usu: "", senha_usu: "", dataNascimento_usu: "" } });
   });
   
