@@ -1,7 +1,7 @@
 const express = require('express')
 var session = require('express-session')
 const app = express()
-const porta = 6969
+const porta = process.env.PORT || 6969
 
 app.use(express.static('app/public'))
 
