@@ -2,10 +2,10 @@ const mysql = require("mysql");
 
 module.exports = function () {
   return mysql.createConnection({
-    host: "localhost",
+    host: "containers-us-west-68.railway.app",
     user: "root",
-    password: "", // Your database password
-    database: "muvall",
-    port: 3306
+    password: "z09YyLXnJ4yTEo8AF8Cx", // Your database password
+    database: "railway",
+    port: 5500
   });
 };

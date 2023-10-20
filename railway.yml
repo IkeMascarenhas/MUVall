@@ -1,0 +1,30 @@
+version: 3.5.0
+
+environments: 
+  production:
+    API_KEY: 0720f846-ec9d-478b-85d7-cd9878dd1ea9
+  development:
+    API_KEY: 90d8e41e-2a71-4ce8-bd8b-3810a42a8024
+
+commands:
+  build:
+    steps:
+      - name: Instalar dependências
+        run: npm install
+
+services:
+  database:
+    image: mysql
+
+build:
+  steps:
+    - name: Instalar dependências
+      run: npm install
+  output: public
+
+endpoints:
+  - name: Web
+    command: npm start
+
+secrets:
+  API_KEY: richardviado
