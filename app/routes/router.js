@@ -50,7 +50,7 @@ router.get("/sair", limparSessao, function (req, res) {
 // });
 
 router.get("/cadastro", function (req, res) {
-    res.render("pages/cadastro", { listaErros: null, dadosNotificacao: null, valores: { email_usu: "", nome_usu: "", senha_usu: "", dataNascimento_usu: "" } });
+    res.render("pages/cadastro", { listaErros: null, dadosNotificacao: null, autenticado:null, valores: { email_usu: "", nome_usu: "", senha_usu: "", dataNascimento_usu: "" } });
   });
   
   router.post("/cadastro",
@@ -242,8 +242,9 @@ async function (req, res) {
   }
 
 });
-router.get('/anunciar', function(req, res){
-    res.render('pages/anunciar')
+router.get('/anunciar', verificarUsuAutenticado, verificarUsuAutorizado(2, 'pages/restrito'), function(req, res){
+    
+  res.render('pages/anunciar', {autenticado: req.session.autenticado})
 })
 
 router.get('/descservico', function(req, res){
