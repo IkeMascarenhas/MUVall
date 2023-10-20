@@ -95,35 +95,7 @@ router.get('/cadastro-anunciante', function(req, res){
 })
 
 router.post('/cadastro-anunciante', function(req, res){
-    const { nomeEmpresa, email, senha, cnpj } = req.body
-    
 
-    if (nomeEmpresa && email && senha && cnpj){
-    bd.query('select * from cadastro_anunciante where email = ?',
-    [email],
-    (error, results) => {
-        if(results.length > 0) {
-            res.send('Email já cadastrado')
-        } else {
-            const hashedPassword = bcrypt.hashSync(senha)
-            
-            bd.query(
-            'insert into cadastro_anunciante (nomeDaEmpresa, email, senha, cnpj) values (?, ?, ?, ?)',
-            [nomeEmpresa, email, hashedPassword, cnpj],
-            (error, results) => {
-                if(error){
-                    res.send('Erro ao cadastrar o usuário')
-                    throw error
-                } else {
-                    res.redirect('/perfil')
-                }
-            }
-            )
-        }
-    })
-    } else {
-        res.send('Por favor, preencha todos os campos')
-    }
 })
 
 router.get('/lista-de-servicos', function(req, res){
@@ -242,7 +214,7 @@ async function (req, res) {
   }
 
 });
-router.get('/anunciar', verificarUsuAutenticado, verificarUsuAutorizado(2, 'pages/restrito'), function(req, res){
+router.get('/anunciar', verificarUsuAutenticado, verificarUsuAutorizado([2], 'pages/restrito'), function(req, res){
     
   res.render('pages/anunciar', {autenticado: req.session.autenticado})
 })
