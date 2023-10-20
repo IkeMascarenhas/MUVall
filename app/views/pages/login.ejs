@@ -26,10 +26,21 @@
 
             <ul id="menu-items" class="NaoPropagar">
                 <img src="imagem/delete.png" alt="Fechar" id="close">
-                <li class="NaoPropagar"><a href="perfilUsuario" aria-label="Perfil" rel="next">Minha conta</a></li>
-                <li class="NaoPropagar"><a href="anunciar">Anuncie</a></li>
+                <%
+                if(autenticado){
+                    %> 
+                    <li class="NaoPropagar"><a href="painel_adm">Painel Admin</a></li> 
+                    <li class="NaoPropagar"><a href="anunciar">Anuncie</a></li>
+                    <li class="NaoPropagar"><a href="perfilUsuario" aria-label="Perfil" rel="next">Minha conta</a></li>
+                    <li class="NaoPropagar"><a href="/sair">Sair da conta</a></li>
+                    <%
+                }else{ %>
                 <li class="NaoPropagar"><a href="login">Entre</a></li>
                 <li class="NaoPropagar"><a href="cadastro">Cadastre-se</a></li>
+                <li class="NaoPropagar"><a href="faleConosco" aria-label="Fale conosco" rel="next">Fale Conosco</a></li>
+                <%
+                }
+                %>
             </ul>
         </div>
     </nav>
