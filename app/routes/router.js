@@ -165,7 +165,7 @@ async function (req, res) {
   const erros = validationResult(req);
   console.log(erros)
   if (!erros.isEmpty()) {
-    return res.render("pages/perfilUsuario", { listaErros: erros, dadosNotificacao: null, valores: req.body })
+    return res.render("pages/perfilUsuario", { listaErros: erros, autenticado:null,dadosNotificacao: null, valores: req.body })
   }
   try {
     var dadosForm = {
